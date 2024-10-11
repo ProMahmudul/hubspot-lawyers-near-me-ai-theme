@@ -1,0 +1,82 @@
+.legal_start{
+    background: $gray3;
+    .legal-content{
+        @media #{$xs} {
+        margin-bottom: 30px;
+    }
+        .legal-title{
+            color:$primary;
+        }
+        p{
+            color: #D5D5D5;
+            font-size: 20px;
+            line-height: 28px;
+            margin-top: 10px;
+            margin-bottom: 24px;
+            width: 81%;
+            @media #{$xs} {
+        width: 100%;
+    }
+        }
+        .legal_btn{
+            a{
+                padding: 8px 8px 8px 15px;
+                
+                font-size: 18px;
+                font-weight: bold;
+                border:1px solid $primary;
+                border-radius: 100px;
+                display: inline-block;
+                 transition: .3s;
+                span{
+                    color:$white;
+                }
+                i{
+                    background:$primary ;
+                    color: $white;
+                    width: 36px;
+                    height: 36px;
+                    border-radius: 100px;
+                    text-align: center;
+                    line-height: 36px;
+                    margin-left: 38px;
+                }
+                &:hover{
+                    background: $primary;
+                    transition: .3s;
+                    i{
+                        background:$black;
+                        color: $white;
+                    }
+                }
+            }
+        }
+    }
+
+    .legal-boxes{
+        gap:15px;
+        align-items: center;
+        .legal-box{
+            padding: 40px 12px 40px 17px;
+             background: linear-gradient(90deg, #171717, #181818);
+             border:1px solid #2C2C2C;
+             border-radius: 24px;
+             h4{
+                color:$primary;
+                font-size: 20px;
+                font-weight: bold;
+                margin-top: 16px;
+                margin-bottom: 8px;
+             }
+             p{
+                color:#D5D5D5;
+                font-size: 16px;
+                line-height: 21px;
+             }
+        }
+        .legal-box2{
+            margin-top: 50px;
+                padding: 40px 32px 40px 17px;
+        }
+    }
+}

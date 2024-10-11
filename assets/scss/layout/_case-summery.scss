@@ -1,0 +1,53 @@
+.case_summery{
+       background: url('../imgs/case-summery/casesummery-bg.jpg');
+        background-position:center ;
+        background-size: cover;
+        position: relative;
+        .heading{
+            margin-bottom: 156px;
+             @media #{$xs} {
+             margin-bottom: 15px;
+        }
+        }
+        .case-summery-shape{
+            position: absolute;
+            top: 30%;
+            left: 31%;
+             @media #{$xl} {
+    top: 33%;
+    left: 23%;
+    }
+            img{
+                width: 100%;
+                @media #{$xl} {
+                         width: auto;
+                }
+            }
+        }
+        .case-summeryimg{
+            position: relative;
+            z-index: 99;
+            img{
+                width: 100%;
+            }
+        }
+        .case-summerybox{
+            padding: 28px 0px 20px 50px;
+             @media #{$md} {
+            padding-left: 0px;
+        }
+            h3{
+                font-size: 24px;
+                color:#fff;
+                font-weight: bold;
+            }
+            p{
+                font-size: 18px;
+                color:#D5D5D5;
+                    width: 80%;
+                    @media #{$xl} {
+         width: 100%;
+    }
+            }
+        }
+}

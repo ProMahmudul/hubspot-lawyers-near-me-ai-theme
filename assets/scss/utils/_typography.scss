@@ -1,0 +1,142 @@
+/*----------------------------------------*/
+/* 03. TYPOGRAPHY CSS START
+/*----------------------------------------*/
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: $productsans;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding: 0;
+  margin: 0;
+  font-family: $productsans;
+}
+
+h1 {
+  font-size: 36px;
+}
+
+h2 {
+  font-size: 48px;
+  font-weight: bold;
+}
+
+@media #{$xs} {
+               h2 {
+  font-size: 35px;
+}
+            }
+
+h3 {
+  font-size: 48px;
+  font-weight: bold;
+}
+
+@media #{$xs} {
+        h3 {
+  font-size: 32px;
+  line-height: 40px;
+  font-weight: bold;
+}
+    }
+
+h4 {
+  font-size: 24px;
+}
+
+h5 {
+  font-size: 20px;
+}
+
+h6 {
+  font-size: 18px;
+}
+
+ul,
+ol {
+  padding: 0;
+  margin: 0 !important;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  transition: all 0.3s;
+  color: inherit;
+
+  &:hover {
+    color: inherit;
+  }
+}
+
+p {
+  padding: 0;
+  margin: 0;
+  font-style: normal;
+  line-height: 1.5;
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--gray);
+}
+
+
+li{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #FFF, #F4C001);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+.gradient-text2 {
+  background: linear-gradient(180deg, #FFF, #F4C001);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+         .heading{
+      
+          margin-bottom: 40px;
+    text-align: center;
+
+        p{
+            font-size: 24px;
+            color:#D5D5D5;
+            @media #{$xs} {
+                font-size: 16px;
+            }
+        }
+
+        img{
+                margin-bottom: -90px;
+        }
+
+        
+     }
