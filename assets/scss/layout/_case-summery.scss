@@ -50,4 +50,87 @@
     }
             }
         }
+
+
+}
+
+        .modal.show .modal-dialog {
+    transform: none;
+    max-width: 1191px;
+    
+    border:1px solid #424242;
+    border-radius: 22px;
+
+    @media #{$lg} {
+         max-width: 100%;
+         margin-right: 20px;
+         margin-left: 20px;
+    }
+    .modal-header{
+background: $black !important;
+padding: 15px 32px 15px 70px;
+  @media #{$xs} {
+        padding: 15px;
+    }
+.modal-title {
+    color:$primary;
+    font-size: 40px;
+     @media #{$xs} {
+        font-size: 28px;
+    }
+}
+
+button.btn-close{
+    background: url('../imgs/Vector.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: 1;
+        width: 25px;
+    height: 0px;
+}
+    }
+    .modal-body{
+background: $black !important;
+padding: 10px 60px 10px 60px;
+  @media #{$xs} {
+        padding: 20px;
+    }
+.modal-con{
+    padding-top: 35px;
+    &:last-child{
+        padding-bottom: 35px;
+    }
+    h6{
+        color:$primary;
+        font-size: 24px;
+        line-height: 36px;
+    }
+    p{
+        color:$white;
+        font-size: 18px;
+        line-height: 30px;
+        padding-left: 10px;
+    }
+    ul{
+
+        padding-left: 10px;
+        li{
+             color:$white;
+        font-size: 18px;
+        line-height: 30px;
+        &:before{
+               content: "";
+    width: 10px;
+    height: 10px;
+    background: var(--white);
+    margin-right: 10px;
+    border-radius: 100px;
+    display: inline-block;
+
+        }
+        }
+    }
+}
+    }
 }

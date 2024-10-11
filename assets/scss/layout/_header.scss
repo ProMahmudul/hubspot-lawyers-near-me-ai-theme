@@ -6,6 +6,9 @@
         // background-size: cover;
     padding-top: 35px;
     padding-bottom: 100px;
+    &.header_area2{
+        background: $gray3;
+    }
 .header-navarea {
     justify-content: space-between;
     border: 1px solid $primary;
