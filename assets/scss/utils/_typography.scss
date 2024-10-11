@@ -13,6 +13,9 @@ body {
   font-family: $productsans;
 }
 
+section{
+    overflow: hidden;
+}
 html {
   scroll-behavior: smooth;
 }
