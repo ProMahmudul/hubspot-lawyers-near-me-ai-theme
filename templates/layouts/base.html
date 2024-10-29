@@ -30,9 +30,9 @@
 <body>
 
   <!-- Preloader -->
-  <!-- <div class="preloader-wrap">
+  <div class="preloader-wrap">
     <div class="site-preloader"></div>
-  </div> -->
+  </div>
 
   <!-- Scroll to top 
   <button id="scroll_top" class="scroll--top"><i class="fa-solid fa-arrow-up"></i></button>-->
@@ -52,7 +52,7 @@
 -->
 
   <!-- Header area start -->
-  <header class="header_area" style="background: url({{ get_asset_url('../../images/hero/hero.png') }}); background-position: center; background-size: cover;">
+  <header id="header" class="header_area" style="background: url({{ get_asset_url('../../images/hero/hero.png') }}); background-position: center; background-size: cover;">
     <div class="container">
       <div class="row align-items-center">
         <div class="col-lg-4 col-xl-5 col-6">
@@ -72,10 +72,10 @@
             <div class="menu">
               <div class="close-btn">&times;</div>
               <ul>
-                <li><a href="#0">Home</a></li>
-                <li><a href="#0">How It Works</a></li>
-                <li><a href="#0">Compliance</a></li>
-                <li><a href="#0">Case Summary</a></li>
+                <li><a href="#header" class="text-white">Home</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#compliance">Compliance</a></li>
+                {# <li><a href="#0">Case Summary</a></li> #}
               </ul>
             </div>
             <div class="header-btn d-none d-lg-block">
@@ -172,7 +172,7 @@
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Phone Number</label>
-                    <input type="number" id="phone" class="form-control" id="exampleInputEmail1"
+                    <input type="number" id="phone" class="form-control"
                       aria-describedby="emailHelp" placeholder="Enter your number ">
                   </div>
 
@@ -233,7 +233,7 @@
   </div>
 
   <!-- How it work start -->
-  <section>
+  <section id="how-it-works">
     <div class="how_it_work pb-100">
       <div class="overlay" style="background: url({{ get_asset_url('../../images/work/bg.png') }}); background-position: bottom; background-size: cover; background-repeat: no-repeat;"></div>
       <div class="container">
@@ -251,8 +251,7 @@
           </div>
           <div class="work_box_content">
             <h4>Describe Your Case</h4>
-            <p>Provide key details about your personal injury incident. Our AI will organize this information to help
-              you get connected with an attorney.</p>
+            <p>Share important details about your personal injury incident. Our AI will gather this information and organize it to help connect you with the right attorney.</p>
           </div>
         </div>
         <div class="work_box d-block d-md-flex text-center text-md-start">
@@ -261,8 +260,7 @@
           </div>
           <div class="work_box_content">
             <h4>Get Your Case Summary</h4>
-            <p>We’ll generate a case summary based on your inputs. This summary is designed to help attorneys review
-              your case quickly, but it’s not a legal evaluation.</p>
+            <p>Our AI generates a case summary based on your inputs, making it easy for attorneys to review your case quickly. This summary provides a clear overview but is not a legal evaluation.</p>
           </div>
         </div>
         <div class="work_box d-block d-md-flex text-center text-md-start">
@@ -271,7 +269,7 @@
           </div>
           <div class="work_box_content">
             <h4>Choose Your Attorney</h4>
-            <p>We’ll connect you with experienced attorneys in your area who specialize in cases like yours.</p>
+            <p>We’ll match you with experienced attorneys in your area who specialize in cases similar to yours.</p>
           </div>
         </div>
       </div>
@@ -285,8 +283,7 @@
       <div class="container">
         <div class="heading">
           <h3 class="gradient-text2 text-start">What’s in Your Case Summary? </h3>
-          <p class="text-start">Our AI helps organize the information you provide into a summary that attorneys can use
-            to evaluate your case. </p>
+          <p class="text-start">Ai organizes the details you provide into a clear, concise summary that attorneys can quickly review to evaluate your case</p>
         </div>
         <div class="row">
           <div class="col-lg-6 col-12">
@@ -335,7 +332,7 @@
                 our AI assists in organizing case details and connecting you with attorneys, it does not provide legal
                 advice. We follow the rules and guidelines established for non-lawyer legal assistance services. </p>
               <div class="legal_btn">
-                <a href="#0"> <span>Let’s talk <i class="fa-light fa-arrow-right"></i></span></a>
+                <a href="#0" data-bs-toggle="modal" data-bs-target="#chatModal"> <span>Let’s talk <i class="fa-light fa-arrow-right"></i></span></a>
               </div>
             </div>
           </div>
@@ -343,16 +340,14 @@
             <div class="legal-boxes d-block d-md-flex">
               <div class="legal-left">
                 <div class="legal-box">
-                  <img src="{{ get_asset_url('../../images/legal/check.png') }}" alt="Ethical Referrals">
-                  <h4>Ethical Referrals</h4>
-                  <p>Using this platform does not establish an attorney-client relationship. Legal representation can
-                    only be established through direct communication with a licensed attorney.</p>
+                  <img src="{{ get_asset_url('../../images/legal/check.png') }}" alt="General Information Only">
+                  <h4>General Information Only</h4>
+                  <p>The AI provides general information based on your inputs, but it is not a substitute for legal advice. Always consult a licensed attorney for specific legal guidance.</p>
                 </div>
                 <div class="legal-box mt-3">
                   <img src="{{ get_asset_url('../../images/legal/check.png') }}" alt="Ethical Referrals">
                   <h4>Ethical Referrals</h4>
-                  <p>Any referrals to attorneys are based on relevant case categories and attorney expertise, ensuring
-                    you are matched with qualified legal professionals</p>
+                  <p>Any referrals to attorneys are based on relevant case categories and attorney expertise, ensuring you are matched with qualified legal professionals</p>
                 </div>
               </div>
 
@@ -360,8 +355,7 @@
                 <div class="legal-box legal-box2">
                   <img src="{{ get_asset_url('../../images/legal/check.png') }}" alt="Attorney-Client Relationship">
                   <h4>Attorney-Client Relationship</h4>
-                  <p>The AI provides general information based on your inputs, but it is not a substitute for legal
-                    advice. Always consult a licensed attorney for specific legal guidance.</p>
+                  <p>Using this platform does not establish an attorney-client relationship. Legal representation can only be established through direct communication with a licensed attorney.</p>
                 </div>
               </div>
             </div>
@@ -373,7 +367,7 @@
   <!-- Legal End -->
 
   <!-- Data start -->
-  <section>
+  <section id="compliance">
     <div class="data_area p-100 " style="background: url({{ get_asset_url('../../images/data/bg.png') }}); background-position: center; background-size: cover;">
       <div class="container">
         <div class="heading" style="height: auto;">
@@ -433,7 +427,7 @@
           <div class="email-form">
             <p class="text-black">Talk, or Text with our AI Agent, built on decades of legal excellence and powered by
               cutting-edge AI technology.</p>
-            <form action="" class="form_area d-block d-lg-flex">
+            <form action="" onsubmit="return false;" class="form_area d-block d-lg-flex">
               <div class="form-field w-100">
                 <div class="input-with-icon">
                   <img src="{{ get_asset_url('../../images/hero/form-star.png') }}" alt="icon" class="input-icon">
@@ -442,7 +436,7 @@
                 </div>
               </div>
               <div class="submit-btn">
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#chatModal">Submit</button>
               </div>
             </form>
           </div>
@@ -560,8 +554,8 @@
             <div class="footer-section">
               <div class="footer-menu">
                 <ul>
-                  <li><a href="#0">Home</a></li>
-                  <li><a href="#0">How It Work</a></li>
+                  <li><a href="#header">Home</a></li>
+                  <li><a href="#how-it-works">How It Work</a></li>
                   <li><a href="#0">About</a></li>
                   <li><a href="#0">Contact</a></li>
                 </ul>
@@ -615,8 +609,9 @@
   {{ require_js(get_asset_url("../../js/jquery.magnific-popup.min.js")) }}
   {{ require_js(get_asset_url("../../js/counter.js")) }}
   {{ require_js(get_asset_url("../../js/progressbar.js")) }}
-  <!-- {{ require_js(get_asset_url("../../js/sc-cursor.js")) }} -->
-  <!-- {{ require_js(get_asset_url("../../js/main.js")) }} -->
+
+  {# {{ require_js(get_asset_url("../../js/sc-cursor.js")) }} #}
+  {# {{ require_js(get_asset_url("../../js/main.js")) }} #}
 
 
   <script>
@@ -644,7 +639,6 @@
     (function () {
       var words = [
         'Wrongful Death',
-        'Designer',
         'Slip And Fall',
         'Medical Malpractice',
         'Mass Tort'

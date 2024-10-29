@@ -5,7 +5,7 @@
 
 @font-face {
   font-family: "Productsans";
-  src: url("../webfonts/Product Sans Regular.ttf") format("truetype");
+  src: url('{{ get_asset_url("../webfonts/Product Sans Regular.ttf") }}') format("truetype");
   font-weight: bold;
   font-weight: normal;
   font-style: normal;

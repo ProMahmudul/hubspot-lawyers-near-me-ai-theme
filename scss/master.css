@@ -4,7 +4,6 @@
 /*----------------------------------------*/
 @font-face {
   font-family: "Productsans";
-  /* src: url("../webfonts/Product Sans Regular.ttf") format("truetype"); */
   src: url('{{ get_asset_url("../webfonts/Product Sans Regular.ttf") }}') format("truetype");
   font-weight: bold;
   font-weight: normal;
@@ -1202,6 +1201,11 @@ a {
   top: 0;
   width: 100%;
   height: 100%;
+}
+@media (max-width: 1399px) {
+  .how_it_work .overlay {
+    top: -150px;
+  }
 }
 @media (max-width: 574px) {
   .how_it_work .overlay {

@@ -80,10 +80,10 @@
         }
         .legal-box2{
             margin-top: 50px;
-                padding: 40px 32px 40px 40px;
+                padding: 40px 12px 40px 17px;
                 @media #{$xs} {
-        margin-top: 20px;
-    }
+                    margin-top: 20px;
+                }
         }
     }
 }
