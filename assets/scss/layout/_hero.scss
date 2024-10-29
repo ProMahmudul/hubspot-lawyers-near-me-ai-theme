@@ -289,6 +289,13 @@ form{
         line-height: 16px;
     }
     .submit-btn{
+
+
+        @media #{$xs} {
+     
+    margin-left: 4px;
+
+    }
         button{
             width: 100%;
             background: $primary;
