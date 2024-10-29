@@ -97,7 +97,7 @@
         <div class="hero-content">
           <h2>NEED A LAWYER?</h2>
           <h4>Use Ai to Find the Right 
-            <span style="color:#FFC900" id="changingword">Personal Injury</span>
+            <span style="color:#FFC900" id="rotatingText">Personal Injury</span>
   
   
             Lawyer in Minutes.</h4>
@@ -708,21 +708,27 @@ document.querySelector('.close-btn').addEventListener('click', function () {
 
 
 (function(){
-      var words = [
-          'Wrongful Death',
-          'Designer',
-          'Slip And Fall',
-          'Medical Malpractice',
-          'Mass Tort',
-          ], i = 0;
-      setInterval(function(){
-          $('#changingword').fadeOut(function(){
-              $(this).html(words[i=(i+1)%words.length]).fadeIn();
-          });
-      }, 3000);
-        
-  })();
+    var words = [
+         'Wrongful Death',
+        'Designer',
+        'Slip And Fall',
+        'Medical Malpractice',
+        'Mass Tort'
+    ], i = 0;
 
+    setInterval(function(){
+        var $text = $('#rotatingText');
+        // Rotate out the current text
+        $text.addClass('rotate-out').one('transitionend', function() {
+            // Update the text after rotate-out completes
+            $(this).text(words[i = (i + 1) % words.length]);
+            // Reset rotate classes for next animation
+            $(this).removeClass('rotate-out').addClass('rotate-in').one('transitionend', function() {
+                $(this).removeClass('rotate-in');
+            });
+        });
+    }, 3000); // Change word every 3 seconds
+})();
 
 </script>
 
