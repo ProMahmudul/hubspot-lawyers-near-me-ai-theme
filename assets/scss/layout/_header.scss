@@ -1,11 +1,14 @@
 .header_area{
    
-     background: linear-gradient(90deg, #0e0f0e -12%, #CFB53B -15%, #0e0f0e 55%);
-        //     background: url('../imgs/hero/hero.png');
-        // background-position:center ;
-        // background-size: cover;
+    //  background: linear-gradient(90deg, #0e0f0e -12%, #CFB53B -15%, #0e0f0e 55%);
+            background: url('../imgs/hero/hero.png');
+        background-position:center ;
+        background-size: cover;
     padding-top: 35px;
-    padding-bottom: 100px;
+    padding-bottom: 250px;
+    @media #{$xs} {
+           padding-bottom: 80px;
+        }
     &.header_area2{
         background: $gray3;
     }
@@ -28,7 +31,7 @@
             padding-left: 35px;
             li {
                 display: inline-block;
-                padding-right: 44px;
+                padding-right: 20px;
                 &:last-child {
                     padding-right: 0;
                 }
@@ -47,11 +50,11 @@
     .header-btn a {
         background: $primary;
         color: $white;
-        padding: 4px 4px 4px 15px;
+        padding: 4px 15px 4px 4px ;
         text-decoration: none;
         display: block;
         border-radius: 100px;
-        i {
+        strong {
             background: $white;
             color: $primary;
             width: 32px;
@@ -59,7 +62,8 @@
             border-radius: 100px;
             text-align: center;
             line-height: 32px;
-            margin-left: 38px;
+            margin-right: 10px;
+                display: inline-block;
         }
     }
 

@@ -11,11 +11,13 @@
 
 body {
   font-family: $productsans;
+
 }
 
 section{
     overflow: hidden;
 }
+
 html {
   scroll-behavior: smooth;
 }
@@ -124,22 +126,29 @@ a{
   color: transparent;
 }
 
-         .heading{
-      
-          margin-bottom: 40px;
-    text-align: center;
+.heading{
 
-        p{
-            font-size: 24px;
-            color:#D5D5D5;
-            @media #{$xs} {
-                font-size: 16px;
-            }
-        }
+margin-bottom: 40px;
+text-align: center;
 
-        img{
-                margin-bottom: -90px;
-        }
+p{
+  font-size: 24px;
+  color:#D5D5D5;
+  @media #{$xs} {
+      font-size: 16px;
+  }
+}
 
-        
-     }
+img{
+      margin-bottom: -90px;
+}
+
+
+}
+
+
+@media (min-width: 1500px) {
+    .container {
+        max-width: 1420px;
+    }
+}

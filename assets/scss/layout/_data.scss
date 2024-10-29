@@ -1,7 +1,11 @@
 .data_area{
-    background: $gray3;
+    background: url('../imgs/data/bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     .data-box{
-        background: url('../imgs/data/data-bg.jpg');
+        // background: url('../imgs/data/data-bg.jpg');
+        background: $white;
         width: 1060px;
         margin: 0 auto;
         padding: 50px;
@@ -19,7 +23,7 @@
             h3{
                 font-size: 32px;
                 line-height: 39px;
-                color:$white;
+                color:$black;
                 font-weight: 400;
                 @media #{$xs} {
        font-size: 28px;
@@ -27,7 +31,7 @@
     }
             }
             p{
-                color:#D5D5D5;
+                color:$black;
                 font-size: 20px;
                 margin-top: 10px;
                   @media #{$xs} {
@@ -57,67 +61,67 @@
         }
    
     }
-    .data-box-bottom{
-        gap:20px;
+
+        .data-box2{
+             background: url('../imgs/data/data-bg.jpg');
+       
         width: 1060px;
         margin: 0 auto;
-        margin-top: 24px;
-         @media #{$md} {
-        width: 100%;
-    }
-        .data-box2{
-            border-radius: 40px;
-            border:1px solid #2C2C2C;
-            .data-content{
-                padding-left: 15px;
-            padding-right: 10px;
-            @media #{$xs} {
-       padding: 20px;
-    }
-            }
-
-             .data-img{
-                img{
-                    @media #{$xs} {
-       width: 100%;
-    }
-                }
-             }
-            
-        }
-        h3{
-            font-size: 28px;
-                line-height: 33px;
-                color:$white;
-                font-weight: 400;
-        }
-        .data-box3{
-            background: url('../imgs/data/data3.png');
-             border-radius: 40px;
+        padding: 50px;
+        border-radius: 40px;
         background-position:center ;
         background-size: cover;
-        display: flex;
-    align-items: center;
+         margin-top: 24px;
 
-     @media #{$md} {
-        height: 318px;
-        margin-top: 20px;
+
+         @media #{$lg} {
+        
+        width: 100%;
     }
-         .data-content{
-                padding: 0px 45px;
-                  @media #{$xs} {
-       padding: 20px;
+     @media #{$xs} {
+       padding: 30px 15px;
     }
-                h3{
-                    width: 90%;
-                    font-size: 28px;
-                    line-height: 39px;
-                    @media #{$xs} {
-       width: 100%;
+
+        .data-box-content{
+            padding-left: 55px;
+                     @media #{$md} {
+       padding-left: 0px;
+       padding-top: 20px;
     }
-                    
-                }
+            h3{
+                font-size: 38px;
+                line-height: 39px;
+                color:$white;
+                font-weight: 400;
+                @media #{$xs} {
+       font-size: 28px;
+       line-height: 34px;
+    }
+    }
+    }
+
+
+        .data-img{
+            margin-top: 20px;
+             img{
+                @media #{$md} {
+        width: 100%;
+    }
+     
             }
         }
+
+        .data-img{
+            margin-top: 20px;
+             img{
+                @media #{$md} {
+        width: 100%;
     }
+     
+            }
+        }
+       
+
+
+}
 }

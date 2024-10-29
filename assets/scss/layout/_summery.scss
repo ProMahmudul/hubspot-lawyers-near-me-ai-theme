@@ -17,7 +17,7 @@ position: relative;
         background-position:center ;
         background-size: cover;
         position: relative;
-        height: 795px;
+        height: 1000px;
         display: flex;
         align-items: center;
         z-index: 9;
@@ -36,7 +36,11 @@ position: relative;
             width: 100%;
         }
         &:last-child{
-            margin-top: 60px;
+                margin-top: -90px;
+                @media #{$xs} {
+        
+        margin-top: 20px;
+    }
         }
         p{
             color:#D5D5D5;
@@ -55,15 +59,138 @@ position: relative;
         background-size: cover;
         border:1px solid #2C2C2C;
         border-radius: 40px;
-        padding: 65px 20px 65px 45px;
+        padding: 65px 20px 65px 0px;
+        
          @media #{$xs} {
         
         padding: 40px 20px;
     }
         p{
             margin-top: 10px;
+            color: #A0A0A0;
+            font-size: 20px;
+            line-height: 26px;
+            text-align: center;
+                width: 1100px;
+                  @media #{$lg} {
+             width: 100%;
+        }
         }
     }
 }
 
 }
+
+
+.email-form{
+
+    background: $white;
+    padding: 20px 30px;
+    border-radius: 20px;
+    position: relative;
+    z-index: 999;
+
+ 
+           p{
+            font-size: 18px !important;
+           }
+            width: 100%;
+            margin: 0 auto;
+             margin-top: 80px;
+              @media #{$xl} {
+          
+                  width: 100%;
+                  
+         
+        }
+            @media #{$xs} {
+             padding: 40px 20px;
+             margin-top: 20px;
+        }
+        .form_area{
+            gap:18px;
+            margin-top: 10px;
+            position: relative;
+            .input-with-icon {
+                position: relative;
+                display: flex;
+                align-items: center;
+                .input-icon {
+                position: absolute;
+                left: 30px; /* Adjust as needed */
+                width: 25px; /* Adjust size as needed */
+                height: 25px;
+                pointer-events: none; /* Allows click-through to input */
+                .input-with-icon .form-control {
+                padding-left: 35px; /* Add space to the left for the icon */
+            }
+            }
+
+            }
+
+
+            
+
+            @media #{$md} {
+         .iti{
+            width: 100%;
+             @media #{$md} {
+                    margin-top: 10px;
+                    
+                }
+         }
+    }
+            input{
+                  background: url('../imgs/summery/input.png');
+                  background-position: center;
+                  background-repeat: no-repeat;
+                  background-size: cover;
+                height: 70px;
+                border-color: $gray2;
+                padding-left: 60px;
+                border:1px solid $primary;
+                border-radius: 100px;
+                color:$white;
+                 @media #{$md} {
+                    width: 100%;
+                    margin-top: 10px;
+                    
+                }
+                &::placeholder{
+                    font-size: 16px;
+                    font-weight: 400;
+                    color: $white;
+                    margin-left: 10px;
+
+                }
+            }
+            .submit-btn{
+                
+                button{
+                background: $primary;
+                color:$black;
+                border-color: $primary;
+                height: 56px;
+                padding: 13px 40px;
+                border-radius: 100px;
+                position: absolute;
+                right: 3%;
+                top: 10%;
+                font-size: 22px;
+                font-weight: bold;
+                 @media #{$xs} {
+            position: relative;
+            width: 100%;
+        }
+                &:hover{
+                    background: $black;
+                    color: $primary;
+                }
+                @media #{$md} {
+                    margin-top: 10px;
+                    
+                }
+            }
+            }
+        }
+    }
