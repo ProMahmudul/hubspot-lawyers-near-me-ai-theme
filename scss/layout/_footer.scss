@@ -1,0 +1,114 @@
+.footer{
+    background: $gray3;
+    .footer-area{
+    margin-right: 40px;
+    margin-left: 40px;
+    background: $black;
+    border-radius: 20px;
+     @media #{$xs} {
+            margin-right: 20px;
+    margin-left: 20px;
+        }
+    }
+    
+    .footer-top{
+     
+    padding:60px 0px;
+    .footer-logo{
+        text-align: left;
+    }
+    .footer-social{
+        margin-top: 40px;
+        ul{
+            li{
+                display: inline-block;
+                padding-right: 30px;
+                &:last-child{
+                    padding-right:0
+                }
+                a{
+                    color:#C4C4C4;
+                }
+            }
+        }
+    }
+    .footer-menu{
+        ul{
+            li{
+                padding-bottom: 23px;
+                &:last-child{
+                    padding-bottom: 0px;
+                }
+                a{
+                    color:#EBEBEB;
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+    .footer-infos{
+        ul{
+            li{
+                padding-bottom: 23px;
+                &:last-child{
+                    padding-bottom: 0px;
+                }
+                a{
+                    color:#EBEBEB;
+                    font-size: 18px;
+                    i{
+                        margin-right: 16px;
+                    }
+                }
+            }
+        }
+    }
+    }
+
+    .footer-bottom{
+        padding: 35px 0px;
+        border-top: 1px solid #545454;
+           @media #{$xs} {
+        
+        text-align: center;
+    }
+        .footer-bottom-menu{
+            ul{
+                li{
+                    display: inline-block;
+                    border-right:1px solid #545454;
+                    padding-right: 6px;
+                     &:last-child{
+                   border:none
+                }
+                    a{
+                        font-size: 16px;
+                        color:#545454
+
+                    }
+                }
+            }
+        }
+
+        .copyright{
+            p{
+                font-size: 18px;
+                        color:#545454;
+                        display: block;
+                        @media #{$xs} {
+        
+        text-align: center !important;
+    }
+            }
+        }
+    }
+
+
+    .footer-section{
+         @media #{$xs} {
+        
+        margin-bottom: 20px;
+    }
+    }
+   
+}

@@ -1,41 +1,650 @@
 <!--
   templateType: none
 -->
-<!doctype html>
+<!DOCTYPE html>
 <html lang="{{ html_lang }}" {{ html_lang_dir }}>
-  <head>
-    <meta charset="utf-8">
-    {% if page_meta.html_title or pageTitle %}<title>{{ page_meta.html_title or pageTitle }}</title>{% endif %}
-    {% if brand_settings.primaryFavicon.src %}<link rel="shortcut icon" href="{{ brand_settings.primaryFavicon.src }}" />{% endif %}
-    <meta name="description" content="{{ page_meta.meta_description }}">
-    {{ require_css(get_asset_url("../../css/main.css")) }}
-    {# This is intended to be used if a template requires template specific style sheets #}
-    {% if template_css %}
-      {{ require_css(get_asset_url(template_css)) }}
-    {% endif %}
-    {{ require_css(get_asset_url("../../css/theme-overrides.css")) }}
-    {# To see a full list of what is included via standard_header_includes please reference this article: https://developers.hubspot.com/docs/cms/hubl/variables#required-page-template-variables #}
-    {{ standard_header_includes }}
-  </head>
-  <body>
-    <div class="body-wrapper {{ builtin_body_classes }}">
-      {% block header %}
-        {% global_partial path="../partials/header.html" %}
-      {% endblock header %}
 
-      {# The main-content ID is used for the navigation skipper in the header.html file. More information on the navigation skipper can be found here: https://github.com/HubSpot/cms-theme-boilerplate/wiki/Accessibility #}
+<head>
+  <meta charset="UTF-8">
+  <!-- Site Title -->
+  {% if page_meta.html_title or pageTitle %}<title>{{ page_meta.html_title or pageTitle }}</title>{% endif %}
+  <!-- Site Favicon -->
+  {% if brand_settings.primaryFavicon.src %}<link rel="shortcut icon" href="{{ brand_settings.primaryFavicon.src }}" />{% endif %}
+  <meta name="description" content="{{ page_meta.meta_description }}">
 
-      <main id="main-content" class="body-container-wrapper">
-        {% block body %}
-        {% endblock body %}
-      </main>
 
-      {% block footer %}
-        {% global_partial path="../partials/footer.html" %}
-      {% endblock footer %}
+  <!-- All CSS Files -->
+  {{ require_css(get_asset_url("../../css/fontawesome.min.css")) }}
+  {{ require_css(get_asset_url("../../css/bootstrap.min.css")) }}
+  {{ require_css(get_asset_url("../../css/meanmenu.min.css")) }}
+  {{ require_css(get_asset_url("../../css/swiper-bundle.min.css")) }}
+  {{ require_css(get_asset_url("../../css/magnific-popup.css")) }}
+  {{ require_css(get_asset_url("../../css/progressbar.css")) }}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
+
+  <!-- {{ require_css(get_asset_url("../../css/sc-cursor.css")) }} -->
+  {{ require_css(get_asset_url("../../scss/master.css")) }}
+  {{ standard_header_includes }}
+</head>
+
+<body>
+
+  <!-- Preloader -->
+  <!-- <div class="preloader-wrap">
+    <div class="site-preloader"></div>
+  </div> -->
+
+  <!-- Scroll to top 
+  <button id="scroll_top" class="scroll--top"><i class="fa-solid fa-arrow-up"></i></button>-->
+
+  <!-- Mobile Offcanvas 
+  <div class="offcanvas__area offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight">
+    <div class="offcanvas-header">
+      <img src="assets/imgs/logo/logo.png" alt="Logo" class="logo">
+      <button class="btn--close" data-bs-dismiss="offcanvas">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
     </div>
-    {{ require_js(get_asset_url("../../js/main.js")) }}
-    {# To see a full list of what is included via standard_footer_includes please reference this article: https://developers.hubspot.com/docs/cms/hubl/variables#required-page-template-variables #}
-    {{ standard_footer_includes }}
-  </body>
+    <div class="offcanvas-body offcanvas__body">
+      <div class="mobile_menu"></div>
+    </div>
+  </div>
+-->
+
+  <!-- Header area start -->
+  <header class="header_area">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-5 col-6">
+          <div class="header-logo">
+            <a href="#0">
+              <img src="{{ get_asset_url('../../images/logo.png') }}" alt="logo">
+            </a>
+          </div>
+        </div>
+        <div class="col-md-7  col-6">
+          <div class="header-navarea d-block d-md-flex">
+            <div class="hamburger">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div class="menu">
+              <div class="close-btn">&times;</div>
+              <ul>
+                <li><a href="#0">Home</a></li>
+                <li><a href="#0">How It Works</a></li>
+                <li><a href="#0">Compliance</a></li>
+              </ul>
+            </div>
+            <div class="header-btn d-none d-lg-block">
+              <a href="#0">
+                <span>Contact <i class="fa-light fa-arrow-right"></i></span>
+              </a>
+            </div>
+          </div>
+
+
+
+
+        </div>
+      </div>
+      <div class="hero_area">
+        <div class="hero-content">
+          <h2 class="gradient-text">Let AI Help You Find the Right Lawyer in Minutes</h2>
+          <h4>Our AI helps organize your case details and connects you with the right legal professionals</h4>
+          <p>The AI provides general information and helps organize your case details. It does not provide legal advice.
+            Consult with a licensed attorney for legal guidance.</p>
+        </div>
+        <div class="hero_form">
+          <p>Talk, or Text with our AI Agent, built on decades of legal excellence and powered by cutting-edge AI
+            technology.</p>
+          <form action="" class="form_area d-block d-lg-flex">
+
+            <div class="form-field w-100">
+              <input type="text" placeholder="Tell Ai What Happened?" class="form-control" id="exampleInputName"
+                aria-describedby="emailHelp">
+            </div>
+            <div class="submit-btn">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- Header area end -->
+
+  <!-- Case Summery start -->
+
+  <section>
+    <div class="case_summry p-100">
+      <div class="container">
+        <h3 class="gradient-text2">Sample Case Summary</h3>
+        <div class="row">
+          <div class="col-md-6 col-lg-4">
+            <div class="case_box">
+              <img src="{{ get_asset_url('../../images/case/case-01.png') }}" alt="">
+              <div class="case-content">
+                <a href="#0">Lorem Ipsum is dummy text of the printing.</a>
+                <div class="case-btn">
+                  <a href="#0" data-bs-toggle="modal" data-bs-target="#exampleModal"><span>View Case <i
+                        class="fa-light fa-eye"></i></span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="case_box">
+              <img src="{{ get_asset_url('../../images/case/case-02.png') }}" alt="">
+              <div class="case-content">
+                <a href="#0">Lorem Ipsum is dummy text of the printing.</a>
+                <div class="case-btn">
+                  <a href="#0" data-bs-toggle="modal" data-bs-target="#exampleModal"><span>View Case <i
+                        class="fa-light fa-eye"></i></span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="case_box">
+              <img src="{{ get_asset_url('../../images/case/case-03.png') }}" alt="">
+              <div class="case-content">
+                <a href="#0">Lorem Ipsum is dummy text of the printing.</a>
+                <div class="case-btn">
+                  <a href="#0" data-bs-toggle="modal" data-bs-target="#exampleModal"><span>View Case <i
+                        class="fa-light fa-eye"></i></span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Button trigger modal -->
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title " id="exampleModalLabel">Case Summary for Jane Doe</h3>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="modal-con">
+            <h6>Personal Information:</h6>
+            <ul>
+              <li>Name: Jane Doe </li>
+              <li>Date of Incident: July 21, 2022 (1 year and 2 months ago) </li>
+              <li>Location: Atlanta, Georgia </li>
+              <li>Insurance Provider: Progressive </li>
+            </ul>
+          </div>
+          <div class="modal-con">
+            <h6>Personal Information:</h6>
+            <p>Jane Doe was involved in a motor vehicle accident in Atlanta, Georgia on July 21, 2022. She was the
+              driver and sole occupant of her vehicle. Another driver made an illegal turn, hitting her car on the side.
+              According to the police report, Jane was not at fault for the accident. The other driver failed to yield
+              the right of way during a turn, causing the collision.</p>
+          </div>
+          <div class="modal-con">
+            <h6>Personal Information:</h6>
+            <p>Jane Doe was involved in a motor vehicle accident in Atlanta, Georgia on July 21, 2022. She was the
+              driver and sole occupant of her vehicle. Another driver made an illegal turn, hitting her car on the side.
+              According to the police report, Jane was not at fault for the accident. The other driver failed to yield
+              the right of way during a turn, causing the collision.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!-- Case Summery end -->
+
+  <!-- How it work start -->
+
+  <section>
+    <div class="how_it_work pb-100">
+      <div class="container">
+        <div class="heading">
+          <h3 class="gradient-text2 text-center">How It Works </h3>
+          <p class="text-center">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
+        </div>
+        <div class="line-img d-none d-md-block">
+          <img src="{{ get_asset_url('../../images/work/line.png') }}" alt="">
+        </div>
+        <div class="work_box d-block d-md-flex text-center text-md-start">
+          <div class="work_box_img">
+            <img src="{{ get_asset_url('../../images/work/work1.png') }}" alt="">
+          </div>
+          <div class="work_box_content">
+            <h4>Describe Your Case</h4>
+            <p>Provide key details about your personal injury incident. Our AI will organize this information to help
+              you get connected with an attorney.</p>
+          </div>
+        </div>
+        <div class="work_box d-block d-md-flex text-center text-md-start">
+          <div class="work_box_img">
+            <img src="{{ get_asset_url('../../images/work/work2.png') }}" alt="">
+          </div>
+          <div class="work_box_content">
+            <h4>Get Your Case Summary</h4>
+            <p>We’ll generate a case summary based on your inputs. This summary is designed to help attorneys review
+              your case quickly, but it’s not a legal evaluation.</p>
+          </div>
+        </div>
+        <div class="work_box d-block d-md-flex text-center text-md-start">
+          <div class="work_box_img">
+            <img src="{{ get_asset_url('../../images/work/work3.png') }}" alt="">
+          </div>
+          <div class="work_box_content">
+            <h4>Choose Your Attorney</h4>
+            <p>We’ll connect you with experienced attorneys in your area who specialize in cases like yours.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- How it work End -->
+
+  <!-- Case Summery Start -->
+
+
+  <section>
+    <div class="case_summery p-100" style="background: url({{ get_asset_url('../../images/case-summery/casesummery-bg.jpg') }}); background-position: center; background-size: cover;">
+      <div class="container">
+        <div class="heading">
+          <h3 class="gradient-text2 text-start">What’s in Your Case Summary? </h3>
+          <p class="text-start">Our AI helps organize the information you provide into a summary that attorneys can use
+            to evaluate your case. </p>
+        </div>
+        <div class="row">
+          <div class="col-lg-6 col-12">
+            <div class="case-summeryimg">
+              <img src="{{ get_asset_url('../../images/case-summery/casesummery-img.png') }}" alt="">
+            </div>
+          </div>
+          <div class="col-lg-6 col-12">
+            <div class="case-summerybox">
+              <h3>Incident Description</h3>
+              <p>A summary of what happened, based on your inputs.</p>
+            </div>
+            <div class="case-summerybox">
+              <h3>Injuries or Damages</h3>
+              <p>A description of any injuries or damages you report.</p>
+            </div>
+            <div class="case-summerybox">
+              <h3>Available Evidence</h3>
+              <p>Information on any evidence you provide (photos, witness statements, etc.)</p>
+            </div>
+            <div class="case-summerybox">
+              <h3>Timeline</h3>
+              <p>A breakdown of key dates, including when the incident occurred and when medical attention was sought.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="case-summery-shape d-none d-lg-block">
+          <img src="{{ get_asset_url('../../images/case-summery/shape.png') }}" alt="">
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Case Summery End -->
+
+
+  <!-- Legal start -->
+
+  <section>
+    <div class="legal_start p-100">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 col-12">
+            <div class="legal-content">
+              <h3 class="gradient-text">Committed to Legal and</h3>
+              <h3 class="legal-title">Ethical Guidelines</h3>
+              <p>We ensure that all services offered by our platform adhere to strict legal and ethical standards. While
+                our AI assists in organizing case details and connecting you with attorneys, it does not provide legal
+                advice. We follow the rules and guidelines established for non-lawyer legal assistance services. </p>
+              <div class="legal_btn">
+                <a href="#0"> <span>Let’s talk <i class="fa-light fa-arrow-right"></i></span></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 col-12">
+            <div class="legal-boxes d-block d-md-flex">
+              <div class="legal-left">
+                <div class="legal-box">
+                  <img src="{{ get_asset_url('../../images/legal/check.png') }}" alt="">
+                  <h4>General Information Only</h4>
+                  <p>The AI provides general information based on your inputs, but it is not a substitute for legal
+                    advice. Always consult a licensed attorney for specific legal guidance.</p>
+                </div>
+                <div class="legal-box mt-3">
+                  <img src="{{ get_asset_url('../../images/legal/check.png') }}" alt="">
+                  <h4>Attorney-Client Relationship</h4>
+                  <p>Any referrals to attorneys are based on relevant case categories and attorney expertise, ensuring
+                    you are matched with qualified legal professionals</p>
+                </div>
+              </div>
+
+              <div class="legal-right">
+                <div class="legal-box legal-box2">
+                  <img src="{{ get_asset_url('../../images/legal/check.png') }}" alt="">
+                  <h4>Ethical Referrals</h4>
+                  <p>Using this platform does not establish an attorney-client relationship. Legal representation can
+                    only be established through direct communication with a licensed attorney.</p>
+
+                </div>
+                <div class="legal-box mt-3">
+                  <img src="{{ get_asset_url('../../images/legal/check.png') }}" alt="">
+                  <h4>General Information Only</h4>
+                  <p>The AI provides general information based on your inputs, but it is not a substitute for legal
+                    advice. Always consult a licensed attorney for specific legal guidance.</p>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Legal End -->
+
+  <!-- Data start -->
+
+  <section>
+    <div class="data_area p-100 pt-0">
+      <div class="container">
+        <div class="heading" style="height: auto;">
+          <img src="{{ get_asset_url('../../images/data/arrow.png') }}" alt="" class="text-center">
+          <h3 class="gradient-text2 text-center">How We Handle Your Data? </h3>
+          <p class="text-center">Our Commitment to Your Legal Rights.</p>
+        </div>
+        <div class="data-box" style="background: url({{ get_asset_url('../../images/data/data-bg.jpg') }}); background-position: center; background-size: cover;">
+          <div class="row align-items-center">
+            <div class="col-lg-7 col-12">
+              <div class="data-box-content data-box-content2">
+                <h3>You are always in control of your information, and we will never share it without your <span
+                    style="color:#FFC900">permission</span>.</h3>
+                <p>We maintain transparency and ensure compliance with all relevant legal advertising and referral
+                  service regulations.</p>
+              </div>
+            </div>
+            <div class="col-lg-5 col-12">
+              <div class="data-img">
+                <img src="{{ get_asset_url('../../images/data/data1.png') }}" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="data-box-bottom d-block d-lg-flex">
+          <div class="data-box2 d-block d-md-flex align-items-center">
+            <div class="data-img">
+              <img src="{{ get_asset_url('../../images/data/data2.png') }}" alt="">
+            </div>
+            <div class="data-content">
+              <h3>We only collect information necessary to connect you <span style="color:#FFC900">with attorneys</span>
+              </h3>
+            </div>
+          </div>
+          <div class="data-box3" style="background: url({{ get_asset_url('../../images/data/data3.png') }}); background-position: center; background-size: cover;">
+            <div class="data-content data-box-content3">
+
+              <h3><span style="color:#FFC900">Your data </span> is stored securely and protected in compliance with GDPR
+                and CCPA regulations.</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Data End -->
+
+  <!-- Summery start -->
+
+  <section class="summershape">
+    <div class="summer-shape d-none d-lg-flex">
+      <img src="{{ get_asset_url('../../images/summery/shape.png') }}" alt="">
+    </div>
+    <div class="summery-area" style="background: url({{ get_asset_url('../../images/summery/summerybg.jpg') }}); background-position: center; background-size: cover;">
+
+      <div class="container">
+
+        <div class="summery-box">
+          <h2 class="text-white">(Start Your Free Case Summary)</h2>
+          <h6 class="gradient-text2">Disclaimer:</h6>
+          <p>This summary is based on the information you provide and is meant to help attorneys assess your situation.
+            It is not a legal opinion or evaluation. For legal advice, please consult with a licensed attorney</p>
+        </div>
+        <div class="summery-box summery-box2">
+          <h2 class="gradient-text">Your Privacy Matters! </h2>
+          <p>We take the security of your personal information seriously. All data you provide is handled with care and
+            protected through secure, encrypted systems. Your information will only be shared with attorneys when you
+            give explicit consent</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Summery End -->
+
+
+  <!-- Testimonail Start -->
+
+
+  <section>
+    <div class="testimonail-area p-100">
+      <div class="container">
+        <div class="heading">
+          <h3 class="gradient-text2 text-center">Hear from Our Satisfied Clients </h3>
+          <p class="text-center">Coming Soon</p>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6">
+            <div class="testimonal-box">
+              <div class="testimonail-header d-flex ">
+                <div class="testimonial-left d-flex">
+                  <div class="testimonial-img">
+                    <img src="{{ get_asset_url('../../images/testimonail/test1.png') }}" alt="">
+                  </div>
+                  <div class="testimonial-content">
+                    <h6>Eric Lee</h6>
+                    <p>CEO OF PREMIUM </p>
+                    <img src="{{ get_asset_url('../../images/testimonail/review.png') }}" alt="">
+                  </div>
+                </div>
+                <div class="testimonial-right">
+                  <img src="{{ get_asset_url('../../images/testimonail/x.png') }}" alt="">
+                </div>
+              </div>
+              <div class="testimonail-text">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proclivi currit oratio. Quamquam te quidem
+                  video minime esse deterritum. Proclivi currit oratio. Quamquam te quidem video minime esse deterritum.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="testimonal-box">
+              <div class="testimonail-header d-flex ">
+                <div class="testimonial-left d-flex">
+                  <div class="testimonial-img">
+                    <img src="{{ get_asset_url('../../images/testimonail/test1.png') }}" alt="">
+                  </div>
+                  <div class="testimonial-content">
+                    <h6>Eric Lee</h6>
+                    <p>CEO OF PREMIUM </p>
+                    <img src="{{ get_asset_url('../../images/testimonail/review.png') }}" alt="">
+                  </div>
+                </div>
+                <div class="testimonial-right">
+                  <img src="{{ get_asset_url('../../images/testimonail/x.png') }}" alt="">
+                </div>
+              </div>
+              <div class="testimonail-text">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proclivi currit oratio. Quamquam te quidem
+                  video minime esse deterritum. Proclivi currit oratio. Quamquam te quidem video minime esse deterritum.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="testimonal-box">
+              <div class="testimonail-header d-flex ">
+                <div class="testimonial-left d-flex">
+                  <div class="testimonial-img">
+                    <img src="{{ get_asset_url('../../images/testimonail/test1.png') }}" alt="">
+                  </div>
+                  <div class="testimonial-content">
+                    <h6>Eric Lee</h6>
+                    <p>CEO OF PREMIUM </p>
+                    <img src="{{ get_asset_url('../../images/testimonail/review.png') }}" alt="">
+                  </div>
+                </div>
+                <div class="testimonial-right">
+                  <img src="{{ get_asset_url('../../images/testimonail/x.png') }}" alt="">
+                </div>
+              </div>
+              <div class="testimonail-text">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proclivi currit oratio. Quamquam te quidem
+                  video minime esse deterritum. Proclivi currit oratio. Quamquam te quidem video minime esse deterritum.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonail-light">
+          <img src="{{ get_asset_url('../../images/testimonail/testimonail-light.png') }}" alt="">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonail End -->
+
+  <!-- Footer Start -->
+
+  <footer class="footer">
+
+    <div class="footer-area">
+      <div class="container">
+
+        <div class="footer-top d-block d-md-flex justify-content-between">
+
+          <div class="footer-section">
+            <div class="footer-logo">
+              <a href="#0"><img src="{{get_asset_url("../../images/logo.png")}}" alt=""></a>
+            </div>
+            <div class="footer-social">
+              <ul>
+                <li><a href="#0"><i class="fa-brands fa-twitter"></i></a></li>
+                <li><a href="#0"><i class="fa-brands fa-instagram"></i></a></li>
+                <li><a href="#0"><i class="fa-brands fa-youtube"></i></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer-section">
+            <div class="footer-menu">
+              <ul>
+                <li><a href="#0">Home</a></li>
+                <li><a href="#0">How It Work</a></li>
+                <li><a href="#0">About</a></li>
+                <li><a href="#0">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer-section">
+            <div class="footer-infos">
+              <ul>
+                <li><a href="#0"><i class="fa-light fa-phone-volume"></i>000-111-222-00</a></li>
+                <li><a href="#0"><i class="fa-thin fa-envelope-dot"></i>Info@lawyersnearmeai.com</a></li>
+                <li><a href="#0"><i class="fa-light fa-map"></i>1064 South Main Street, </a></li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="footer-bottom">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="footer-bottom-menu">
+                <ul>
+                  <li><a href="#0">Terms & Conditions</a></li>
+                  <li><a href="#0">Privacy Policy</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="copyright">
+                <p class="text-end">© 2024 Legal Leads ai . All rights reserved.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+
+  </footer>
+
+
+  <!-- Footer End -->
+
+
+  <!-- All JS Files -->
+  {{ require_js(get_asset_url("../../js/jquery-3.6.1.min.js")) }}
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+  {{ require_js(get_asset_url("../../js/bootstrap.bundle.min.js")) }}
+  {{ require_js(get_asset_url("../../js/jquery.meanmenu.min.js")) }}
+  {{ require_js(get_asset_url("../../js/swiper-bundle.min.js")) }}
+  {{ require_js(get_asset_url("../../js/jquery.magnific-popup.min.js")) }}
+  {{ require_js(get_asset_url("../../js/counter.js")) }}
+  {{ require_js(get_asset_url("../../js/progressbar.js")) }}
+  <!-- {{ require_js(get_asset_url("../../js/sc-cursor.js")) }} -->
+  <!-- {{ require_js(get_asset_url("../../js/main.js")) }} -->
+
+
+  <script>
+
+    // Toggle menu when hamburger is clicked
+    // Toggle menu when hamburger is clicked
+    document.querySelector('.hamburger').addEventListener('click', function () {
+      document.querySelector('.menu').classList.toggle('active');
+    });
+
+    // Close menu when close icon is clicked
+    document.querySelector('.close-btn').addEventListener('click', function () {
+      document.querySelector('.menu').classList.remove('active');
+    });
+
+
+
+    const input = document.querySelector("#phone");
+    const iti = window.intlTelInput(input, {
+      initialCountry: "us",  // Default country is USA
+      utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"
+    });
+
+  </script>
+  {{ standard_footer_includes }}
+</body>
+
 </html>

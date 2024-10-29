@@ -1,0 +1,31 @@
+/*----------------------------------------*/
+/*  10. MODAL CSS START
+/*----------------------------------------*/
+
+
+.axency__modal {
+  width: 140px;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  background: var(--primary);
+  position: relative;
+
+  .icon {
+    fill: var(--white);
+    color: var(--white);
+    font-size: 32px;
+  }
+
+  .shape {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    animation: modalRotate 10s linear infinite;
+  }
+
+}

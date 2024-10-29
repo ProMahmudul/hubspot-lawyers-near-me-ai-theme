@@ -1,0 +1,151 @@
+.contact{
+
+    background: $gray3;
+    .title-btn{
+        margin-bottom: 25px;
+         a {
+    background: #181818;
+    color: #fff;
+    font-size: 24px;
+    padding: 14px 44px;
+    border-radius: 5px;
+    position: relative;
+    border:1px solid #2C2C2C;
+    &::after {
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 100%;
+    background: var(--primary);
+    right: 0;
+    top: 0;
+    border-radius: 0px 10px 10px 0px;
+}
+    &::before {
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 100%;
+    background: var(--primary);
+    left: 0;
+    top: 0;
+    border-radius: 10px 0px 0px 10px;
+}
+}
+    }
+    .contact_box{
+        background: linear-gradient(180deg, #171717 , #181818);
+        border:1px solid #2C2C2C;
+        padding: 115px 50px;
+        border-radius: 24px;
+        margin-top: 70px;
+          @media #{$xs} {
+
+           padding: 60px 20px;
+
+            }
+        h4{
+            color:$white;
+            font-size: 40px;
+            line-height: 50px;
+            padding: 50px 0px;
+            width: 90%;
+            @media #{$xs} {
+
+            width: 100%;
+            font-size: 28px;
+            line-height: 38px;
+
+            }
+        }
+
+         .contact-infos{
+        ul{
+            li{
+                padding-bottom: 23px;
+                &:last-child{
+                    padding-bottom: 0px;
+                }
+                a{
+                    color:#EBEBEB;
+                    font-size: 18px;
+                    i{
+                        margin-right: 16px;
+                        color:$primary;
+                    }
+                }
+            }
+        }
+    }
+    }
+    .contact-form{
+        margin-left:40px ;
+        margin-top: 70px;
+        @media #{$md} {
+
+            margin-left:0px 
+
+            }
+        form{
+            .form-grp{
+                gap:18px;
+                    margin-top: 20px;
+                .form-box{
+            
+                label{
+                color:#7C7C7C;
+                font-size: 18px;
+                margin-bottom: 8px;
+                font-weight: bold;
+            }
+            input{
+                background: $black;
+                border:2px solid #303030;
+                border-radius: 100px;
+                height: 50px;
+                padding: 16px;
+                color:$white;
+                font-size: 16px;
+                width: 100%;
+                &::placeholder{
+                    font-size: 16px;
+                    color:#353535;
+                }
+                &:focus{
+                    border-color: $white;
+                }
+            }
+            textarea{
+                background: $black;
+                border:2px solid #303030;
+                border-radius: 28px;
+                height: 135px;
+                padding: 16px;
+                color:$white;
+                font-size: 16px;
+                width: 100%;
+                &::placeholder{
+                    font-size: 16px;
+                    color:#353535;
+                }
+                &:focus{
+                    border-color: $white;
+                }
+            }
+            }
+            }
+           .submit-btn{
+            margin-top: 15px;
+            button{
+                background: $primary;
+                padding: 13px 66px;
+                color:$black;
+                font-weight: bold;
+                font-size: 20px;
+                border-radius: 100px;
+
+            }
+           } 
+        }
+    }
+}

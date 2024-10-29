@@ -1,0 +1,85 @@
+.hero_area{
+    background: $dark3;
+    padding: 70px 85px 55px 85px;
+    border-radius: 40px;
+    border:1px solid $dark2;
+    margin-top: 80px;
+    text-align: center;
+     @media #{$xs} {
+            padding: 50px 20px;
+        }
+    .hero-content{
+        h4{
+            color:$white;
+            padding: 5px 0px 20px 0px;
+        }
+        p{
+            font-size: 18px;
+            width: 685px;
+            margin: 0 auto;
+             @media #{$md} {
+                width: 100%;
+            }
+        }
+    }
+
+    .hero_form{
+
+            padding: 25px 40px;
+            background: $white;
+            border-radius: 25px;
+            margin-top: 35px;
+            @media #{$xs} {
+            padding: 50px 20px;
+        }
+            p{
+                text-align: left;
+                @media #{$xs} {
+             text-align: center;
+        }
+            }
+        .form_area{
+            gap:18px;
+            margin-top: 10px;
+            @media #{$md} {
+         .iti{
+            width: 100%;
+             @media #{$md} {
+                    margin-top: 10px;
+                    
+                }
+         }
+    }
+            input{
+                height: 54px;
+                border-color: $gray2;
+                 @media #{$md} {
+                    width: 100%;
+                    margin-top: 10px;
+                    
+                }
+                &::placeholder{
+                    font-size: 18px;
+                    font-weight: 400;
+                    color: $gray
+
+                }
+            }
+            .submit-btn{
+                
+                button{
+                background: $primary;
+                color:$white;
+                border-color: $primary;
+                height: 56px;
+                padding: 13px 40px;
+
+                @media #{$md} {
+                    margin-top: 10px;
+                    
+                }
+            }
+            }
+        }
+    }
+}

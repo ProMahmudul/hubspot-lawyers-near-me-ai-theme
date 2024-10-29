@@ -1,0 +1,242 @@
+/*----------------------------------------*/
+/*  02. SPACE CSS START
+/*----------------------------------------*/
+
+
+// Padding Bottom
+@mixin pb {
+  @media #{$lg} {
+    padding-bottom: 100px;
+  }
+
+  @media #{$lg} {
+    padding-bottom: 90px;
+  }
+
+  @media #{$sm} {
+    padding-bottom: 60px;
+  }
+}
+
+
+.p-100 {
+  padding-bottom: 250px;
+  padding-top: 250px;
+
+  @media #{$md} {
+    padding-bottom: 90px;
+  padding-top: 90px;
+  }
+
+  @media #{$sm} {
+   padding-bottom: 60px;
+  padding-top: 60px;
+  }
+}
+.pt-100 {
+  padding-top: 100px;
+
+  @media #{$md} {
+    padding-top: 90px;
+  }
+
+  @media #{$sm} {
+    padding-top: 60px;
+  }
+}
+.pb-100 {
+  padding-bottom: 100px;
+
+  @media #{$md} {
+    padding-bottom: 90px;
+  }
+
+  @media #{$sm} {
+    padding-bottom: 60px;
+  }
+}
+
+.pb-110 {
+  padding-bottom: 110px;
+
+  @include pb;
+}
+
+.pb-120 {
+  padding-bottom: 120px;
+
+  @include pb;
+}
+
+.pb-130 {
+  padding-bottom: 130px;
+
+  @include pb;
+}
+
+.pb-140 {
+  padding-bottom: 140px;
+
+  @include pb;
+}
+
+.pb-150 {
+  padding-bottom: 150px;
+
+  @include pb;
+}
+
+.pb-160 {
+  padding-bottom: 160px;
+
+  @include pb;
+}
+
+
+// Padding Top
+@mixin pt {
+  @media #{$lg} {
+    padding-top: 100px;
+  }
+
+  @media #{$md} {
+    padding-top: 90px;
+  }
+
+  @media #{$sm} {
+    padding-top: 60px;
+  }
+}
+
+.pt-100 {
+  padding-top: 100px;
+
+  @media #{$md} {
+    padding-top: 90px;
+  }
+
+  @media #{$sm} {
+    padding-top: 60px;
+  }
+}
+
+.pt-110 {
+  padding-top: 110px;
+
+  @include pt;
+}
+
+.pt-120 {
+  padding-top: 120px;
+
+  @include pt;
+}
+
+.pt-130 {
+  padding-top: 130px;
+
+  @include pt;
+}
+
+.pt-140 {
+  padding-top: 140px;
+
+  @include pt;
+}
+
+.pt-150 {
+  padding-top: 150px;
+
+  @include pt;
+}
+
+.pt-160 {
+  padding-top: 160px;
+
+  @include pt;
+}
+
+.pt-180 {
+  padding-top: 180px;
+
+  @include pt;
+}
+
+// Margin top
+@mixin mt {
+  @media #{$lg} {
+    margin-top: 100px;
+  }
+
+  @media #{$md} {
+    margin-top: 90px;
+  }
+
+  @media #{$sm} {
+    margin-top: 60px;
+  }
+}
+
+.mt-100 {
+  margin-top: 100px;
+
+  @media #{$md} {
+    margin-top: 90px;
+  }
+
+  @media #{$sm} {
+    margin-top: 60px;
+  }
+}
+
+.mt-110 {
+  margin-top: 110px;
+
+  @include mt;
+}
+
+.mt-120 {
+  margin-top: 120px;
+
+  @include mt;
+}
+
+
+// Margin Bottom
+@mixin mb {
+  @media #{$lg} {
+    margin-bottom: 100px;
+  }
+
+  @media #{$md} {
+    margin-bottom: 90px;
+  }
+
+  @media #{$sm} {
+    margin-bottom: 60px;
+  }
+}
+
+.mb-100 {
+  margin-bottom: 100px;
+
+  @media #{$md} {
+    margin-bottom: 90px;
+  }
+
+  @media #{$sm} {
+    margin-bottom: 60px;
+  }
+}
+
+.mb-110 {
+  margin-bottom: 110px;
+
+  @include mb;
+}
+
+.mb-120 {
+  margin-bottom: 120px;
+
+  @include mb;
+}

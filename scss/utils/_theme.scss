@@ -1,0 +1,93 @@
+/*----------------------------------------*/
+/* 04. THEME CSS START
+/*----------------------------------------*/
+
+
+
+// Prealoder
+.preloader-wrap {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #eee;
+}
+
+.site-preloader {
+  width: 80px;
+  padding: 8px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #FF7F48;
+  --_m:
+    conic-gradient(#0000 10%, #000),
+    linear-gradient(#000 0 0) content-box;
+  -webkit-mask: var(--_m);
+  mask: var(--_m);
+  -webkit-mask-composite: source-out;
+  mask-composite: subtract;
+  animation: preloader 1s infinite linear;
+}
+
+@keyframes preloader {
+  to {
+    transform: rotate(1turn)
+  }
+}
+
+
+// Scroll to Top
+.scroll--top {
+  position: fixed;
+  width: 36px;
+  height: 36px;
+  bottom: 0;
+  right: 20px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color: #1B1A1A;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 100%;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s;
+  opacity: 0;
+  visibility: hidden;
+
+  &.showed {
+    opacity: 1;
+    bottom: 20px;
+    visibility: visible;
+  }
+
+  &:hover {
+    color: #1B1A1A;
+    background-color: #FF7F48;
+  }
+}
+
+
+
+
+
+.img-reveal {
+  visibility: hidden;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transform-origin: left;
+  }
+}

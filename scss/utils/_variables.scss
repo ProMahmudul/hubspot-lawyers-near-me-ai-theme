@@ -1,0 +1,60 @@
+
+/*----------------------------------------*/
+/*  01. VARIBALES DECLARARION
+/*----------------------------------------*/
+
+@font-face {
+  font-family: "Productsans";
+  src: url("../webfonts/Product Sans Regular.ttf") format("truetype");
+  font-weight: bold;
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+:root {
+  // Colors
+  --primary: #FFC900;
+  --secondary: #2C2C2C;
+
+  --white: #fff;
+  --black: #000;
+
+  --dark: #5F6368;
+  --dark2: #424242;
+  --dark3: #171717;
+
+  --gray: #7D7D7D;
+  --gray2: #CFCFCF;
+  --gray3: #0e0f0e;
+  --gray-4: #D8D0D0;
+
+  --icon-font: "Font Awesome 6 Pro";
+  --font-productsans: "Productsans", sans-serif;
+}
+
+
+$primary : var(--primary);
+$secondary : var(--secondary);
+$white : var(--white);
+$black : var(--black);
+$dark : var(--dark);
+$dark2 : var(--dark2);
+$dark3 : var(--dark3);
+$gray : var(--gray);
+$gray2 : var(--gray2);
+$gray3 : var(--gray3);
+
+
+$productsans : var(--font-productsans);
+
+
+
+// Responsive Variable
+$xxxl: '(min-width: 1920px)';
+$xxl: '(max-width: 1919px)';
+$xl: '(max-width: 1399px)';
+$lg: '(max-width: 1199px)';
+$md: '(max-width: 991px)';
+$sm: '(max-width: 767px)';
+$xs: '(max-width: 574px)';

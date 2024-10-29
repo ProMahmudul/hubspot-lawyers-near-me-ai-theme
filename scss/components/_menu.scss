@@ -1,0 +1,312 @@
+/*----------------------------------------*/
+/*  09. MENU CSS START
+/*----------------------------------------*/
+
+
+.main-menu {
+  @media #{$lg} {
+    display: none;
+  }
+
+  ul {
+    li {
+      display: inline-block;
+      padding: 0 10px;
+
+      &:hover {
+        .main-dropdown {
+          top: 80px;
+          opacity: 1;
+          visibility: visible;
+        }
+
+        .mega-menu {
+          top: 80px;
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+
+      a {
+        font-size: 16px;
+        color: var(--dark);
+        font-weight: 500;
+        display: block;
+        padding: 32px 5px;
+        text-transform: capitalize;
+
+        &:hover {
+          color: var(--primary);
+        }
+      }
+    }
+  }
+
+  .main {
+    &-dropdown {
+      position: absolute;
+      width: 260px;
+      top: 100px;
+      background: var(--dark);
+      padding: 20px 0;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.2s;
+      z-index: 5;
+      box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+
+      li {
+        padding: 0 30px;
+        display: block;
+        text-align: left;
+        position: relative;
+
+        &:hover {
+          .sub-dropdown {
+            left: 100%;
+            opacity: 1;
+            visibility: visible;
+
+            @media #{$xxl} {
+              left: -100%;
+            }
+          }
+        }
+
+        a {
+          color: var(--white);
+          padding: 7px 0;
+        }
+      }
+    }
+  }
+
+  .sub {
+    &-dropdown {
+      position: absolute;
+      width: 260px;
+      left: 90%;
+      top: 0;
+      background: var(--black-2);
+      padding: 20px 0;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.2s;
+      z-index: 5;
+      box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+
+      @media #{$xxl} {
+        left: -90%;
+      }
+
+      li {
+        padding: 0 30px;
+        display: block;
+        text-align: left;
+        position: relative;
+
+        a {
+          color: var(--white);
+          padding: 10px 0;
+        }
+      }
+    }
+  }
+
+  .has-dropdown {
+    position: relative;
+
+    &:hover {
+      &::after {
+        color: var(--primary);
+      }
+    }
+
+    &::after {
+      position: absolute;
+      content: "\f107";
+      width: 15px;
+      height: 15px;
+      top: 35px;
+      right: -5px;
+      color: #15140F;
+      font-family: "Font Awesome 6 Free";
+      font-weight: 700;
+      font-size: 14px;
+      transition: all 0.2s;
+    }
+  }
+
+  .has-megamenu {
+    position: static;
+
+    &:hover {
+      &::after {
+        color: var(--primary);
+      }
+    }
+
+    &::after {
+      position: absolute;
+      content: "\f107";
+      width: 15px;
+      height: 15px;
+      top: 30px;
+      color: var(--white);
+      font-family: "Font Awesome 6 Free";
+      font-weight: 700;
+      transition: all 0.2s;
+    }
+  }
+
+  .main-dropdown .has-dropdown {
+    position: relative;
+
+    &:hover {
+      &::after {
+        color: var(--primary);
+      }
+    }
+
+    &::after {
+      position: absolute;
+      content: "\f107";
+      width: 15px;
+      height: 15px;
+      top: 15px;
+      right: 20px;
+      color: var(--white);
+      transform: rotate(-90deg);
+      font-family: "Font Awesome 6 Free";
+      font-weight: 700;
+      transition: all 0.2s;
+    }
+  }
+
+
+  // Mega Menu
+  .mega-menu {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 100px;
+    z-index: 9;
+    background-color: var(--black-2);
+    text-align: left;
+    padding: 40px 230px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+
+    @media #{$xxl} {
+      padding: 40px 50px;
+    }
+
+    @media #{$xl} {
+      padding: 40px 20px;
+    }
+
+    li {
+      display: block;
+
+      &:first-child {
+        font-size: 18px;
+        color: var(--white);
+        padding-bottom: 10px;
+        text-transform: capitalize;
+      }
+
+      a {
+        padding: 8px 5px;
+      }
+    }
+  }
+
+}
+
+
+// MeanMenu
+.mean-container {
+  .mean-nav>ul {
+    display: block !important;
+  }
+
+  a.meanmenu-reveal {
+    display: none !important;
+  }
+
+  .mean-bar {
+    padding: 0;
+    height: calc(100vh - 100px);
+    overflow-y: auto;
+    background: transparent;
+  }
+
+  .mean-nav {
+    margin-top: 0;
+    background-color: transparent;
+
+    ul li {
+      border-bottom: 1px solid #dddddd;
+
+      &:first-child {
+        border-top: 1px solid #ddd;
+      }
+
+      .main-dropdown li:last-child {
+        border-bottom: none;
+      }
+    }
+
+    ul li a {
+      font-size: 14px;
+      font-weight: 600;
+      color: #15140F;
+      padding: 13px 0;
+      text-transform: uppercase;
+      border: none;
+
+      &:hover {
+        background: transparent;
+      }
+
+      &.mean-expand {
+        padding: 0 !important;
+        line-height: 44px;
+        background: transparent;
+        border: none !important;
+
+        &:hover {
+          background: transparent;
+        }
+      }
+    }
+
+    ul li li a {
+      padding: 13px 15px;
+      border-top: none;
+      opacity: 1;
+      color: #15140F;
+    }
+
+  }
+}
+
+
+// Offcanvas
+.offcanvas {
+  &__area {
+    .btn--close {
+      border: 1px solid #15140F;
+      padding: 4px 10px;
+      font-size: 20px;
+      background-color: transparent;
+      border-radius: 3px;
+    }
+
+
+  }
+}
