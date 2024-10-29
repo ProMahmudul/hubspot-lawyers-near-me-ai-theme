@@ -673,7 +673,7 @@ a {
     width: 250px;
     background: var(--primary);
     transition: right 0.3s ease-in-out;
-    z-index: 9999;
+    z-index: 9999999;
     padding-top: 20px;
   }
   .header_area .header-navarea .menu ul {
@@ -1346,6 +1346,11 @@ a {
 .legal_start .legal-boxes .legal-box2 {
   margin-top: 50px;
   padding: 40px 32px 40px 40px;
+}
+@media (max-width: 574px) {
+  .legal_start .legal-boxes .legal-box2 {
+    margin-top: 20px;
+  }
 }
 
 .data_area {
