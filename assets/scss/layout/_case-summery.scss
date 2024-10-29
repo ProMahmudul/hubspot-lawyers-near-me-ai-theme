@@ -140,8 +140,13 @@ padding: 10px 60px 10px 60px;
 .modal.fade .modal-dialog {
  
     max-width: 1191px !IMPORTANT;
+    
+
 }
 .modal-content {
     width: 1191px !important;
     background: $black;
+    @media #{$lg} {
+            max-width: 100% !important;
+        }
 }

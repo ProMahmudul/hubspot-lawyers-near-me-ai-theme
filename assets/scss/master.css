@@ -2026,6 +2026,11 @@ a {
   width: 1191px !important;
   background: var(--black);
 }
+@media (max-width: 1199px) {
+  .modal-content {
+    max-width: 100% !important;
+  }
+}
 
 .contact {
   background: var(--gray3);
