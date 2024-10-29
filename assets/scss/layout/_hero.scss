@@ -11,6 +11,7 @@
             text-transform: uppercase;
             font-size: 64px;
             letter-spacing: 3px;
+            
              @media #{$xs} {
           
                    font-size: 45px;
@@ -21,12 +22,16 @@
             color:$white;
             padding: 5px 0px 20px 0px;
             font-size: 52px;
+ 
+	}
+            
              @media #{$xs} {
           
                    font-size: 30px;
          
         }
         }
+        
         p{
             font-size: 18px;
             width: 685px;
@@ -76,15 +81,15 @@
 
             
 
-            @media #{$md} {
+            
          .iti{
-            width: 100%;
+            width: 100% !important;
              @media #{$md} {
                     margin-top: 10px;
                     
                 }
          }
-    }
+   
             input{
                 height: 70px;
                 border-color: $gray2;
@@ -118,6 +123,7 @@
                 top: 10%;
                 font-size: 22px;
                 font-weight: bold;
+                line-height: 0;
                  @media #{$xs} {
             position: relative;
             width: 100%;
@@ -245,6 +251,12 @@ label {
 form{
     .form-flex{
         gap: 14px;
+        .form-group{
+            width: 49%;
+            @media #{$md} {
+      width: 100%;
+    }
+        }
     }
     .form-group{
         margin-bottom: 20px;
@@ -298,6 +310,11 @@ form{
 }
 .modal-body{
     padding-bottom:60px ;
+}
+
+
+.iti {
+    width: 100%;
 }
     }
 
@@ -367,7 +384,7 @@ form{
         ul{
             li{
                 color:$white;
-                 font-size: 20px;
+                 font-size: 18px;
                  font-weight: 400px;
                  padding-top: 15px;
                  &:last-child{
@@ -392,4 +409,26 @@ form{
   .send-img {
     margin-bottom: -65px;
 }
+}
+
+@keyframes animateWords {
+	0% {
+		transform: translateY(0%);
+	}
+	
+	25% {
+		transform: translateY(-100%);
+	}
+	
+	50% {
+		transform: translateY(-200%);
+	}
+	
+	75% {
+		transform: translateY(-300%);
+	}
+	
+	100% {
+		transform: translateY(-400%);
+	}
 }

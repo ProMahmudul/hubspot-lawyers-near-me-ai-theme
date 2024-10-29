@@ -173,8 +173,8 @@ a {
 /*  02. SPACE CSS START
 /*----------------------------------------*/
 .p-100 {
-  padding-bottom: 250px;
-  padding-top: 250px;
+  padding-bottom: 80px;
+  padding-top: 80px;
 }
 @media (max-width: 991px) {
   .p-100 {
@@ -587,7 +587,7 @@ a {
   background-position: center;
   background-size: cover;
   padding-top: 35px;
-  padding-bottom: 250px;
+  padding-bottom: 150px;
   /* For mobile view */
   /* For desktop view */
 }
@@ -753,6 +753,18 @@ a {
   padding: 5px 0px 20px 0px;
   font-size: 52px;
 }
+.hero_area .hero-content h4 > span {
+  position: relative;
+  display: inline-block;
+  color: #FFC900;
+  height: 1.25em;
+  vertical-align: bottom;
+  overflow: hidden;
+}
+.hero_area .hero-content h4 > span span {
+  display: block;
+  animation: animateWords 10s infinite ease;
+}
 @media (max-width: 574px) {
   .hero_area .hero-content h4 {
     font-size: 30px;
@@ -804,12 +816,10 @@ a {
 .hero_area .hero_form .form_area .input-with-icon .input-icon .input-with-icon .form-control {
   padding-left: 35px; /* Add space to the left for the icon */
 }
-@media (max-width: 991px) {
-  .hero_area .hero_form .form_area .iti {
-    width: 100%;
-  }
+.hero_area .hero_form .form_area .iti {
+  width: 100% !important;
 }
-@media (max-width: 991px) and (max-width: 991px) {
+@media (max-width: 991px) {
   .hero_area .hero_form .form_area .iti {
     margin-top: 10px;
   }
@@ -851,6 +861,7 @@ a {
   top: 10%;
   font-size: 22px;
   font-weight: bold;
+  line-height: 0;
 }
 @media (max-width: 574px) {
   .hero_area .hero_form .form_area .submit-btn button {
@@ -1013,6 +1024,9 @@ a {
 #chatModal .modal-body {
   padding-bottom: 60px;
 }
+#chatModal .iti {
+  width: 100%;
+}
 
 #thankModal .modal-dialog {
   width: 900px;
@@ -1089,6 +1103,23 @@ a {
   margin-bottom: -65px;
 }
 
+@keyframes animateWords {
+  0% {
+    transform: translateY(0%);
+  }
+  25% {
+    transform: translateY(-100%);
+  }
+  50% {
+    transform: translateY(-200%);
+  }
+  75% {
+    transform: translateY(-300%);
+  }
+  100% {
+    transform: translateY(-400%);
+  }
+}
 .case_summry {
   background: var(--gray3);
 }
@@ -1205,6 +1236,7 @@ a {
   align-items: center;
   margin-top: 104px;
   position: relative;
+  z-index: 9999;
 }
 @media (max-width: 991px) {
   .how_it_work .work_box {
@@ -1227,8 +1259,8 @@ a {
   font-weight: bold;
 }
 .how_it_work .work_box .work_box_content p {
-  color: #8B8B8B;
-  font-size: 20px;
+  color: #DADADA;
+  font-size: 18px;
   margin-top: 5px;
 }
 
@@ -1248,7 +1280,7 @@ a {
 }
 .legal_start .legal-content p {
   color: #D5D5D5;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 28px;
   margin-top: 10px;
   margin-bottom: 24px;
@@ -1314,7 +1346,7 @@ a {
 }
 .legal_start .legal-boxes .legal-box2 {
   margin-top: 50px;
-  padding: 40px 32px 40px 17px;
+  padding: 40px 32px 40px 40px;
 }
 
 .data_area {
@@ -1356,7 +1388,7 @@ a {
 }
 .data_area .data-box .data-box-content p {
   color: var(--black);
-  font-size: 20px;
+  font-size: 18px;
   margin-top: 10px;
 }
 @media (max-width: 574px) {
@@ -1514,10 +1546,10 @@ a {
 .summershape .summery-area .summery-box2 p {
   margin-top: 10px;
   color: #A0A0A0;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 26px;
   text-align: center;
-  width: 1100px;
+  width: 100%;
 }
 @media (max-width: 1199px) {
   .summershape .summery-area .summery-box2 p {
@@ -1617,9 +1649,10 @@ a {
   padding: 13px 40px;
   border-radius: 100px;
   position: absolute;
-  right: 3%;
+  right: 24px;
   top: 10%;
   font-size: 22px;
+  line-height: 0;
   font-weight: bold;
 }
 @media (max-width: 574px) {
@@ -1704,6 +1737,7 @@ a {
 .footer .footer-area {
   margin-right: 40px;
   margin-left: 40px;
+  margin-bottom: 40px;
   background: var(--black);
   border-radius: 20px;
 }
@@ -1828,7 +1862,7 @@ a {
 }
 .case_summery .case-summery-shape {
   position: absolute;
-  top: 30%;
+  top: 37%;
   left: 31%;
 }
 @media (max-width: 1399px) {
@@ -1854,6 +1888,8 @@ a {
 }
 .case_summery .case-summerybox {
   padding: 28px 0px 20px 50px;
+  z-index: 9999;
+  position: relative;
 }
 @media (max-width: 991px) {
   .case_summery .case-summerybox {

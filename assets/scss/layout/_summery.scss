@@ -68,10 +68,10 @@ position: relative;
         p{
             margin-top: 10px;
             color: #A0A0A0;
-            font-size: 20px;
+            font-size: 18px;
             line-height: 26px;
             text-align: center;
-                width: 1100px;
+                width: 100%;
                   @media #{$lg} {
              width: 100%;
         }
@@ -174,9 +174,10 @@ position: relative;
                 padding: 13px 40px;
                 border-radius: 100px;
                 position: absolute;
-                right: 3%;
+                right: 24px;
                 top: 10%;
                 font-size: 22px;
+                line-height: 0;
                 font-weight: bold;
                  @media #{$xs} {
             position: relative;
