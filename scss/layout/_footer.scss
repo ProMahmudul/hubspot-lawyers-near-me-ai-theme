@@ -1,8 +1,10 @@
 .footer{
-    background: $gray3;
+ 
+ 
     .footer-area{
     margin-right: 40px;
     margin-left: 40px;
+    margin-bottom: 40px;
     background: $black;
     border-radius: 20px;
      @media #{$xs} {
@@ -44,7 +46,32 @@
                     font-size: 18px;
                 }
             }
+
+            
         }
+        .footer-chat{
+ a {
+        background: $primary;
+        color: $white;
+        padding: 4px 15px 4px 4px ;
+        text-decoration: none;
+        display: block;
+        border-radius: 100px;
+        margin-top: 23px;
+        strong {
+            background: $white;
+            color: $primary;
+            width: 32px;
+            height: 32px;
+            border-radius: 100px;
+            text-align: center;
+            line-height: 32px;
+            margin-right: 10px;
+                display: inline-block;
+        }
+    }
+        }
+       
     }
     .footer-infos{
         ul{

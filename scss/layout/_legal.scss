@@ -1,5 +1,8 @@
 .legal_start{
-    background: $gray3;
+      background: url('../imgs/legal/bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     .legal-content{
         @media #{$xs} {
         margin-bottom: 30px;
@@ -9,7 +12,7 @@
         }
         p{
             color: #D5D5D5;
-            font-size: 20px;
+            font-size: 18px;
             line-height: 28px;
             margin-top: 10px;
             margin-bottom: 24px;
@@ -59,7 +62,8 @@
         .legal-box{
             padding: 40px 12px 40px 17px;
              background: linear-gradient(90deg, #171717, #181818);
-             border:1px solid #2C2C2C;
+             opacity: 90%;
+             border:1px solid $primary;
              border-radius: 24px;
              h4{
                 color:$primary;
@@ -76,7 +80,10 @@
         }
         .legal-box2{
             margin-top: 50px;
-                padding: 40px 32px 40px 17px;
+                padding: 40px 32px 40px 40px;
+                @media #{$xs} {
+        margin-top: 20px;
+    }
         }
     }
 }
