@@ -182,6 +182,7 @@ position: relative;
                  @media #{$xs} {
             position: relative;
             width: 100%;
+            left: 0;
         }
                 &:hover{
                     background: $black;

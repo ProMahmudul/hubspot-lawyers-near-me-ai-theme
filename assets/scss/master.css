@@ -753,78 +753,67 @@ a {
   padding: 5px 0px 20px 0px;
   font-size: 52px;
 }
-.hero_area .hero-content h4 > span {
-  position: relative;
-  display: inline-block;
-  color: #FFC900;
-  height: 1.25em;
-  vertical-align: bottom;
-  overflow: hidden;
-}
-.hero_area .hero-content h4 > span span {
-  display: block;
-  animation: animateWords 10s infinite ease;
-}
 @media (max-width: 574px) {
   .hero_area .hero-content h4 {
     font-size: 30px;
   }
 }
-.hero_area .hero-content p {
+.hero_area p {
   font-size: 18px;
   width: 685px;
   margin: 0 auto;
 }
 @media (max-width: 991px) {
-  .hero_area .hero-content p {
+  .hero_area p {
     width: 100%;
   }
 }
-.hero_area .hero_form {
+
+.hero_form {
   width: 1245px;
   margin: 0 auto;
   margin-top: 80px;
 }
 @media (max-width: 1399px) {
-  .hero_area .hero_form {
+  .hero_form {
     width: 100%;
   }
 }
 @media (max-width: 574px) {
-  .hero_area .hero_form {
+  .hero_form {
     padding: 0;
     margin-top: 20px;
   }
 }
-.hero_area .hero_form .form_area {
+.hero_form .form_area {
   gap: 18px;
   margin-top: 10px;
   position: relative;
 }
-.hero_area .hero_form .form_area .input-with-icon {
+.hero_form .form_area .input-with-icon {
   position: relative;
   display: flex;
   align-items: center;
 }
-.hero_area .hero_form .form_area .input-with-icon .input-icon {
+.hero_form .form_area .input-with-icon .input-icon {
   position: absolute;
   left: 30px; /* Adjust as needed */
   width: 25px; /* Adjust size as needed */
   height: 25px;
   pointer-events: none; /* Allows click-through to input */
 }
-.hero_area .hero_form .form_area .input-with-icon .input-icon .input-with-icon .form-control {
+.hero_form .form_area .input-with-icon .input-icon .input-with-icon .form-control {
   padding-left: 35px; /* Add space to the left for the icon */
 }
-.hero_area .hero_form .form_area .iti {
+.hero_form .form_area .iti {
   width: 100% !important;
 }
 @media (max-width: 991px) {
-  .hero_area .hero_form .form_area .iti {
+  .hero_form .form_area .iti {
     margin-top: 10px;
   }
 }
-.hero_area .hero_form .form_area input {
+.hero_form .form_area input {
   height: 70px;
   border-color: var(--gray2);
   padding-left: 60px;
@@ -832,24 +821,24 @@ a {
   border-radius: 100px;
 }
 @media (max-width: 991px) {
-  .hero_area .hero_form .form_area input {
+  .hero_form .form_area input {
     width: 100%;
     margin-top: 10px;
   }
 }
-.hero_area .hero_form .form_area input::-moz-placeholder {
+.hero_form .form_area input::-moz-placeholder {
   font-size: 16px;
   font-weight: 400;
   color: var(--black);
   margin-left: 10px;
 }
-.hero_area .hero_form .form_area input::placeholder {
+.hero_form .form_area input::placeholder {
   font-size: 16px;
   font-weight: 400;
   color: var(--black);
   margin-left: 10px;
 }
-.hero_area .hero_form .form_area .submit-btn button {
+.hero_form .form_area .submit-btn button {
   background: var(--primary);
   color: var(--black);
   border-color: var(--primary);
@@ -864,31 +853,33 @@ a {
   line-height: 0;
 }
 @media (max-width: 574px) {
-  .hero_area .hero_form .form_area .submit-btn button {
+  .hero_form .form_area .submit-btn button {
     position: relative;
     width: 100%;
+    right: 0;
   }
 }
-.hero_area .hero_form .form_area .submit-btn button:hover {
+.hero_form .form_area .submit-btn button:hover {
   background: var(--black);
   color: var(--primary);
 }
 @media (max-width: 991px) {
-  .hero_area .hero_form .form_area .submit-btn button {
+  .hero_form .form_area .submit-btn button {
     margin-top: 10px;
   }
 }
-.hero_area .hero-steps {
+
+.hero-steps {
   width: 1155px;
   margin: 0 auto;
   margin-top: 50px;
 }
 @media (max-width: 1399px) {
-  .hero_area .hero-steps {
+  .hero-steps {
     width: 100%;
   }
 }
-.hero_area .hero-steps ul li {
+.hero-steps ul li {
   margin-bottom: 28px;
   color: var(--white);
   text-align: left;
@@ -897,15 +888,15 @@ a {
   font-weight: bold;
 }
 @media (max-width: 574px) {
-  .hero_area .hero-steps ul li {
+  .hero-steps ul li {
     font-size: 24px;
     line-height: 30px;
   }
 }
-.hero_area .hero-steps ul li:last-child {
+.hero-steps ul li:last-child {
   margin-bottom: 0px;
 }
-.hero_area .hero-steps ul li span {
+.hero-steps ul li span {
   color: var(--primary);
 }
 
@@ -974,6 +965,14 @@ a {
 }
 #chatModal form .form-flex {
   gap: 14px;
+}
+#chatModal form .form-flex .form-group {
+  width: 49%;
+}
+@media (max-width: 991px) {
+  #chatModal form .form-flex .form-group {
+    width: 100%;
+  }
 }
 #chatModal form .form-group {
   margin-bottom: 20px;
@@ -1081,7 +1080,7 @@ a {
 }
 #thankModal .modal-dialog .happen-box ul li {
   color: var(--white);
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 400px;
   padding-top: 15px;
 }
@@ -1659,6 +1658,7 @@ a {
   .email-form .form_area .submit-btn button {
     position: relative;
     width: 100%;
+    left: 0;
   }
 }
 .email-form .form_area .submit-btn button:hover {

@@ -22,14 +22,16 @@
             color:$white;
             padding: 5px 0px 20px 0px;
             font-size: 52px;
+
  
-	}
-            
              @media #{$xs} {
           
                    font-size: 30px;
          
         }
+ 
+	}
+           
         }
         
         p{
@@ -127,6 +129,7 @@
                  @media #{$xs} {
             position: relative;
             width: 100%;
+            right: 0;
         }
                 &:hover{
                     background: $black;
@@ -173,7 +176,7 @@
     }
 
   
-}
+
 
   #chatModal{
     .checkbox{
@@ -289,13 +292,7 @@ form{
         line-height: 16px;
     }
     .submit-btn{
-
-
-        @media #{$xs} {
-     
-    margin-left: 4px;
-
-    }
+        
         button{
             width: 100%;
             background: $primary;
