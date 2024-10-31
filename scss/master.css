@@ -961,6 +961,7 @@ a {
   font-size: 16px;
   margin-left: 15px;
   margin-bottom: 0px;
+  max-width: 320px;
 }
 #chatModal .checkbox-container input[type=checkbox]:checked + label {
   color: var(--primary);

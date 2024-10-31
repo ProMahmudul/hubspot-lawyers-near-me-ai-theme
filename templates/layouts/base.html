@@ -95,16 +95,16 @@
           </h4>
         </div>
         <div class="hero_form">
-          <form action="" class="form_area d-block d-lg-flex" onsubmit="return false;">
+          <form class="form_area case_description_form d-block d-lg-flex">
             <div class="form-field w-100">
               <div class="input-with-icon">
                 <img src="{{ get_asset_url('../../images/hero/form-star.png') }}" alt="icon" class="input-icon">
-                <input type="text" placeholder="Tell Ai What Happened?" class="form-control" id="exampleInputName"
-                  aria-describedby="emailHelp">
+                <input type="text" placeholder="Tell Ai What Happened?" name="get_case_description" class="form-control" id="get_case_description"
+                  aria-describedby="get_case_description" required>
               </div>
             </div>
             <div class="submit-btn">
-              <button type="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#chatModal">Submit</button>
+              <button type="submit" class="btn btn-primary">Submit</button>
             </div>
           </form>
         </div>
@@ -132,27 +132,27 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="background: url({{ get_asset_url('../../images/Vector.png') }}); background-position: center; background-size: contain; background-repeat: no-repeat;"></button>
         </div>
         <div class="modal-body">
-          <form action="" onsubmit="return false">
+          <form class="chat-form">
             <div class="row align-items-center">
               <div class="col-md-6">
                 <div class="checkbox">
                   <label for="">Free Summary</label>
                   <div class="checkbox-container">
-                    <input type="checkbox" id="subscribeCheckbox" name="subscribe" value="yes">
-                    <label for="subscribeCheckbox">Get a quick summary of your case details at no charge.</label>
+                    <input type="checkbox" id="free_summary" name="free_summary" value="Yes">
+                    <label for="free_summary">Get a quick summary of your case details at no charge.</label>
                   </div>
                 </div>
                 <div class="checkbox">
                   <label for="">$9.97 Detailed Summary with Suggested Next Steps</label>
                   <div class="checkbox-container">
-                    <input type="checkbox" id="subscribeCheckbox" name="subscribe" value="yes">
-                    <label for="subscribeCheckbox">Get a quick summary of your case details at no charge.</label>
+                    <input type="checkbox" id="premium_detailed_summary" name="premium_detailed_summary" value="Yes">
+                    <label for="premium_detailed_summary">Receive a comprehensive case summary along with personalized suggestions for your next steps in resolving your case.</label>
                   </div>
                 </div>
               </div>
 
               <div class="col-md-6">
-                <div class="chat-form">
+                <div class="chat-form-group-fields">
                   <div class="form-group">
                     <input type="text" class="form-control d-none" id="case_description" name="case_description" aria-describedby="case_description"
                       placeholder="Enter your case description">
@@ -161,26 +161,26 @@
                     <div class="form-group">
                       <label for="firstname">First Name</label>
                       <input type="text" class="form-control" name="firstname" id="firstname" aria-describedby="firstname"
-                        placeholder="Enter your first name">
+                        placeholder="Enter your first name" required>
                     </div>
                     <div class="form-group">
                       <label for="lastname">Last Name</label>
                       <input type="text" class="form-control" id="lastname" name="lastname" aria-describedby="lastname"
-                        placeholder="Enter your last name">
+                        placeholder="Enter your last name" required>
                     </div>
                   </div>
                   <div class="form-group">
                     <label for="email">Email Address</label>
                     <input type="email" class="form-control" id="email" name="email" aria-describedby="email"
-                      placeholder="Enter your email">
+                      placeholder="Enter your email" required>
                   </div>
                   <div class="form-group">
                     <label for="phone">Phone Number</label>
                     <input type="number" id="phone" class="form-control" name="phone"
-                      aria-describedby="phone" placeholder="Enter your number ">
+                      aria-describedby="phone" placeholder="Enter your number">
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="share-my-case-report" name="share_my_case_report">
+                    <input class="form-check-input" type="checkbox" value="Yes" id="share-my-case-report" name="share_my_case_report">
                     <label class="form-check-label" for="share-my-case-report">
                       Share my case report with the most qualified Lawyers near me
                     </label>
@@ -200,7 +200,6 @@
             </div>
           </form>
         </div>
-
       </div>
     </div>
   </div>
@@ -210,7 +209,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="background: url({{ get_asset_url('../../images/Vector.png') }}); background-position: center; background-size: contain; background-repeat: no-repeat;"></button>
         </div>
         <div class="modal-body">
           <h2><span>Thank You</span> for Submitting Your Case!</h2>
@@ -436,16 +435,16 @@
           <div class="email-form">
             <p class="text-black">Talk, or Text with our AI Agent, built on decades of legal excellence and powered by
               cutting-edge AI technology.</p>
-            <form action="" onsubmit="return false;" class="form_area d-block d-lg-flex">
+            <form class="form_area case_description_form d-block d-lg-flex">
               <div class="form-field w-100">
                 <div class="input-with-icon">
                   <img src="{{ get_asset_url('../../images/hero/form-star.png') }}" alt="icon" class="input-icon">
-                  <input type="text" placeholder="Tell Ai What Happened?" name="get-case-description" class="form-control" id="get-case-description"
-                    aria-describedby="emailHelp" style="background: url({{ get_asset_url('../../images/summery/input.png') }}); background-position: center; background-size: cover; background-repeat: no-repeat;">
+                  <input type="text" placeholder="Tell Ai What Happened?" name="get_case_description" class="form-control" id="get_case_description"
+                    aria-describedby="emailHelp" style="background: url({{ get_asset_url('../../images/summery/input.png') }}); background-position: center; background-size: cover; background-repeat: no-repeat;" required>
                 </div>
               </div>
               <div class="submit-btn">
-                <button type="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#chatModal">Submit</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
               </div>
             </form>
           </div>
