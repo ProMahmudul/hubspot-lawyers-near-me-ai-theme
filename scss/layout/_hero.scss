@@ -1,198 +1,174 @@
-.hero_area{
-   
-    margin-top: 80px;
-    text-align: center;
-     @media #{$xs} {
-            padding: 50px 20px;
-        }
-    .hero-content{
-        h2{
-            color: $primary;
-            text-transform: uppercase;
-            font-size: 64px;
-            letter-spacing: 3px;
-            
-             @media #{$xs} {
-          
-                   font-size: 45px;
-         
-        }
-        }
-        h4{
-            color:$white;
-            padding: 5px 0px 20px 0px;
-            font-size: 52px;
+.hero_area {
+  margin-top: 80px;
+  text-align: center;
+  @media #{$xs} {
+    padding: 50px 20px;
+  }
+  .hero-content {
+    h2 {
+      color: $primary;
+      text-transform: uppercase;
+      font-size: 64px;
+      letter-spacing: 3px;
 
- 
-             @media #{$xs} {
-          
-                   font-size: 30px;
-         
-        }
- 
-	}
-           
-        }
-        
-        p{
-            font-size: 18px;
-            width: 685px;
-            margin: 0 auto;
-             @media #{$md} {
-                width: 100%;
-            }
-        }
+      @media #{$xs} {
+        font-size: 45px;
+      }
     }
+    h4 {
+      color: $white;
+      padding: 5px 0px 20px 0px;
+      font-size: 50px;
 
-    .hero_form{
-           
-            width: 1245px;
-            margin: 0 auto;
-             margin-top: 80px;
-              @media #{$xl} {
-          
-                  width: 100%;
-                  
-         
-        }
-            @media #{$xs} {
-            padding: 0;
-             margin-top: 20px;
-        }
-        .form_area{
-            gap:18px;
-            margin-top: 10px;
-            position: relative;
-            .input-with-icon {
-                position: relative;
-                display: flex;
-                align-items: center;
-                .input-icon {
-                position: absolute;
-                left: 30px; /* Adjust as needed */
-                width: 25px; /* Adjust size as needed */
-                height: 25px;
-                pointer-events: none; /* Allows click-through to input */
-                .input-with-icon .form-control {
-                padding-left: 35px; /* Add space to the left for the icon */
-            }
-            }
+      @media #{$xl} {
+        font-size: 40px;
+      }
 
-            }
-
-
-            
-
-            
-         .iti{
-            width: 100% !important;
-             @media #{$md} {
-                    margin-top: 10px;
-                    
-                }
-         }
-   
-            input{
-                height: 70px;
-                border-color: $gray2;
-                padding-left: 60px;
-                border:1px solid $primary;
-                border-radius: 100px;
-                 @media #{$md} {
-                    width: 100%;
-                    margin-top: 10px;
-                    
-                }
-                &::placeholder{
-                    font-size: 16px;
-                    font-weight: 400;
-                    color: $black;
-                    margin-left: 10px;
-
-                }
-            }
-            .submit-btn{
-                
-                button{
-                background: $primary;
-                color:$black;
-                border-color: $primary;
-                height: 56px;
-                padding: 13px 40px;
-                border-radius: 100px;
-                position: absolute;
-                right: 2%;
-                top: 10%;
-                font-size: 22px;
-                font-weight: bold;
-                line-height: 0;
-                 @media #{$xs} {
-            position: relative;
-            width: 100%;
-            right: 0;
-        }
-                &:hover{
-                    background: $black;
-                    color: $primary;
-                }
-                @media #{$md} {
-                    margin-top: 10px;
-                    
-                }
-            }
-            }
-        }
+      @media #{$xs} {
+        font-size: 30px;
+      }
     }
+  }
 
-    .hero-steps{
-        width: 1155px;
-            margin: 0 auto;
-            margin-top: 50px;
-             @media #{$xl} {
-          
-                  width: 100%;
-         
-        }
-        ul{
-            li{
-                margin-bottom: 28px;
-                color: $white;
-                text-align: left;
-                font-size: 25px;
-                line-height: 35px;
-                font-weight: 400;
-                 @media #{$xs} {
-             font-size: 24px;
-                line-height: 30px;
-        }
-                &:last-child{
-                    margin-bottom: 0px;
-                }
-                span{
-                    color:$primary;
-                }
-            }
-        }
+  p {
+    font-size: 18px;
+    width: 685px;
+    margin: 0 auto;
+    @media #{$md} {
+      width: 100%;
     }
-
-  
-
-
-  #chatModal{
-    .checkbox{
-        margin-top: 42px;
-    &:first-child{
-        margin-top: 0px;
-    }
-    label{
-       margin-bottom: 14px; 
-       font-size: 18px;
-       color:$white;
-    }
+  }
 }
 
+.hero_form {
+  width: 1245px;
+  margin: 0 auto;
+  margin-top: 80px;
+  @media #{$xl} {
+    width: 100%;
+  }
+  @media #{$xs} {
+    padding: 0;
+    margin-top: 20px;
+  }
+  .form_area {
+    gap: 18px;
+    margin-top: 10px;
+    position: relative;
+    .input-with-icon {
+      position: relative;
+      display: flex;
+      align-items: center;
+      .input-icon {
+        position: absolute;
+        left: 30px; /* Adjust as needed */
+        width: 25px; /* Adjust size as needed */
+        height: 25px;
+        pointer-events: none; /* Allows click-through to input */
+        .input-with-icon .form-control {
+          padding-left: 35px; /* Add space to the left for the icon */
+        }
+      }
+    }
 
-   .checkbox-container {
+    .iti {
+      width: 100% !important;
+      @media #{$md} {
+        margin-top: 10px;
+      }
+    }
+
+    input {
+      height: 70px;
+      border-color: $gray2;
+      padding-left: 60px;
+      border: 1px solid $primary;
+      border-radius: 100px;
+      @media #{$md} {
+        width: 100%;
+        margin-top: 10px;
+      }
+      &::placeholder {
+        font-size: 16px;
+        font-weight: 400;
+        color: $black;
+        margin-left: 10px;
+      }
+    }
+    .submit-btn {
+      button {
+        background: $primary;
+        color: $black;
+        border-color: $primary;
+        height: 56px;
+        padding: 13px 40px;
+        border-radius: 100px;
+        position: absolute;
+        right: 2%;
+        top: 10%;
+        font-size: 22px;
+        font-weight: bold;
+        line-height: 0;
+        @media #{$xs} {
+          position: relative;
+          width: 100%;
+          right: 0;
+        }
+        &:hover {
+          background: $black;
+          color: $primary;
+        }
+        @media #{$md} {
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+}
+
+.hero-steps {
+  width: 1155px;
+  margin: 0 auto;
+  margin-top: 50px;
+  @media #{$xl} {
+    width: 100%;
+  }
+  ul {
+    li {
+      margin-bottom: 28px;
+      color: $white;
+      text-align: left;
+      font-size: 25px;
+      line-height: 35px;
+      font-weight: 400;
+      @media #{$xs} {
+        font-size: 24px;
+        line-height: 30px;
+      }
+      &:last-child {
+        margin-bottom: 0px;
+      }
+      span {
+        color: $primary;
+      }
+    }
+  }
+}
+
+#chatModal {
+  .checkbox {
+    margin-top: 42px;
+    &:first-child {
+      margin-top: 0px;
+    }
+    label {
+      margin-bottom: 14px;
+      font-size: 18px;
+      color: $white;
+    }
+  }
+
+  .checkbox-container {
     display: flex;
     width: 425px;
     align-items: center;
@@ -200,258 +176,255 @@
     border: 1px solid #ccc;
     border-radius: 20px;
     transition: background-color 0.3s; /* Smooth background color transition */
-     @media #{$md} {
+    @media #{$md} {
       width: 100%;
     }
-     input[type="checkbox"] {
-    appearance: none; /* Remove default styling */
-    width: 50px;
-    height: 45px;
-    border: 2px solid #d9d9d930;
-    border-radius: 12px;
-    margin-right: 10px;
-    background-color: transparent;
-    position: relative;
-    cursor: pointer;
-    transition: background-color 0.3s, border-color 0.3s;
+    input[type="checkbox"] {
+      appearance: none; /* Remove default styling */
+      width: 50px;
+      height: 45px;
+      border: 2px solid #d9d9d930;
+      border-radius: 12px;
+      margin-right: 10px;
+      background-color: transparent;
+      position: relative;
+      cursor: pointer;
+      transition:
+        background-color 0.3s,
+        border-color 0.3s;
 
-   
-        &:checked {
+      &:checked {
         background-color: transparent; /* Keep transparent */
         border-color: $primary; /* Change border color */
         &::after {
-            content: "✔"; /* Check icon */
-            font-size: 40px;
-            color: $primary;
-            position: absolute;
-            top: -9px;
-            left: 3px;
+          content: "✔"; /* Check icon */
+          font-size: 40px;
+          color: $primary;
+          position: absolute;
+          top: -9px;
+          left: 3px;
         }
+      }
     }
-}
 
-label {
-    color: $white;
-    font-size: 16px;
-    margin-left: 15px;
-    margin-bottom: 0px;
-}
+    label {
+      color: $white;
+      font-size: 16px;
+      margin-left: 15px;
+      margin-bottom: 0px;
+    }
+  }
 
-}
-
-
-.checkbox-container input[type="checkbox"]:checked + label {
+  .checkbox-container input[type="checkbox"]:checked + label {
     color: $primary;
-    
-}
+  }
 
-.checkbox-container input[type="checkbox"]:checked ~ label {
+  .checkbox-container input[type="checkbox"]:checked ~ label {
     color: $primary;
-}
+  }
 
-
-
-form{
-    .form-flex{
-        gap: 14px;
-        .form-group{
-            width: 49%;
-            @media #{$md} {
-      width: 100%;
-    }
+  form {
+    .form-flex {
+      gap: 14px;
+      .form-group {
+        width: 49%;
+        @media #{$md} {
+          width: 100%;
         }
+      }
     }
-    .form-group{
-        margin-bottom: 20px;
-       
-        label{
-            color:#7C7C7C;
-            font-size: 18px;
-            margin-bottom: 10px;
+    .form-group {
+      margin-bottom: 20px;
+
+      label {
+        color: #7c7c7c;
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+      input {
+        height: 56px;
+        border: 2px solid #303030;
+        border-radius: 100px;
+        background: transparent;
+        color: $white;
+        &::placeholder {
+          color: #353535;
         }
+        &:focus {
+          border-color: $white;
+          outline: 0;
+          box-shadow: none;
+        }
+      }
+    }
+
+    .form-check{
         input{
-            height: 56px;
-            border:2px solid #303030;
-            border-radius: 100px;
-            background: transparent;
-            color:$white;
-            &::placeholder{
-                color:#353535
-            }
-            &:focus{
-                border-color:$white;
-                outline: 0;
-                box-shadow: none;
-            }
+            margin-top: 2px;
         }
+        label {
+            color: #979797;
+          }
     }
 
-    p{
-        font-size: 13px;
-        color:#979797;
-        line-height: 16px;
+    p {
+      font-size: 13px;
+      color: #979797;
+      line-height: 16px;
     }
-    .submit-btn{
-        
-        button{
-            width: 100%;
-            background: $primary;
-            border-radius: 100px;
-            border:1px solid $primary;
-            color:$black;
-            font-size: 20px;
-            font-weight: bold;
-            height: 50px;
-            margin-top: 24px;
-            margin-bottom: 10px;
-        }
+    .submit-btn {
+      button {
+        width: 100%;
+        background: $primary;
+        border-radius: 100px;
+        border: 1px solid $primary;
+        color: $black;
+        font-size: 20px;
+        font-weight: bold;
+        height: 50px;
+        margin-top: 24px;
+        margin-bottom: 10px;
+      }
     }
-}
-       
+  }
 
-.modal-header{
-    border-bottom:0px ;
-}
-.modal-body{
-    padding-bottom:60px ;
-}
+  .modal-header {
+    border-bottom: 0px;
+  }
+  .modal-body {
+    padding-bottom: 60px;
+  }
 
-
-.iti {
+  .iti {
     width: 100%;
+  }
 }
-    }
-
-
 
 // THank MOdel
 
-
-#thankModal .modal-dialog{
-    width: 900px;
+#thankModal .modal-dialog {
+  width: 900px;
+  z-index: 99999999999;
+  .modal-content {
+    background-color: $black;
     z-index: 99999999999;
-    .modal-content{
-        
-        background-color: $black;
-         z-index: 99999999999;
+  }
+  .modal-header {
+    border: none;
+  }
+  h2 {
+    font-size: 24px;
+    color: $white;
+    text-align: center;
+    font-weight: 400;
+    span {
+      font-size: 48px;
+      color: $primary;
+      font-weight: bold;
     }
-    .modal-header{
-        border: none;
+  }
+  p {
+    color: #dedede;
+    font-size: 22px;
+    text-align: center;
+    margin-top: 35px;
+  }
+
+  h3 {
+    font-size: 24px;
+    color: $white;
+    text-align: center;
+    font-weight: 400;
+
+    width: 65%;
+    margin: 0 auto;
+    margin-top: 45px;
+  }
+
+  .happen-box {
+    border: 1px solid #292929;
+    padding: 30px 20px;
+    border-radius: 20px;
+    margin-top: 15px;
+    h3 {
+      font-size: 24px;
+      color: $primary;
+      text-align: left;
+
+      font-weight: 400;
+
+      width: 100%;
+
+      margin-top: 0px;
     }
-    h2{
-        font-size: 24px;
+
+    ul {
+      li {
         color: $white;
-        text-align: center;
-        font-weight: 400;
-        span{
-            font-size: 48px;
-            color: $primary;
-            font-weight: bold;
+        font-size: 18px;
+        font-weight: 400px;
+        padding-top: 15px;
+        &:last-child {
+          padding-top: 0px;
         }
+      }
     }
-    p{
-        color: #DEDEDE;
-        font-size: 22px;
-        text-align: center;
-        margin-top: 35px;
-    }
+  }
 
-    h3{
-        font-size: 24px;
-        color: $white;
-        text-align: center;
-        font-weight: 400;
-        
-        width: 65%;
-        margin:0 auto;
-        margin-top: 45px;
-    }
-
-    .happen-box{
-        border:1px solid #292929;
-        padding: 30px 20px;
-        border-radius: 20px;
-        margin-top: 15px;
-        h3{
-             font-size: 24px;
-        color: $primary;
-            text-align: left;
-           
-        font-weight: 400;
-        
-        width: 100%;
-        
-        margin-top: 0px;
-   
-        }
-
-        ul{
-            li{
-                color:$white;
-                 font-size: 18px;
-                 font-weight: 400px;
-                 padding-top: 15px;
-                 &:last-child{
-                    padding-top: 0px;
-                 }
-            }
-        }
-    }
-
-    .btn{
-        background: $primary;
-        color:$black;
-        text-align: center;
-        width: 270px;
-        height: 50px;
-        font-weight: bold;
-        display: block;
-        margin: 0 auto;
-        margin-top: 20px;
-    }
+  .btn {
+    background: $primary;
+    color: $black;
+    text-align: center;
+    width: 270px;
+    height: 50px;
+    font-weight: bold;
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+  }
 
   .send-img {
     margin-bottom: -65px;
-}
+  }
 }
 
 @keyframes animateWords {
-	0% {
-		transform: translateY(0%);
-	}
-	
-	25% {
-		transform: translateY(-100%);
-	}
-	
-	50% {
-		transform: translateY(-200%);
-	}
-	
-	75% {
-		transform: translateY(-300%);
-	}
-	
-	100% {
-		transform: translateY(-400%);
-	}
+  0% {
+    transform: translateY(0%);
+  }
+
+  25% {
+    transform: translateY(-100%);
+  }
+
+  50% {
+    transform: translateY(-200%);
+  }
+
+  75% {
+    transform: translateY(-300%);
+  }
+
+  100% {
+    transform: translateY(-400%);
+  }
 }
 
+#rotatingText {
+  font-weight: bold;
+  display: inline-block;
+  transform-origin: center;
+  transition:
+    transform 0.6s ease,
+    opacity 0.6s ease;
+}
 
-  #rotatingText {
-            
-            font-weight: bold;
-            display: inline-block;
-            transform-origin: center;
-            transition: transform 0.6s ease, opacity 0.6s ease;
-        }
+.rotate-out {
+  transform: rotateX(90deg);
+  opacity: 0;
+}
 
-         .rotate-out {
-            transform: rotateX(90deg);
-            opacity: 0;
-        }
-
-        .rotate-in {
-            transform: rotateX(-90deg);
-            opacity: 1;
-        }
+.rotate-in {
+  transform: rotateX(-90deg);
+  opacity: 1;
+}
