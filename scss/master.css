@@ -751,7 +751,12 @@ a {
 .hero_area .hero-content h4 {
   color: var(--white);
   padding: 5px 0px 20px 0px;
-  font-size: 52px;
+  font-size: 50px;
+}
+@media (max-width: 1399px) {
+  .hero_area .hero-content h4 {
+    font-size: 40px;
+  }
 }
 @media (max-width: 574px) {
   .hero_area .hero-content h4 {
@@ -978,7 +983,7 @@ a {
   margin-bottom: 20px;
 }
 #chatModal form .form-group label {
-  color: #7C7C7C;
+  color: #7c7c7c;
   font-size: 18px;
   margin-bottom: 10px;
 }
@@ -999,6 +1004,12 @@ a {
   border-color: var(--white);
   outline: 0;
   box-shadow: none;
+}
+#chatModal form .form-check input {
+  margin-top: 2px;
+}
+#chatModal form .form-check label {
+  color: #979797;
 }
 #chatModal form p {
   font-size: 13px;
@@ -1050,7 +1061,7 @@ a {
   font-weight: bold;
 }
 #thankModal .modal-dialog p {
-  color: #DEDEDE;
+  color: #dedede;
   font-size: 22px;
   text-align: center;
   margin-top: 35px;
