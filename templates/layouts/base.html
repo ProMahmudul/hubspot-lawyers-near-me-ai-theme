@@ -80,7 +80,7 @@
             </div>
             <div class="header-btn d-none d-lg-block">
               <a href="#0">
-                <span> <strong><img src="{{ get_asset_url('../../images/chat.png') }}" alt=""></strong> Chat Coming Soon </span>
+                <span> <strong><img src="{{ get_asset_url('../../images/chat.png') }}" alt=""></strong> Firm Subscription</span>
               </a>
             </div>
           </div>
@@ -152,30 +152,39 @@
               </div>
 
               <div class="col-md-6">
-                <div class="chat-fomr">
+                <div class="chat-form">
+                  <div class="form-group">
+                    <input type="text" class="form-control d-none" id="case_description" name="case_description" aria-describedby="case_description"
+                      placeholder="Enter your case description">
+                  </div>
                   <div class="form-flex d-block d-md-flex align-items-center">
                     <div class="form-group">
-                      <label for="exampleInputEmail1">First Name</label>
-                      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                      <label for="firstname">First Name</label>
+                      <input type="text" class="form-control" name="firstname" id="firstname" aria-describedby="firstname"
                         placeholder="Enter your first name">
                     </div>
                     <div class="form-group">
-                      <label for="exampleInputEmail1">Last Name</label>
-                      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                      <label for="lastname">Last Name</label>
+                      <input type="text" class="form-control" id="lastname" name="lastname" aria-describedby="lastname"
                         placeholder="Enter your last name">
                     </div>
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputEmail1">Email Address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                    <label for="email">Email Address</label>
+                    <input type="email" class="form-control" id="email" name="email" aria-describedby="email"
                       placeholder="Enter your email">
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputEmail1">Phone Number</label>
-                    <input type="number" id="phone" class="form-control"
-                      aria-describedby="emailHelp" placeholder="Enter your number ">
+                    <label for="phone">Phone Number</label>
+                    <input type="number" id="phone" class="form-control" name="phone"
+                      aria-describedby="phone" placeholder="Enter your number ">
                   </div>
-
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="share-my-case-report" name="share_my_case_report">
+                    <label class="form-check-label" for="share-my-case-report">
+                      Share my case report with the most qualified Lawyers near me
+                    </label>
+                  </div>
                   <p>By providing your phone number, you consent to receive text messages, including automated texts,
                     from Lawyers Near Me.AI for service updates and promotional campaigns. Message and data rates may
                     apply. Consent is not a condition of purchasing any goods or services. You can opt out at any time
@@ -431,7 +440,7 @@
               <div class="form-field w-100">
                 <div class="input-with-icon">
                   <img src="{{ get_asset_url('../../images/hero/form-star.png') }}" alt="icon" class="input-icon">
-                  <input type="text" placeholder="Tell Ai What Happened?" class="form-control" id="exampleInputName"
+                  <input type="text" placeholder="Tell Ai What Happened?" name="get-case-description" class="form-control" id="get-case-description"
                     aria-describedby="emailHelp" style="background: url({{ get_asset_url('../../images/summery/input.png') }}); background-position: center; background-size: cover; background-repeat: no-repeat;">
                 </div>
               </div>
@@ -561,7 +570,7 @@
                 </ul>
                 <div class="footer-chat">
                   <a href="#0">
-                    <span> <strong><img src="{{ get_asset_url('../../images/chat.png') }}" alt=""></strong> Chat Coming Soon </span>
+                    <span> <strong><img src="{{ get_asset_url('../../images/chat.png') }}" alt=""></strong> Firm Subscription</span>
                   </a>
                 </div>
               </div>
@@ -611,54 +620,10 @@
   {{ require_js(get_asset_url("../../js/progressbar.js")) }}
 
   {# {{ require_js(get_asset_url("../../js/sc-cursor.js")) }} #}
-  {# {{ require_js(get_asset_url("../../js/main.js")) }} #}
+  {{ require_js(get_asset_url("../../js/main.js")) }}
 
 
-  <script>
-    // Toggle menu when hamburger is clicked
-    // Toggle menu when hamburger is clicked
-    document.querySelector('.hamburger').addEventListener('click', function () {
-      document.querySelector('.menu').classList.toggle('active');
-    });
-
-    // Close menu when close icon is clicked
-    document.querySelector('.close-btn').addEventListener('click', function () {
-      document.querySelector('.menu').classList.remove('active');
-    });
-
-
-
-    const input = document.querySelector("#phone");
-    const iti = window.intlTelInput(input, {
-      initialCountry: "us",  // Default country is USA
-      utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"
-    });
-
-
-
-    (function () {
-      var words = [
-        'Wrongful Death',
-        'Slip And Fall',
-        'Medical Malpractice',
-        'Mass Tort'
-      ], i = 0;
-
-      setInterval(function () {
-        var $text = $('#rotatingText');
-        // Rotate out the current text
-        $text.addClass('rotate-out').one('transitionend', function () {
-          // Update the text after rotate-out completes
-          $(this).text(words[i = (i + 1) % words.length]);
-          // Reset rotate classes for next animation
-          $(this).removeClass('rotate-out').addClass('rotate-in').one('transitionend', function () {
-            $(this).removeClass('rotate-in');
-          });
-        });
-      }, 3000); // Change word every 3 seconds
-    })();
-
-  </script>
+  <script></script>
   {{ standard_footer_includes }}
 </body>
 
