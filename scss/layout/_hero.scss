@@ -2,7 +2,8 @@
   margin-top: 80px;
   text-align: center;
   @media #{$xs} {
-    padding: 50px 20px;
+    padding: 0px 20px;
+    margin-top: 40px;
   }
   .hero-content {
     h2 {
