@@ -135,20 +135,20 @@
           <form class="chat-form">
             <div class="row align-items-center">
               <div class="col-md-6">
-                <div class="checkbox">
-                  <label for="">Free Summary</label>
-                  <div class="checkbox-container">
-                    <input type="checkbox" id="free_summary" name="free_summary" value="Yes">
-                    <label for="free_summary">Get a quick summary of your case details at no charge.</label>
+                <div class="radio">
+                    <label for="free_summary">Free Summary</label>
+                    <div class="radio-container">
+                      <input type="radio" id="free_summary" name="case_summary_type" value="Free">
+                      <label for="free_summary">Get a quick summary of your case details at no charge.</label>
+                    </div>
                   </div>
-                </div>
-                <div class="checkbox">
-                  <label for="">$9.97 Detailed Summary with Suggested Next Steps</label>
-                  <div class="checkbox-container">
-                    <input type="checkbox" id="premium_detailed_summary" name="premium_detailed_summary" value="Yes">
-                    <label for="premium_detailed_summary">Receive a comprehensive case summary along with personalized suggestions for your next steps in resolving your case.</label>
+                  <div class="radio">
+                    <label for="premium_detailed_summary">$9.97 Detailed Summary with Suggested Next Steps</label>
+                    <div class="radio-container">
+                      <input type="radio" id="premium_detailed_summary" name="case_summary_type" value="Paid">
+                      <label for="premium_detailed_summary">Receive a comprehensive case summary along with personalized suggestions for your next steps in resolving your case.</label>
+                    </div>
                   </div>
-                </div>
               </div>
 
               <div class="col-md-6">

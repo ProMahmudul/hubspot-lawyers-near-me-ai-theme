@@ -906,18 +906,18 @@ a {
   color: var(--primary);
 }
 
-#chatModal .checkbox {
+#chatModal .radio {
   margin-top: 42px;
 }
-#chatModal .checkbox:first-child {
+#chatModal .radio:first-child {
   margin-top: 0px;
 }
-#chatModal .checkbox label {
+#chatModal .radio label {
   margin-bottom: 14px;
   font-size: 18px;
   color: var(--white);
 }
-#chatModal .checkbox-container {
+#chatModal .radio-container {
   display: flex;
   width: 425px;
   align-items: center;
@@ -927,11 +927,11 @@ a {
   transition: background-color 0.3s; /* Smooth background color transition */
 }
 @media (max-width: 991px) {
-  #chatModal .checkbox-container {
+  #chatModal .radio-container {
     width: 100%;
   }
 }
-#chatModal .checkbox-container input[type=checkbox] {
+#chatModal .radio-container input[type=radio] {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none; /* Remove default styling */
@@ -945,11 +945,11 @@ a {
   cursor: pointer;
   transition: background-color 0.3s, border-color 0.3s;
 }
-#chatModal .checkbox-container input[type=checkbox]:checked {
+#chatModal .radio-container input[type=radio]:checked {
   background-color: transparent; /* Keep transparent */
   border-color: var(--primary); /* Change border color */
 }
-#chatModal .checkbox-container input[type=checkbox]:checked::after {
+#chatModal .radio-container input[type=radio]:checked::after {
   content: "✔"; /* Check icon */
   font-size: 40px;
   color: var(--primary);
@@ -957,17 +957,17 @@ a {
   top: -9px;
   left: 3px;
 }
-#chatModal .checkbox-container label {
+#chatModal .radio-container label {
   color: var(--white);
   font-size: 16px;
   margin-left: 15px;
   margin-bottom: 0px;
   max-width: 320px;
 }
-#chatModal .checkbox-container input[type=checkbox]:checked + label {
+#chatModal .radio-container input[type=radio]:checked + label {
   color: var(--primary);
 }
-#chatModal .checkbox-container input[type=checkbox]:checked ~ label {
+#chatModal .radio-container input[type=radio]:checked ~ label {
   color: var(--primary);
 }
 #chatModal form .form-flex {

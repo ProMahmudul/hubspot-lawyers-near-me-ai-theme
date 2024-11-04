@@ -157,7 +157,7 @@
 }
 
 #chatModal {
-  .checkbox {
+  .radio {
     margin-top: 42px;
     &:first-child {
       margin-top: 0px;
@@ -169,7 +169,7 @@
     }
   }
 
-  .checkbox-container {
+  .radio-container {
     display: flex;
     width: 425px;
     align-items: center;
@@ -180,7 +180,7 @@
     @media #{$md} {
       width: 100%;
     }
-    input[type="checkbox"] {
+    input[type="radio"] {
       appearance: none; /* Remove default styling */
       width: 50px;
       height: 45px;
@@ -217,11 +217,11 @@
     }
   }
 
-  .checkbox-container input[type="checkbox"]:checked + label {
+  .radio-container input[type="radio"]:checked + label {
     color: $primary;
   }
 
-  .checkbox-container input[type="checkbox"]:checked ~ label {
+  .radio-container input[type="radio"]:checked ~ label {
     color: $primary;
   }
 
