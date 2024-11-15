@@ -120,6 +120,25 @@
         </div>
 
 
+        <div class="hero_form">
+  <form action="" class="form_area d-block d-lg-flex">
+    <div class="form-field w-100">
+      <div class="input-with-icon">
+        <img src="assets/imgs/hero/form-star.png" alt="icon" class="input-icon">
+        <textarea placeholder="Tell AI What Happened?" 
+                  class="form-control" 
+                  id="exampleInputText" 
+                  rows="1"></textarea>
+      </div>
+    </div>
+    <div class="submit-btn">
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </form>
+</div>
+
+
+
         <div class="hero-steps">
           <ul>
             <li><span>Step 1:</span> Tell us about your case.  </li>
@@ -685,6 +704,24 @@ https://nationalbar.org/  https://www.americanbar.org/</p>
 
 
   <script>
+
+const textarea = document.getElementById('exampleInputText');
+
+textarea.addEventListener('input', function () {
+  // Reset height to recalculate
+  this.style.height = '70px'; 
+  
+  // Dynamically adjust height based on scrollHeight
+  this.style.height = this.scrollHeight + 'px'; 
+  
+  // Dynamically adjust border-radius based on height
+  if (this.scrollHeight > 70) {
+    this.style.borderRadius = '0px'; // Remove border-radius when resized
+  } else {
+    this.style.borderRadius = '50px'; // Restore border-radius when at initial height
+  }
+});
+
 
 // Toggle menu when hamburger is clicked
 // Toggle menu when hamburger is clicked

@@ -790,6 +790,11 @@ a {
   margin-top: 10px;
   position: relative;
 }
+@media (max-width: 574px) {
+  .hero_form .form_area img {
+    top: 32px;
+  }
+}
 .hero_form .form_area .input-with-icon {
   position: relative;
   display: flex;
@@ -813,37 +818,43 @@ a {
     margin-top: 10px;
   }
 }
-.hero_form .form_area input {
+.hero_form .form_area textarea {
   height: 70px;
   border-color: var(--gray2);
   padding-left: 60px;
   border: 1px solid var(--primary);
   border-radius: 100px;
   padding-right: 14%;
+  resize: none; /* Prevent manual resizing */
+  overflow: hidden; /* Hide overflow initially */
+  box-sizing: border-box;
+  padding-top: 16px;
 }
 @media (max-width: 991px) {
-  .hero_form .form_area input {
+  .hero_form .form_area textarea {
     width: 100%;
     margin-top: 10px;
     padding-right: 32%;
   }
 }
 @media (max-width: 574px) {
-  .hero_form .form_area input {
+  .hero_form .form_area textarea {
     padding-right: 20px;
   }
 }
-.hero_form .form_area input::-moz-placeholder {
+.hero_form .form_area textarea::-moz-placeholder {
   font-size: 16px;
   font-weight: 400;
   color: var(--black);
   margin-left: 10px;
+  line-height: 36px;
 }
-.hero_form .form_area input::placeholder {
+.hero_form .form_area textarea::placeholder {
   font-size: 16px;
   font-weight: 400;
   color: var(--black);
   margin-left: 10px;
+  line-height: 36px;
 }
 .hero_form .form_area .submit-btn button {
   background: var(--primary);
@@ -854,7 +865,7 @@ a {
   border-radius: 100px;
   position: absolute;
   right: 2%;
-  top: 10%;
+  bottom: 7px;
   font-size: 22px;
   font-weight: bold;
   line-height: 0;
