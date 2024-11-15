@@ -151,10 +151,15 @@ position: relative;
                 border:1px solid $primary;
                 border-radius: 100px;
                 color:$white;
+                padding-right: 20%;
                  @media #{$md} {
                     width: 100%;
                     margin-top: 10px;
                     
+                }
+                @media #{$xs} {
+                 
+                     padding-right: 20px;
                 }
                 &::placeholder{
                     font-size: 16px;
