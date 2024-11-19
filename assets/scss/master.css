@@ -863,6 +863,12 @@ a {
   right: 7px;
   bottom: 7px;
 }
+@media (max-width: 574px) {
+  .hero_form .form_area .submit-btn {
+    position: relative;
+    right: 0;
+  }
+}
 .hero_form .form_area .submit-btn button {
   background: var(--primary);
   color: var(--black);

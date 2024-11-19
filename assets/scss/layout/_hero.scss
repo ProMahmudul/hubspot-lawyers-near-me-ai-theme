@@ -133,6 +133,11 @@
                 position: absolute;
                     right: 7px;
                 bottom: 7px;
+                 @media #{$xs} {
+                 
+                       position: relative;
+                       right: 0;
+                }
                 button{
                 background: $primary;
                 color:$black;
