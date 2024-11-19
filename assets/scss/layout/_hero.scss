@@ -109,6 +109,8 @@
                 overflow: hidden; /* Hide overflow initially */
                 box-sizing: border-box;
                 padding-top:16px;
+                 word-break: break-word;
+                 font-size: 20px;
                  @media #{$md} {
                     width: 100%;
                     margin-top: 10px;
