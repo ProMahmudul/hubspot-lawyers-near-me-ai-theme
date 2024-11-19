@@ -858,6 +858,11 @@ a {
   margin-left: 10px;
   line-height: 36px;
 }
+.hero_form .form_area .submit-btn {
+  position: absolute;
+  right: 7px;
+  bottom: 7px;
+}
 .hero_form .form_area .submit-btn button {
   background: var(--primary);
   color: var(--black);
@@ -865,9 +870,6 @@ a {
   height: 56px;
   padding: 13px 40px;
   border-radius: 100px;
-  position: absolute;
-  right: 2%;
-  bottom: 7px;
   font-size: 22px;
   font-weight: bold;
   line-height: 0;

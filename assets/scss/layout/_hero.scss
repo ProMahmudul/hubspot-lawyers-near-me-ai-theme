@@ -130,7 +130,9 @@
                 }
             }
             .submit-btn{
-                
+                position: absolute;
+                    right: 7px;
+                bottom: 7px;
                 button{
                 background: $primary;
                 color:$black;
@@ -138,9 +140,7 @@
                 height: 56px;
                 padding: 13px 40px;
                 border-radius: 100px;
-                position: absolute;
-                right: 2%;
-                bottom: 7px;
+                
                 font-size: 22px;
                 font-weight: bold;
                 line-height: 0;

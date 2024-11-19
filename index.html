@@ -706,21 +706,28 @@ https://nationalbar.org/  https://www.americanbar.org/</p>
   <script>
 
 const textarea = document.getElementById('exampleInputText');
+const submitButton = document.querySelector('.hero_form .form_area .submit-btn');
 
 textarea.addEventListener('input', function () {
-  // Reset height to recalculate
-  this.style.height = '70px'; 
-  
-  // Dynamically adjust height based on scrollHeight
-  this.style.height = this.scrollHeight + 'px'; 
-  
-  // Dynamically adjust border-radius based on height
-  if (this.scrollHeight > 70) {
-    this.style.borderRadius = '0px'; // Remove border-radius when resized
-  } else {
-    this.style.borderRadius = '50px'; // Restore border-radius when at initial height
+  this.style.height = '70px'; // Reset height to recalculate
+  this.style.height = this.scrollHeight + 'px'; // Dynamically adjust height
+
+  // Adjust button position
+  // submitButton.style.bottom = `${this.scrollHeight / 2}px`; // Set margin-top based on textarea height
+
+
+   if (window.innerWidth > 768) {
+    if (this.scrollHeight > 115) {
+
+      submitButton.style.bottom = `${this.scrollHeight / 2}px`; // Adjust bottom relative to height
+    } else {
+      submitButton.style.bottom = '7px'; // Reset to original position
+    }
   }
+
+
 });
+
 
 
 // Toggle menu when hamburger is clicked
