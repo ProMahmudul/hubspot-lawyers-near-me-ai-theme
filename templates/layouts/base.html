@@ -99,12 +99,12 @@
             <div class="form-field w-100">
               <div class="input-with-icon">
                 <img src="{{ get_asset_url('../../images/hero/form-star.png') }}" alt="icon" class="input-icon">
-                <input type="text" placeholder="Tell Ai What Happened?" name="get_case_description" class="form-control" id="get_case_description"
-                  aria-describedby="get_case_description" required>
+                <textarea type="text" placeholder="Tell Ai What Happened?" name="get_case_description" class="form-control" id="get_case_description"
+                  aria-describedby="get_case_description" required></textarea>
+                <div class="submit-btn">
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
               </div>
-            </div>
-            <div class="submit-btn">
-              <button type="submit" class="btn btn-primary">Submit</button>
             </div>
           </form>
         </div>
@@ -213,6 +213,7 @@
         </div>
         <div class="modal-body">
           <h2><span>Thank You</span> for Submitting Your Case!</h2>
+          <br>
           <h2>We’ve received your information and are processing your request.</h2>
           <p>Our AI Agent will contact you shortly to confirm your details.</p>
           <div class="happen-box">
@@ -229,7 +230,7 @@
 
           <h3><span class="fw-bold">Thank you</span> for trusting us, and feel free to reach out if you have any
             questions!</h3>
-          <a href="#" class="btn">
+          <a href="https://lawyersnearme.ai" class="btn">
             GO TO HOME
           </a>
           <div class="send-img">

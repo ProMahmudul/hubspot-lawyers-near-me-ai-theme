@@ -60,12 +60,18 @@
       position: relative;
       display: flex;
       align-items: center;
+      @media #{$xs} {           
+        display: block;
+      }
       .input-icon {
         position: absolute;
         left: 30px; /* Adjust as needed */
         width: 25px; /* Adjust size as needed */
         height: 25px;
         pointer-events: none; /* Allows click-through to input */
+        @media #{$xs} {           
+          top: 25px;
+        }
         .input-with-icon .form-control {
           padding-left: 35px; /* Add space to the left for the icon */
         }
@@ -79,24 +85,42 @@
       }
     }
 
-    input {
+    textarea {
       height: 70px;
       border-color: $gray2;
       padding-left: 60px;
       border: 1px solid $primary;
       border-radius: 100px;
+      padding-right: 14%;
+      resize: none; /* Prevent manual resizing */
+      overflow: hidden; /* Hide overflow initially */
+      box-sizing: border-box;
+      padding-top: 16px;
+      word-break: break-word;
+      font-size: 20px;
       @media #{$md} {
         width: 100%;
         margin-top: 10px;
+        padding-right: 32%;
+      }
+      @media #{$xs} {
+        padding-right: 20px;
       }
       &::placeholder {
         font-size: 16px;
         font-weight: 400;
         color: $black;
         margin-left: 10px;
+        line-height: 36px;
       }
     }
     .submit-btn {
+      position: absolute;
+      right: 7px;
+      @media #{$xs} {
+        position: relative;
+        right: 0;
+      }
       button {
         background: $primary;
         color: $black;
@@ -104,17 +128,17 @@
         height: 56px;
         padding: 13px 40px;
         border-radius: 100px;
-        position: absolute;
-        right: 2%;
-        top: 10%;
+
         font-size: 22px;
         font-weight: bold;
         line-height: 0;
+
         @media #{$xs} {
           position: relative;
           width: 100%;
           right: 0;
         }
+
         &:hover {
           background: $black;
           color: $primary;
@@ -260,13 +284,13 @@
       }
     }
 
-    .form-check{
-        input{
-            margin-top: 2px;
-        }
-        label {
-            color: #979797;
-          }
+    .form-check {
+      input {
+        margin-top: 2px;
+      }
+      label {
+        color: #979797;
+      }
     }
 
     p {
@@ -305,7 +329,6 @@
 // THank MOdel
 
 #thankModal .modal-dialog {
-  width: 900px;
   z-index: 99999999999;
   .modal-content {
     background-color: $black;
@@ -339,6 +362,9 @@
     font-weight: 400;
 
     width: 65%;
+    @media #{$xs} {
+      width: auto;
+    }
     margin: 0 auto;
     margin-top: 45px;
   }
