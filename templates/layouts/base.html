@@ -57,7 +57,7 @@
       <div class="row align-items-center">
         <div class="col-lg-4 col-xl-5 col-6">
           <div class="header-logo">
-            <a href="#0">
+            <a href="/">
               <img src="{{ get_asset_url('../../images/logo.png') }}" alt="logo" class="img-fluid">
             </a>
           </div>
@@ -134,8 +134,8 @@
         <div class="modal-body">
           <form class="chat-form">
             <div class="row align-items-center">
-              <div class="col-md-6">
-                <div class="radio">
+              <div class="col-md-6 d-none d-md-block">
+                  <div class="radio">
                     <label for="free_summary">Free Summary</label>
                     <div class="radio-container">
                       <input type="radio" id="free_summary" name="case_summary_type" value="Free">
@@ -179,6 +179,24 @@
                     <input type="number" id="phone" class="form-control" name="phone"
                       aria-describedby="phone" placeholder="Enter your number">
                   </div>
+
+                  <div class="d-block d-md-none mb-20">
+                    <div class="radio">
+                      <label for="free_summary">Free Summary</label>
+                      <div class="radio-container">
+                        <input type="radio" id="free_summary" name="case_summary_type" value="Free">
+                        <label for="free_summary">Get a quick summary of your case details at no charge.</label>
+                      </div>
+                    </div>
+                    <div class="radio">
+                      <label for="premium_detailed_summary">$9.97 Detailed Summary with Suggested Next Steps</label>
+                      <div class="radio-container">
+                        <input type="radio" id="premium_detailed_summary" name="case_summary_type" value="Paid">
+                        <label for="premium_detailed_summary">Receive a comprehensive case summary along with personalized suggestions for your next steps in resolving your case.</label>
+                      </div>
+                    </div>
+                  </div>
+
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="Yes" id="share-my-case-report" name="share_my_case_report">
                     <label class="form-check-label" for="share-my-case-report">
@@ -589,7 +607,7 @@
                 <div class="footer-bottom-menu">
                   <ul>
                     <li><a href="#0">Terms & Conditions</a></li>
-                    <li><a href="#0">Privacy Policy</a></li>
+                    <li><a href="https://lawyersnearme.ai/privacy-policy/">Privacy Policy</a></li>
                   </ul>
                 </div>
               </div>

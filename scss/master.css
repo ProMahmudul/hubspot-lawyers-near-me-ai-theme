@@ -599,6 +599,9 @@ a {
 .header_area.header_area2 {
   background: var(--gray3);
 }
+.header_area.others {
+  padding-bottom: 35px;
+}
 .header_area .header-navarea {
   justify-content: space-between;
   border: 1px solid var(--primary);
@@ -2241,4 +2244,11 @@ a {
   font-weight: bold;
   font-size: 20px;
   border-radius: 100px;
+}
+
+.privacy-policy ul {
+  li {
+    list-style: square;
+    list-style-position: inside;
+  }
 }/*# sourceMappingURL=master.css.map */

@@ -1,0 +1,12 @@
+{
+  "label": "Text Editor Content",
+  "is_available_for_new_content": true,
+  "fields": [
+    {
+      "name": "text_editor_content",
+      "label": "Rich Text Content",
+      "type": "richtext",
+      "default": "<p>Edit this content in the HubSpot editor.</p>"
+    }
+  ]
+}
