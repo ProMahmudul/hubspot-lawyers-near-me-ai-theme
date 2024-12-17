@@ -1091,6 +1091,11 @@ a {
   text-align: center;
   font-weight: 400;
 }
+@media (max-width: 574px) {
+  #thankModal .modal-dialog h2 {
+    font-size: 18px;
+  }
+}
 #thankModal .modal-dialog h2 span {
   font-size: 48px;
   color: var(--primary);
@@ -1100,7 +1105,12 @@ a {
   color: #dedede;
   font-size: 22px;
   text-align: center;
-  margin-top: 35px;
+  margin-top: 10px;
+}
+@media (max-width: 574px) {
+  #thankModal .modal-dialog p {
+    font-size: 18px;
+  }
 }
 #thankModal .modal-dialog h3 {
   font-size: 24px;
@@ -1109,16 +1119,18 @@ a {
   font-weight: 400;
   width: 65%;
   margin: 0 auto;
-  margin-top: 45px;
+  margin-top: 10px;
 }
 @media (max-width: 574px) {
   #thankModal .modal-dialog h3 {
     width: auto;
+    font-size: 18px;
+    line-height: 20px;
   }
 }
 #thankModal .modal-dialog .happen-box {
   border: 1px solid #292929;
-  padding: 30px 20px;
+  padding: 20px 20px;
   border-radius: 20px;
   margin-top: 15px;
 }
@@ -2173,26 +2185,26 @@ a {
   margin-right: 16px;
   color: var(--primary);
 }
-.contact .contact-form {
+.contact .contact-section {
   margin-left: 40px;
   margin-top: 70px;
 }
 @media (max-width: 991px) {
-  .contact .contact-form {
+  .contact .contact-section {
     margin-left: 0px;
   }
 }
-.contact .contact-form form .form-grp {
+.contact .contact-section form .form-grp {
   gap: 18px;
   margin-top: 20px;
 }
-.contact .contact-form form .form-grp .form-box label {
+.contact .contact-section form .form-grp .form-box label {
   color: #7C7C7C;
   font-size: 18px;
   margin-bottom: 8px;
   font-weight: bold;
 }
-.contact .contact-form form .form-grp .form-box input {
+.contact .contact-section form .form-grp .form-box input {
   background: var(--black);
   border: 2px solid #303030;
   border-radius: 100px;
@@ -2202,18 +2214,18 @@ a {
   font-size: 16px;
   width: 100%;
 }
-.contact .contact-form form .form-grp .form-box input::-moz-placeholder {
+.contact .contact-section form .form-grp .form-box input::-moz-placeholder {
   font-size: 16px;
   color: #353535;
 }
-.contact .contact-form form .form-grp .form-box input::placeholder {
+.contact .contact-section form .form-grp .form-box input::placeholder {
   font-size: 16px;
   color: #353535;
 }
-.contact .contact-form form .form-grp .form-box input:focus {
+.contact .contact-section form .form-grp .form-box input:focus {
   border-color: var(--white);
 }
-.contact .contact-form form .form-grp .form-box textarea {
+.contact .contact-section form .form-grp .form-box textarea {
   background: var(--black);
   border: 2px solid #303030;
   border-radius: 28px;
@@ -2223,21 +2235,21 @@ a {
   font-size: 16px;
   width: 100%;
 }
-.contact .contact-form form .form-grp .form-box textarea::-moz-placeholder {
+.contact .contact-section form .form-grp .form-box textarea::-moz-placeholder {
   font-size: 16px;
   color: #353535;
 }
-.contact .contact-form form .form-grp .form-box textarea::placeholder {
+.contact .contact-section form .form-grp .form-box textarea::placeholder {
   font-size: 16px;
   color: #353535;
 }
-.contact .contact-form form .form-grp .form-box textarea:focus {
+.contact .contact-section form .form-grp .form-box textarea:focus {
   border-color: var(--white);
 }
-.contact .contact-form form .submit-btn {
+.contact .contact-section form .submit-btn {
   margin-top: 15px;
 }
-.contact .contact-form form .submit-btn button {
+.contact .contact-section form .submit-btn button {
   background: var(--primary);
   padding: 13px 66px;
   color: var(--black);
@@ -2246,9 +2258,11 @@ a {
   border-radius: 100px;
 }
 
+.iti__selected-dial-code {
+  color: #ffffff;
+}
+
 .privacy-policy ul {
-  li {
-    list-style: square;
-    list-style-position: inside;
-  }
+  list-style-type: square;
+  list-style: circle;
 }/*# sourceMappingURL=master.css.map */

@@ -1,0 +1,39 @@
+<!--
+templateType: global_partial
+-->
+<header id="header" class="header_area others header_area2">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-4 col-xl-5 col-6">
+          <div class="header-logo">
+            <a href="{{ request.base_url }}/">
+              <img src="{{ get_asset_url('../../images/logo.png') }}" alt="logo" class="img-fluid">
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-8 col-xl-7 col-6">
+          <div class="header-navarea d-block d-md-flex">
+            <div class="hamburger">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div class="menu">
+              <div class="close-btn">&times;</div>
+              <ul>
+                <li><a href="{{ request.base_url }}#header" class="text-white">Home</a></li>
+                <li><a href="{{ request.base_url }}/#how-it-works">How It Works</a></li>
+                <li><a href="{{ request.base_url }}/#compliance">Compliance</a></li>
+                {# <li><a href="#0">Case Summary</a></li> #}
+              </ul>
+            </div>
+            <div class="header-btn d-none d-lg-block">
+              <a href="{{ request.base_url }}/contact">
+                <span> <strong><img src="{{ get_asset_url('../../images/chat.png') }}" alt=""></strong> Firm Subscription</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>

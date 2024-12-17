@@ -78,7 +78,7 @@
         }
     }
     }
-    .contact-form{
+    .contact-section{
         margin-left:40px ;
         margin-top: 70px;
         @media #{$md} {
@@ -148,4 +148,8 @@
            } 
         }
     }
+}
+
+.iti__selected-dial-code{
+    color: #ffffff;
 }

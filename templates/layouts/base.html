@@ -57,7 +57,7 @@
       <div class="row align-items-center">
         <div class="col-lg-4 col-xl-5 col-6">
           <div class="header-logo">
-            <a href="/">
+            <a href="{{ request.base_url }}">
               <img src="{{ get_asset_url('../../images/logo.png') }}" alt="logo" class="img-fluid">
             </a>
           </div>
@@ -72,14 +72,14 @@
             <div class="menu">
               <div class="close-btn">&times;</div>
               <ul>
-                <li><a href="#header" class="text-white">Home</a></li>
-                <li><a href="#how-it-works">How It Works</a></li>
-                <li><a href="#compliance">Compliance</a></li>
+                <li><a href="{{ request.base_url }}/#header" class="text-white">Home</a></li>
+                <li><a href="{{ request.base_url }}/#how-it-works">How It Works</a></li>
+                <li><a href="{{ request.base_url }}/#compliance">Compliance</a></li>
                 {# <li><a href="#0">Case Summary</a></li> #}
               </ul>
             </div>
             <div class="header-btn d-none d-lg-block">
-              <a href="#0">
+              <a href="{{ request.base_url }}/contact">
                 <span> <strong><img src="{{ get_asset_url('../../images/chat.png') }}" alt=""></strong> Firm Subscription</span>
               </a>
             </div>
@@ -179,8 +179,13 @@
                     <input type="number" id="phone" class="form-control" name="phone"
                       aria-describedby="phone" placeholder="Enter your number">
                   </div>
-
-                  <div class="d-block d-md-none mb-20">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="Yes" id="share-my-case-report" name="share_my_case_report">
+                    <label class="form-check-label" for="share-my-case-report">
+                      Share my case report with the most qualified Lawyers near me
+                    </label>
+                  </div>
+                  <div class="d-block d-md-none mb-20 my-3">
                     <div class="radio">
                       <label for="free_summary">Free Summary</label>
                       <div class="radio-container">
@@ -195,13 +200,6 @@
                         <label for="premium_detailed_summary">Receive a comprehensive case summary along with personalized suggestions for your next steps in resolving your case.</label>
                       </div>
                     </div>
-                  </div>
-
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="Yes" id="share-my-case-report" name="share_my_case_report">
-                    <label class="form-check-label" for="share-my-case-report">
-                      Share my case report with the most qualified Lawyers near me
-                    </label>
                   </div>
                   <p>By providing your phone number, you consent to receive text messages, including automated texts,
                     from Lawyers Near Me.AI for service updates and promotional campaigns. Message and data rates may
@@ -248,7 +246,7 @@
 
           <h3><span class="fw-bold">Thank you</span> for trusting us, and feel free to reach out if you have any
             questions!</h3>
-          <a href="https://lawyersnearme.ai" class="btn">
+          <a href="{{ request.base_url }}" class="btn">
             GO TO HOME
           </a>
           <div class="send-img">
@@ -562,65 +560,8 @@
     <!-- Testimonail End -->
 
     <!-- Footer Start -->
-    <footer class="footer">
-      <div class="footer-area">
-        <div class="container">
-          <div class="footer-top d-block d-md-flex justify-content-between">
-            <div class="footer-section">
-              <div class="footer-logo">
-                <a href="#0"><img src="{{ get_asset_url('../../images/footer-logo.png') }}" alt="" class="img-fluid"></a>
-              </div>
-              <div class="footer-social">
-                <ul>
-                  <li><a href="https://www.instagram.com/LawyersNearMe.Ai/"><i class="fa-brands fa-instagram"></i></a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="footer-section">
-              <div class="footer-menu">
-                <ul>
-                  <li><a href="#header">Home</a></li>
-                  <li><a href="#how-it-works">How It Work</a></li>
-                  <li><a href="#0">About</a></li>
-                  <li><a href="#0">Contact</a></li>
-                </ul>
-                <div class="footer-chat">
-                  <a href="#0">
-                    <span> <strong><img src="{{ get_asset_url('../../images/chat.png') }}" alt=""></strong> Firm Subscription</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="footer-section">
-              <div class="footer-infos">
-                <ul>
-                  <li><a href="#0"><i class="fa-light fa-phone-volume"></i>404-282-7202</a></li>
-                  <li><a href="#0"><i class="fa-thin fa-envelope-dot"></i>AVA@JustAskAVA.com</a></li>
-                  <li><a href="#0"><i class="fa-light fa-map"></i>5950 Live Oak Pkwy #370, Norcross, GA 30093</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="footer-bottom">
-            <div class="row">
-              <div class="col-md-6">
-                <div class="footer-bottom-menu">
-                  <ul>
-                    <li><a href="#0">Terms & Conditions</a></li>
-                    <li><a href="https://lawyersnearme.ai/privacy-policy/">Privacy Policy</a></li>
-                  </ul>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="copyright">
-                  <p class="text-end">© 2024 Legal Leads ai . All rights reserved.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
+    {% global_partial path="../partials/footer.html" %}
+    <!-- Footer End -->
   </section>
   <!-- Footer End -->
 

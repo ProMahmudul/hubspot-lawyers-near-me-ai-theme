@@ -339,6 +339,9 @@
   }
   h2 {
     font-size: 24px;
+    @media #{$xs} {
+      font-size: 18px;
+    }
     color: $white;
     text-align: center;
     font-weight: 400;
@@ -351,8 +354,11 @@
   p {
     color: #dedede;
     font-size: 22px;
+    @media #{$xs} {
+      font-size: 18px;
+    }
     text-align: center;
-    margin-top: 35px;
+    margin-top: 10px;
   }
 
   h3 {
@@ -364,14 +370,16 @@
     width: 65%;
     @media #{$xs} {
       width: auto;
+      font-size: 18px;
+      line-height: 20px;
     }
     margin: 0 auto;
-    margin-top: 45px;
+    margin-top: 10px;
   }
 
   .happen-box {
     border: 1px solid #292929;
-    padding: 30px 20px;
+    padding: 20px 20px;
     border-radius: 20px;
     margin-top: 15px;
     h3 {

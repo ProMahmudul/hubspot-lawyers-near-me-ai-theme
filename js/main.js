@@ -23,6 +23,10 @@
   const input = $("#phone")[0];
   const iti = window.intlTelInput(input, {
     initialCountry: "us", // Default country is USA
+    formatOnDisplay: true,
+    autoPlaceholder: "ON",
+    placeholderNumberType: "MOBILE",
+    separateDialCode: true,
     utilsScript:
       "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
   });
@@ -71,17 +75,24 @@
   $(".chat-form").on("submit", function (event) {
     event.preventDefault();
 
+    const dialCode = iti.getSelectedCountryData().dialCode;
+    const phoneNumber = $("#phone").val();
+    const fullPhoneNumber = `+${dialCode}${phoneNumber}`;    
+
     const formData = $(this).serializeArray();
-    const fields = formData.map((field) => ({
-      name: field.name,
-      value: field.value,
-    }));
+
+    const updatedFields = formData.map((field) => {
+      if (field.name === "phone") {
+        return { name: field.name, value: fullPhoneNumber };
+      }
+      return field;
+    });
 
     $.ajax({
       url: "https://api.hsforms.com/submissions/v3/integration/submit/47511090/1c7ae950-e4d0-45f8-96c0-21afe0c880e1",
       method: "POST",
       contentType: "application/json",
-      data: JSON.stringify({ fields: fields }),
+      data: JSON.stringify({ fields: updatedFields }),
       success: function (response) {
         // Close the modal
         $("#chatModal").modal("hide");
@@ -89,6 +100,40 @@
         $(".chat-form").trigger("reset");
         // Show the success modal
         $("#thankModal").modal("show");
+      },
+      error: function (xhr, status, error) {
+        console.error("Error:", status, error);
+        alert("Form submission failed. Please try again.");
+      },
+    });
+  });
+
+  $(".contact-form").on("submit", function (event) {
+    event.preventDefault();
+    const dialCode = iti.getSelectedCountryData().dialCode;
+    const phoneNumber = $("#phone").val();
+    const fullPhoneNumber = `+${dialCode}${phoneNumber}`;    
+
+    const formData = $(this).serializeArray();
+
+    const updatedFields = formData.map((field) => {
+      if (field.name === "phone") {
+        return { name: field.name, value: fullPhoneNumber };
+      }
+      return field;
+    });
+
+    $.ajax({
+      url: "https://api.hsforms.com/submissions/v3/integration/submit/47511090/9fa3afd3-7f9a-4a7b-97be-705dda5e69d3",
+      method: "POST",
+      contentType: "application/json",
+      data: JSON.stringify({ fields: updatedFields }),
+      success: function (response) {
+        // Reset the form fields after submission
+        $(".contact-form").trigger("reset");
+        // Show the success modal
+        $(".contact.alert-success").removeClass('d-none');
+        console.log('contact success', response);
       },
       error: function (xhr, status, error) {
         console.error("Error:", status, error);
