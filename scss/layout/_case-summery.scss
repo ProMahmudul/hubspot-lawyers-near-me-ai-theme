@@ -33,7 +33,7 @@
   }
   .case-summerybox {
     padding: 28px 0px 20px 50px;
-    z-index: 9999;
+    z-index: 999;
     position: relative;
     @media #{$md} {
       padding-left: 0px;
@@ -131,6 +131,17 @@
       }
     }
   }
+}
+
+.modal.fade#thankModal .modal-dialog {
+  max-width: 730px !IMPORTANT;
+  margin: 0 auto;
+  @media #{$xs} {
+    width: auto;
+  }
+}
+#thankModal .modal-content {
+    width: auto !important;
 }
 
 .modal.fade .modal-dialog {

@@ -230,23 +230,16 @@
         <div class="modal-body">
           <h2><span>Thank You</span> for Submitting Your Case!</h2>
           <br>
-          <h2>We’ve received your information and are processing your request.</h2>
-          <p>Our AI Agent will contact you shortly to confirm your details.</p>
-          <div class="happen-box">
-            <h3>What Happens Next:</h3>
-            <ul>
-              <li> <span class="fw-bold">Within 5 Minutes:</span> An agent will call you to verify your information and
-                ask any additional questions to ensure your case summary is accurate.</li>
-              <li> <span class="fw-bold">Confirmation Text:</span> You’ll receive a text to confirm details and provide
-                any extra information needed.</li>
-              <li> <span class="fw-bold">Case Summary Delivery:</span> Once finalized, your case summary will be emailed
-                directly to you, ready to share with your attorney.</li>
+          <h2 class="fw-bold">Case Summary in Progress</h2>
+          <div class="thankyou-content">
+            <p class="mb-2 text-start">We’re preparing your case summary.</p>
+            <ul class="case-summary-progress">
+              <li><span class="fw-bold">Next Step:</span> Our AI will call you in under 1 minute to verify your details and gather any additional information</li>
+              <li><span class="fw-bold">Delivery:</span> Once finalized, your case summary will be emailed to you, ready to share with your attorney.</li>
             </ul>
           </div>
-
-          <h3><span class="fw-bold">Thank you</span> for trusting us, and feel free to reach out if you have any
-            questions!</h3>
-          <a href="{{ request.base_url }}" class="btn">
+          <h3>Stay tuned for your call!</h3>
+          <a href="{{ request.base_url }}/" class="btn">
             GO TO HOME
           </a>
           <div class="send-img">

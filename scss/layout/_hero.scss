@@ -422,6 +422,38 @@
   .send-img {
     margin-bottom: -65px;
   }
+
+  .thankyou-content{
+    width: 600px;
+    margin: 0 auto !important;
+    @media #{$xs} {
+      width: 100%;
+    }
+  }
+
+  .case-summary-progress {
+    color: $white;
+    li{
+      font-size: 18px;
+      position: relative;
+      color: $white;
+      margin-left: 20px;
+      @media #{$xs} {
+        font-size: 16px;
+      }
+      &:before{
+        content:"";
+        background:$white;
+        width: 6px;
+        height: 6px;
+        border-radius: 6px;
+        display: inline-block;
+        position: absolute;
+        top: 5px;
+        left: -20px;
+    }
+    }
+  }
 }
 
 @keyframes animateWords {
