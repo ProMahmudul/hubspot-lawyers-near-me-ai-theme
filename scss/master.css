@@ -1183,6 +1183,9 @@ a {
   color: var(--white);
   margin-left: 20px;
 }
+#thankModal .modal-dialog .case-summary-progress li span {
+  color: var(--primary);
+}
 @media (max-width: 574px) {
   #thankModal .modal-dialog .case-summary-progress li {
     font-size: 16px;
