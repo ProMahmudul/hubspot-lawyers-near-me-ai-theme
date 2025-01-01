@@ -23,6 +23,7 @@
   const input = $("#phone")[0];
   const iti = window.intlTelInput(input, {
     initialCountry: "us", // Default country is USA
+    onlyCountries: ['us'],  // Only allow USA phone numbers
     formatOnDisplay: true,
     autoPlaceholder: "ON",
     placeholderNumberType: "MOBILE",
@@ -32,31 +33,31 @@
   });
 
   // Rotating text animation
-  (function () {
-    var words = [
-        "Wrongful Death",
-        "Slip And Fall",
-        "Medical Malpractice",
-        "Mass Tort",
-      ],
-      i = 0;
+  // (function () {
+  //   var words = [
+  //       "Wrongful Death",
+  //       "Slip And Fall",
+  //       "Medical Malpractice",
+  //       "Mass Tort",
+  //     ],
+  //     i = 0;
 
-    setInterval(function () {
-      var $text = $("#rotatingText");
-      // Rotate out the current text
-      $text.addClass("rotate-out").one("transitionend", function () {
-        // Update the text after rotate-out completes
-        $(this).text(words[(i = (i + 1) % words.length)]);
-        // Reset rotate classes for next animation
-        $(this)
-          .removeClass("rotate-out")
-          .addClass("rotate-in")
-          .one("transitionend", function () {
-            $(this).removeClass("rotate-in");
-          });
-      });
-    }, 3000); // Change word every 3 seconds
-  })();
+  //   setInterval(function () {
+  //     var $text = $("#rotatingText");
+  //     // Rotate out the current text
+  //     $text.addClass("rotate-out").one("transitionend", function () {
+  //       // Update the text after rotate-out completes
+  //       $(this).text(words[(i = (i + 1) % words.length)]);
+  //       // Reset rotate classes for next animation
+  //       $(this)
+  //         .removeClass("rotate-out")
+  //         .addClass("rotate-in")
+  //         .one("transitionend", function () {
+  //           $(this).removeClass("rotate-in");
+  //         });
+  //     });
+  //   }, 3000); // Change word every 3 seconds
+  // })();
 
   $(".case_description_form").on("submit", function (event) {
     event.preventDefault();
@@ -72,7 +73,24 @@
     $(".case_description_form").trigger("reset");
   });
 
-  $(".chat-form").on("submit", function (event) {
+  // Generate random math question
+  function generateMathQuestion() {
+    const num1 = Math.floor(Math.random() * 10);  // Random number between 0-9
+    const num2 = Math.floor(Math.random() * 10);  // Random number between 0-9
+    const operator = Math.random() > 0.5 ? '+' : '-';  // Randomly choose + or -
+    
+    const question = `${num1} ${operator} ${num2}`;
+    const answer = operator === '+' ? num1 + num2 : num1 - num2;  // Calculate the correct answer
+
+    // Store the answer in a hidden field (to compare later)
+    $('#math-question').text(question);
+    $('#math-answer').data('answer', answer);
+  }
+
+  // Call the function to generate the question on page load
+  generateMathQuestion();
+
+  $(".chat-form").on("submit", async function (event) {
     event.preventDefault();
 
     const dialCode = iti.getSelectedCountryData().dialCode;
@@ -80,6 +98,22 @@
     const fullPhoneNumber = `+${dialCode}${phoneNumber}`;    
 
     const formData = $(this).serializeArray();
+
+    // Check Honeypot Field
+    const honeypot = formData.find(field => field.name === 'hiddenField');
+    if (honeypot && honeypot.value) {
+        alert('Bot detected! Submission blocked.');
+        return;
+    }
+
+    const userAnswer = $("#math-answer").val();  // Get the user's answer
+    const correctAnswer = $("#math-answer").data("answer");  // Get the correct answer
+
+    // Check if the user's answer is correct
+    if (parseInt(userAnswer) !== correctAnswer) {
+      alert("Incorrect answer! Please solve the math problem correctly.");
+      return;
+    }
 
     const updatedFields = formData.map((field) => {
       if (field.name === "phone") {
