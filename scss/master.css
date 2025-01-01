@@ -744,27 +744,27 @@ a {
 .hero_area .hero-content h2 {
   color: var(--primary);
   text-transform: uppercase;
-  font-size: 64px;
+  font-size: 50px;
   letter-spacing: 3px;
 }
 @media (max-width: 574px) {
   .hero_area .hero-content h2 {
-    font-size: 45px;
+    font-size: 20px;
   }
 }
 .hero_area .hero-content h4 {
   color: var(--white);
   padding: 5px 0px 20px 0px;
-  font-size: 50px;
+  font-size: 40px;
 }
 @media (max-width: 1399px) {
   .hero_area .hero-content h4 {
-    font-size: 40px;
+    font-size: 30px;
   }
 }
 @media (max-width: 574px) {
   .hero_area .hero-content h4 {
-    font-size: 30px;
+    font-size: 20px;
   }
 }
 .hero_area p {
@@ -887,10 +887,9 @@ a {
   color: var(--black);
   border-color: var(--primary);
   height: 56px;
-  padding: 13px 40px;
+  padding: 13px 20px;
   border-radius: 100px;
   font-size: 22px;
-  font-weight: bold;
   line-height: 0;
 }
 @media (max-width: 574px) {
@@ -898,6 +897,7 @@ a {
     position: relative;
     width: 100%;
     right: 0;
+    padding: 13px 13px;
   }
 }
 .hero_form .form_area .submit-btn button:hover {
@@ -1650,7 +1650,7 @@ a {
   }
 }
 .summershape .summery-area .summery-box p {
-  color: #D5D5D5;
+  color: #d5d5d5;
   font-size: 24px;
   line-height: 28px;
 }
@@ -1661,7 +1661,7 @@ a {
   background: url("../imgs/summery/blur.png");
   background-position: center;
   background-size: cover;
-  border: 1px solid #2C2C2C;
+  border: 1px solid #2c2c2c;
   border-radius: 40px;
   padding: 65px 20px 65px 0px;
 }
@@ -1672,7 +1672,7 @@ a {
 }
 .summershape .summery-area .summery-box2 p {
   margin-top: 10px;
-  color: #A0A0A0;
+  color: #a0a0a0;
   font-size: 18px;
   line-height: 26px;
   text-align: center;
@@ -1773,20 +1773,20 @@ a {
   color: var(--black);
   border-color: var(--primary);
   height: 56px;
-  padding: 13px 40px;
+  padding: 13px 20px;
   border-radius: 100px;
   position: absolute;
   right: 24px;
   top: 10%;
   font-size: 22px;
   line-height: 0;
-  font-weight: bold;
 }
 @media (max-width: 574px) {
   .email-form .form_area .submit-btn button {
     position: relative;
     width: 100%;
     left: 0;
+    padding: 13px 13px;
   }
 }
 .email-form .form_area .submit-btn button:hover {

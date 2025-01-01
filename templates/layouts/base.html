@@ -88,21 +88,18 @@
       </div>
       <div class="hero_area">
         <div class="hero-content">
-          <h2>NEED A LAWYER?</h2>
-          <h4>Use Ai to Find the Right
-            <span style="color:#FFC900" id="rotatingText">Personal Injury</span>
-            Lawyer in Minutes.
-          </h4>
+          <h2>NEED A LAWYER?<br/>Let AI Create Your Case Summary in Minutes.</h2>
+          <h4>Our AI will gather your case details, call to confirm, and provide a Free Case Summary ready to share with an attorney.</h4>
         </div>
         <div class="hero_form">
           <form class="form_area case_description_form d-block d-lg-flex">
             <div class="form-field w-100">
               <div class="input-with-icon">
-                <img src="{{ get_asset_url('../../images/hero/form-star.png') }}" alt="icon" class="input-icon">
+                <img src="{{ get_asset_url('../../images/hero/chatbot.png') }}" alt="icon" class="input-icon">
                 <textarea type="text" placeholder="Tell Ai What Happened?" name="get_case_description" class="form-control" id="get_case_description"
                   aria-describedby="get_case_description" required></textarea>
                 <div class="submit-btn">
-                  <button type="submit" class="btn btn-primary">Submit</button>
+                  <button type="submit" class="btn btn-primary">Start My Free Case Summary</button>
                 </div>
               </div>
             </div>
@@ -111,11 +108,9 @@
 
         <div class="hero-steps">
           <ul>
-            <li><span>Step 1:</span> Tell us about your case. </li>
-            <li><span>Step 2:</span> Click Submit, then choose a Free Summary or a Detailed Summary with Extra Help.
-            </li>
-            <li><span>Step 3: </span> Our Agent will call & text you to double-check the details, then email your Case
-              Report. </li>
+            <li><span>📝 Step 1:</span> Answer a Quick Question.</li>
+            <li><span>📞 Step 2:</span> Get a Call from Our AI to Confirm Details.</li>
+            <li><span>📄 Step 3: </span> Receive Your Free Case Summary via Email.</li>
           </ul>
         </div>
       </div>
@@ -128,7 +123,10 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h2 class="gradient-text2">Let’s have a chat</h2>
+          <div class="form-header">
+            <h2 class="gradient-text2">Let’s Have a Chat</h2>
+            <p style="font-weight: bold">Important: Please provide accurate details so our AI agent can contact you to prepare your case summary.</p>
+          </div>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="background: url({{ get_asset_url('../../images/Vector.png') }}); background-position: center; background-size: contain; background-repeat: no-repeat;"></button>
         </div>
         <div class="modal-body">
@@ -161,23 +159,23 @@
                     <div class="form-group">
                       <label for="firstname">First Name</label>
                       <input type="text" class="form-control" name="firstname" id="firstname" aria-describedby="firstname"
-                        placeholder="Enter your first name" required>
+                        placeholder="Enter your first name (required)" required>
                     </div>
                     <div class="form-group">
                       <label for="lastname">Last Name</label>
                       <input type="text" class="form-control" id="lastname" name="lastname" aria-describedby="lastname"
-                        placeholder="Enter your last name" required>
+                        placeholder="Enter your last name (required)" required>
                     </div>
                   </div>
                   <div class="form-group">
                     <label for="email">Email Address</label>
                     <input type="email" class="form-control" id="email" name="email" aria-describedby="email"
-                      placeholder="Enter your email" required>
+                      placeholder="Enter your email (to receive your case summary)" required>
                   </div>
                   <div class="form-group">
                     <label for="phone">Phone Number</label>
                     <input type="number" id="phone" class="form-control" name="phone"
-                      aria-describedby="phone" placeholder="Enter your number">
+                      aria-describedby="phone" placeholder="Enter a valid phone number (to receive a call from our AI)" required>
                   </div>
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="Yes" id="share-my-case-report" name="share_my_case_report">
@@ -201,14 +199,17 @@
                       </div>
                     </div>
                   </div>
-                  <p>By providing your phone number, you consent to receive text messages, including automated texts,
-                    from Lawyers Near Me.AI for service updates and promotional campaigns. Message and data rates may
-                    apply. Consent is not a condition of purchasing any goods or services. You can opt out at any time
-                    by replying STOP</p>
+                  <p>ℹ️ Note: Our AI agent cannot contact you without a valid phone number and email address.</p><br/>
+                  <p>ℹ️ By providing your phone number, you agree to receive communications from LawyersNearMe.ai. <a href="{{ request.base_url }}/privacy-policy/" style="color: #ffc900; cursor: pointer;">[Read More]</a></p>
+                  <!-- Honeypot field -->
+                  <input type="text" name="hiddenField" id="hiddenField" style="display:none;">
+
+                  <label class="text-white mt-2" for="math-verification">⚠️ Solve The Math: <span id="math-question"></span> =</label>
+                  <input type="text" id="math-answer" name="math-answer" required />
                   <div class="submit-btn">
-                    <button type="submit" class="btn btn-primary">Speak to Our Agent</button>
+                    <button type="submit" class="btn btn-primary">Submit Information to Speak with AI</button>
                   </div>
-                  <p>TCPA Compliance Note: By selecting an option, you consent to receive communications from
+                  <p>ℹ️ TCPA Compliance Note: By selecting an option, you consent to receive communications from
                     LawyersNearMe.AI, including via automated systems, regarding your case and related services. Message
                     and data rates may apply. You can opt out at any time.</p>
                 </div>
@@ -447,13 +448,13 @@
             <form class="form_area case_description_form d-block d-lg-flex">
               <div class="form-field w-100">
                 <div class="input-with-icon">
-                  <img src="{{ get_asset_url('../../images/hero/form-star.png') }}" alt="icon" class="input-icon">
+                  <img src="{{ get_asset_url('../../images/hero/chatbot.png') }}" alt="icon" class="input-icon">
                   <input type="text" placeholder="Tell Ai What Happened?" name="get_case_description" class="form-control" id="get_case_description"
                     aria-describedby="emailHelp" style="background: url({{ get_asset_url('../../images/summery/input.png') }}); background-position: center; background-size: cover; background-repeat: no-repeat;" required>
                 </div>
               </div>
               <div class="submit-btn">
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary">Start My Free Case Summary</button>
               </div>
             </form>
           </div>
