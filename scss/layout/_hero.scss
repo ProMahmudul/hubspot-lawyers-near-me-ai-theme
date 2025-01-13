@@ -9,7 +9,7 @@
     h2 {
       color: $primary;
       text-transform: uppercase;
-      font-size: 50px;
+      font-size: 45px;
       letter-spacing: 3px;
 
       @media #{$xs} {
@@ -105,13 +105,19 @@
       }
       @media #{$xs} {
         padding-right: 20px;
+        height: 94px;
       }
+      box-sizing: border-box;
       &::placeholder {
         font-size: 16px;
         font-weight: 400;
         color: $black;
         margin-left: 10px;
         line-height: 36px;
+        white-space: normal;
+        @media #{$xs} {
+          padding-right: 14px;
+        }
       }
     }
     .submit-btn {
@@ -235,7 +241,7 @@
 
     label {
       color: $white;
-      font-size: 16px;
+      font-size: 18px;
       margin-left: 15px;
       margin-bottom: 0px;
       max-width: 320px;
@@ -306,7 +312,7 @@
         border-radius: 100px;
         border: 1px solid $primary;
         color: $black;
-        font-size: 20px;
+        font-size: 15px;
         font-weight: bold;
         height: 50px;
         margin-top: 24px;

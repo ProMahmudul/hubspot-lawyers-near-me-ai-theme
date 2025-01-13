@@ -88,7 +88,7 @@
       </div>
       <div class="hero_area">
         <div class="hero-content">
-          <h2>NEED A LAWYER?<br/>Let AI Create Your Case Summary in Minutes.</h2>
+          <h2>NEED A LAWYER?<br/>Your Free Case Summary, Powered by AI, In Minutes.</h2>
           <h4>Our AI will gather your case details, call to confirm, and provide a Free Case Summary ready to share with an attorney.</h4>
         </div>
         <div class="hero_form">
@@ -96,7 +96,7 @@
             <div class="form-field w-100">
               <div class="input-with-icon">
                 <img src="{{ get_asset_url('../../images/hero/chatbot.png') }}" alt="icon" class="input-icon">
-                <textarea type="text" placeholder="Tell Ai What Happened?" name="get_case_description" class="form-control" id="get_case_description"
+                <textarea type="text" placeholder="Briefly describe your case here (e.g., car accident, slip and fall)." name="get_case_description" class="form-control" id="get_case_description"
                   aria-describedby="get_case_description" required></textarea>
                 <div class="submit-btn">
                   <button type="submit" class="btn btn-primary">Start My Free Case Summary</button>
@@ -137,14 +137,14 @@
                     <label for="free_summary">Free Summary</label>
                     <div class="radio-container">
                       <input type="radio" id="free_summary" name="case_summary_type" value="Free">
-                      <label for="free_summary">Get a quick summary of your case details at no charge.</label>
+                      <label for="free_summary">Quick Summary: Get your case details reviewed at no charge.</label>
                     </div>
                   </div>
                   <div class="radio">
-                    <label for="premium_detailed_summary">$9.97 Detailed Summary with Suggested Next Steps</label>
+                    <label for="premium_detailed_summary">Paid Summary</label>
                     <div class="radio-container">
                       <input type="radio" id="premium_detailed_summary" name="case_summary_type" value="Paid">
-                      <label for="premium_detailed_summary">Receive a comprehensive case summary along with personalized suggestions for your next steps in resolving your case.</label>
+                      <label for="premium_detailed_summary">$9.97 Detailed Report: Comprehensive case summary with actionable next steps.</label>
                     </div>
                   </div>
               </div>
@@ -188,26 +188,26 @@
                       <label for="free_summary">Free Summary</label>
                       <div class="radio-container">
                         <input type="radio" id="free_summary" name="case_summary_type" value="Free">
-                        <label for="free_summary">Get a quick summary of your case details at no charge.</label>
+                        <label for="free_summary">Quick Summary: Get your case details reviewed at no charge.</label>
                       </div>
                     </div>
                     <div class="radio">
-                      <label for="premium_detailed_summary">$9.97 Detailed Summary with Suggested Next Steps</label>
+                      <label for="premium_detailed_summary">Paid Summary</label>
                       <div class="radio-container">
                         <input type="radio" id="premium_detailed_summary" name="case_summary_type" value="Paid">
-                        <label for="premium_detailed_summary">Receive a comprehensive case summary along with personalized suggestions for your next steps in resolving your case.</label>
+                        <label for="premium_detailed_summary">$9.97 Detailed Report: Comprehensive case summary with actionable next steps.</label>
                       </div>
                     </div>
                   </div>
                   <p>ℹ️ Note: Our AI agent cannot contact you without a valid phone number and email address.</p><br/>
-                  <p>ℹ️ By providing your phone number, you agree to receive communications from LawyersNearMe.ai. <a href="{{ request.base_url }}/privacy-policy/" style="color: #ffc900; cursor: pointer;">[Read More]</a></p>
+                  <p>ℹ️ By submitting, you consent to receive communications from LawyersNearMe.ai, including calls and texts. <a href="{{ request.base_url }}/privacy-policy/" style="color: #ffc900; cursor: pointer;">[Read More]</a></p>
                   <!-- Honeypot field -->
                   <input type="text" name="hiddenField" id="hiddenField" style="display:none;">
+                  <div class="g-recaptcha mt-3" data-sitekey="6Lc0pqoqAAAAAF551GpV2OZuJYPBMW1lvivaLHAK"></div>
+                  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
-                  <label class="text-white mt-2" for="math-verification">⚠️ Solve The Math: <span id="math-question"></span> =</label>
-                  <input type="text" id="math-answer" name="math-answer" required />
                   <div class="submit-btn">
-                    <button type="submit" class="btn btn-primary">Submit Information to Speak with AI</button>
+                    <button type="submit" class="btn btn-primary">Submit Information to Speak with AI <img src="{{ get_asset_url('../../images/hero/ai-assistant.png') }}" alt="icon" class="input-icon"></button>
                   </div>
                   <p>ℹ️ TCPA Compliance Note: By selecting an option, you consent to receive communications from
                     LawyersNearMe.AI, including via automated systems, regarding your case and related services. Message
@@ -449,7 +449,7 @@
               <div class="form-field w-100">
                 <div class="input-with-icon">
                   <img src="{{ get_asset_url('../../images/hero/chatbot.png') }}" alt="icon" class="input-icon">
-                  <input type="text" placeholder="Tell Ai What Happened?" name="get_case_description" class="form-control" id="get_case_description"
+                  <input type="text" placeholder="Briefly describe your case here (e.g., car accident, slip and fall)." name="get_case_description" class="form-control" id="get_case_description"
                     aria-describedby="emailHelp" style="background: url({{ get_asset_url('../../images/summery/input.png') }}); background-position: center; background-size: cover; background-repeat: no-repeat;" required>
                 </div>
               </div>

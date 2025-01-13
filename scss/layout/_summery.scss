@@ -109,6 +109,9 @@
         width: 25px; /* Adjust size as needed */
         height: 25px;
         pointer-events: none; /* Allows click-through to input */
+        @media #{$xs} {
+          top: 35px;
+        }
         .input-with-icon .form-control {
           padding-left: 35px; /* Add space to the left for the icon */
         }

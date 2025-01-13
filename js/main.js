@@ -23,7 +23,7 @@
   const input = $("#phone")[0];
   const iti = window.intlTelInput(input, {
     initialCountry: "us", // Default country is USA
-    onlyCountries: ['us'],  // Only allow USA phone numbers
+    onlyCountries: ["us"], // Only allow USA phone numbers
     formatOnDisplay: true,
     autoPlaceholder: "ON",
     placeholderNumberType: "MOBILE",
@@ -73,45 +73,27 @@
     $(".case_description_form").trigger("reset");
   });
 
-  // Generate random math question
-  function generateMathQuestion() {
-    const num1 = Math.floor(Math.random() * 10);  // Random number between 0-9
-    const num2 = Math.floor(Math.random() * 10);  // Random number between 0-9
-    const operator = Math.random() > 0.5 ? '+' : '-';  // Randomly choose + or -
-    
-    const question = `${num1} ${operator} ${num2}`;
-    const answer = operator === '+' ? num1 + num2 : num1 - num2;  // Calculate the correct answer
-
-    // Store the answer in a hidden field (to compare later)
-    $('#math-question').text(question);
-    $('#math-answer').data('answer', answer);
-  }
-
-  // Call the function to generate the question on page load
-  generateMathQuestion();
-
   $(".chat-form").on("submit", async function (event) {
     event.preventDefault();
 
     const dialCode = iti.getSelectedCountryData().dialCode;
     const phoneNumber = $("#phone").val();
-    const fullPhoneNumber = `+${dialCode}${phoneNumber}`;    
+    const fullPhoneNumber = `+${dialCode}${phoneNumber}`;
 
     const formData = $(this).serializeArray();
 
     // Check Honeypot Field
-    const honeypot = formData.find(field => field.name === 'hiddenField');
+    const honeypot = formData.find((field) => field.name === "hiddenField");
     if (honeypot && honeypot.value) {
-        alert('Bot detected! Submission blocked.');
-        return;
+      alert("Bot detected! Submission blocked.");
+      return;
     }
 
-    const userAnswer = $("#math-answer").val();  // Get the user's answer
-    const correctAnswer = $("#math-answer").data("answer");  // Get the correct answer
-
-    // Check if the user's answer is correct
-    if (parseInt(userAnswer) !== correctAnswer) {
-      alert("Incorrect answer! Please solve the math problem correctly.");
+    const recaptchaResponse = formData.find(
+      (field) => field.name === "g-recaptcha-response",
+    ).value;
+    if (!recaptchaResponse) {
+      alert("Please complete the CAPTCHA.");
       return;
     }
 
@@ -122,31 +104,71 @@
       return field;
     });
 
-    $.ajax({
-      url: "https://api.hsforms.com/submissions/v3/integration/submit/47511090/1c7ae950-e4d0-45f8-96c0-21afe0c880e1",
-      method: "POST",
-      contentType: "application/json",
-      data: JSON.stringify({ fields: updatedFields }),
-      success: function (response) {
-        // Close the modal
-        $("#chatModal").modal("hide");
-        // Reset the form fields after submission
-        $(".chat-form").trigger("reset");
-        // Show the success modal
-        $("#thankModal").modal("show");
-      },
-      error: function (xhr, status, error) {
-        console.error("Error:", status, error);
-        alert("Form submission failed. Please try again.");
-      },
-    });
+    try {
+      // Verify reCAPTCHA on the server
+      // const verifyResponse = await $.ajax({
+      //   url: "https://lawyersnearme.heracliusus.com/verify_recaptcha.php",
+      //   method: "POST",
+      //   data: { "g-recaptcha-response": recaptchaResponse },
+      //   contentType: "application/x-www-form-urlencoded",
+      // });
+
+      // const verifyData = JSON.parse(verifyResponse);
+      // if (!verifyData.success) {
+      //   alert(
+      //     "reCAPTCHA verification failed: " +
+      //       (verifyData.message || "Unknown error"),
+      //   );
+      //   return;
+      // }
+
+      await $.ajax({
+        url: "https://lawyersnearme.heracliusus.com/verify_recaptcha.php",
+        method: "POST",
+        data: { "g-recaptcha-response": recaptchaResponse },
+        contentType: "application/x-www-form-urlencoded",
+        success: function (response) {
+          console.log("Response:", response);
+        },
+        error: function (xhr, status, error) {
+          console.error("Error:", status, error);
+          alert(
+            "reCAPTCHA verification failed: " +
+              (error || "Unknown error"),
+          );
+          return;
+        },
+      });
+
+      $.ajax({
+        url: "https://api.hsforms.com/submissions/v3/integration/submit/47511090/1c7ae950-e4d0-45f8-96c0-21afe0c880e1",
+        method: "POST",
+        contentType: "application/json",
+        data: JSON.stringify({ fields: updatedFields }),
+        success: function (response) {
+          // Close the modal
+          $("#chatModal").modal("hide");
+          // Reset the form fields after submission
+          $(".chat-form").trigger("reset");
+          // Show the success modal
+          $("#thankModal").modal("show");
+        },
+        error: function (xhr, status, error) {
+          console.error("Error:", status, error);
+          alert("Form submission failed. Please try again.");
+        },
+      });
+    } catch (error) {
+      console.error("Error verifying reCAPTCHA:", error);
+      alert("Failed to verify reCAPTCHA. Please try again.");
+    }
   });
 
   $(".contact-form").on("submit", function (event) {
     event.preventDefault();
     const dialCode = iti.getSelectedCountryData().dialCode;
     const phoneNumber = $("#phone").val();
-    const fullPhoneNumber = `+${dialCode}${phoneNumber}`;    
+    const fullPhoneNumber = `+${dialCode}${phoneNumber}`;
 
     const formData = $(this).serializeArray();
 
@@ -166,8 +188,8 @@
         // Reset the form fields after submission
         $(".contact-form").trigger("reset");
         // Show the success modal
-        $(".contact.alert-success").removeClass('d-none');
-        console.log('contact success', response);
+        $(".contact.alert-success").removeClass("d-none");
+        console.log("contact success", response);
       },
       error: function (xhr, status, error) {
         console.error("Error:", status, error);

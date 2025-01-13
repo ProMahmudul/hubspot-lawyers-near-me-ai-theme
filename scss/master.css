@@ -744,7 +744,7 @@ a {
 .hero_area .hero-content h2 {
   color: var(--primary);
   text-transform: uppercase;
-  font-size: 50px;
+  font-size: 45px;
   letter-spacing: 3px;
 }
 @media (max-width: 574px) {
@@ -845,6 +845,7 @@ a {
   padding-top: 16px;
   word-break: break-word;
   font-size: 20px;
+  box-sizing: border-box;
 }
 @media (max-width: 991px) {
   .hero_form .form_area textarea {
@@ -856,6 +857,7 @@ a {
 @media (max-width: 574px) {
   .hero_form .form_area textarea {
     padding-right: 20px;
+    height: 94px;
   }
 }
 .hero_form .form_area textarea::-moz-placeholder {
@@ -864,6 +866,7 @@ a {
   color: var(--black);
   margin-left: 10px;
   line-height: 36px;
+  white-space: normal;
 }
 .hero_form .form_area textarea::placeholder {
   font-size: 16px;
@@ -871,6 +874,15 @@ a {
   color: var(--black);
   margin-left: 10px;
   line-height: 36px;
+  white-space: normal;
+}
+@media (max-width: 574px) {
+  .hero_form .form_area textarea::-moz-placeholder {
+    padding-right: 14px;
+  }
+  .hero_form .form_area textarea::placeholder {
+    padding-right: 14px;
+  }
 }
 .hero_form .form_area .submit-btn {
   position: absolute;
@@ -994,7 +1006,7 @@ a {
 }
 #chatModal .radio-container label {
   color: var(--white);
-  font-size: 16px;
+  font-size: 18px;
   margin-left: 15px;
   margin-bottom: 0px;
   max-width: 320px;
@@ -1059,7 +1071,7 @@ a {
   border-radius: 100px;
   border: 1px solid var(--primary);
   color: var(--black);
-  font-size: 20px;
+  font-size: 15px;
   font-weight: bold;
   height: 50px;
   margin-top: 24px;
@@ -1724,6 +1736,11 @@ a {
   width: 25px; /* Adjust size as needed */
   height: 25px;
   pointer-events: none; /* Allows click-through to input */
+}
+@media (max-width: 574px) {
+  .email-form .form_area .input-with-icon .input-icon {
+    top: 35px;
+  }
 }
 .email-form .form_area .input-with-icon .input-icon .input-with-icon .form-control {
   padding-left: 35px; /* Add space to the left for the icon */
