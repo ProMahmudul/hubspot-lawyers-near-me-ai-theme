@@ -9,6 +9,10 @@
     $(this).css("height", `${this.scrollHeight}px`); // Dynamically adjust height
   });
 
+
+
+
+
   // Toggle menu when hamburger is clicked
   $(".hamburger").on("click", function () {
     $(".menu").toggleClass("active");
@@ -197,4 +201,25 @@
       },
     });
   });
+
+
+
+//  const input = document.querySelector('.chatgpt-input'); // Select by class
+
+//   input.addEventListener('input', function () {
+//     // Reset height to enable shrinking when deleting text
+//     input.style.height = 'auto';
+    
+//     // Set new height based on scroll height
+//     input.style.height = input.scrollHeight + 'px';
+//   });
+
+
+
+
+
+
+
+
+
 })(jQuery);

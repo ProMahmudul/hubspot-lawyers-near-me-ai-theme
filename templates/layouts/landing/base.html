@@ -1,0 +1,316 @@
+<!--
+  templateType: none
+-->
+<!DOCTYPE html>
+<html lang="{{ html_lang }}" {{ html_lang_dir }}>
+
+<head>
+  <meta charset="UTF-8">
+  <!-- Site Title -->
+  {% if page_meta.html_title or pageTitle %}<title>{{ page_meta.html_title or pageTitle }}</title>{% endif %}
+  <!-- Site Favicon -->
+  {% if brand_settings.primaryFavicon.src %}<link rel="shortcut icon" href="{{ brand_settings.primaryFavicon.src }}" />{% endif %}
+  <meta name="description" content="{{ page_meta.meta_description }}">
+
+
+  <!-- All CSS Files -->
+  {{ require_css(get_asset_url("../../../css/fontawesome.min.css")) }}
+  {{ require_css(get_asset_url("../../../css/bootstrap.min.css")) }}
+  {{ require_css(get_asset_url("../../../css/meanmenu.min.css")) }}
+  {{ require_css(get_asset_url("../../../css/swiper-bundle.min.css")) }}
+  {{ require_css(get_asset_url("../../../css/magnific-popup.css")) }}
+  {{ require_css(get_asset_url("../../../css/progressbar.css")) }}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
+
+  <!-- {{ require_css(get_asset_url("../../css/sc-cursor.css")) }} -->
+  {{ require_css(get_asset_url("../../../scss/master.css")) }}
+  {{ standard_header_includes }}
+</head>
+
+<body> 
+
+<div class="landing-area" style="background: url({{ get_asset_url('../../../images/chat-bg.png') }}); background-position: center; background-size: cover;">
+
+<header id="header" class="header_area others header_area2" style="background:transparent">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-4 col-xl-2 col-6">
+          <div class="header-logo">
+            <a href="{{ request.base_url }}/">
+              <img src="{{ get_asset_url('../../../images/logo.png') }}" alt="logo" class="img-fluid">
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-4 col-xl-7 col-6">
+          <div class="header-navarea d-block d-md-flex border-0">
+            <div class="hamburger">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div class="menu">
+              <div class="close-btn">&times;</div>
+              <ul>
+                <li><a href="{{ request.base_url }}#header" class="text-white">Home</a></li>
+                <li><a href="{{ request.base_url }}/#how-it-works">How It Works</a></li>
+                <li><a href="{{ request.base_url }}/#compliance">Compliance</a></li>
+                {# <li><a href="#0">Case Summary</a></li> #}
+              </ul>
+            </div>
+           
+          </div>
+        </div>
+        <div class="col-lg-2 col-xl-3">
+             <div class="landing-header-btn d-none d-lg-block">
+              <a href="{{ request.base_url }}/contact">
+                <span> <strong><img src="{{ get_asset_url('../../../images/black-message.png') }}" alt=""></strong> Firm Subscription</span>
+              </a>
+            </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+  <div class="chat-hero-section" >
+    <div class="container">
+      <h2><span>AI-Powered </span> Case Summaries </h2>
+      <h2>for Personal Injury Cases</h2>
+      <p>Got injured? Our AI Agent collects your details, verifies them with a call, and sends you a free case summary—connecting you with best lawyers near you.</p>
+      <div class="chat-hero-btn">
+       <a href="#0"> Get My Free Case Summary <i class="fa-light fa-arrow-right-long"></i></a>
+      </div>
+      <div class="chat-suggest">
+        <h3>Choose Your Situation to Get Started Faster.</h3>
+         <div class="row justify-content-center">
+          <div class="col-md-4">
+              <div class="chat-suggest-btn">
+              <a href="#" class="suggest-btn" data-text="I was in a car accident and need legal help." data-url="/accident-help"> I was in a car accident and need legal help. </a>
+            </div>
+          </div>
+          <div class="col-md-4">
+               <div class="chat-suggest-btn">
+              <a href="#" class="suggest-btn" data-text="I was involved in a truck accident." data-url="/accident-help"> I was involved in a truck accident. </a>
+            </div>
+          </div>
+          <div class="col-md-4">
+               <div class="chat-suggest-btn">
+              <a href="#" class="suggest-btn" data-text="I slipped and fell on someone else’s property." data-url="/accident-help"> I slipped and fell on someone else’s property. </a>
+            </div>
+          </div>
+          <div class="col-md-4">
+               <div class="chat-suggest-btn">
+              <a href="#" class="suggest-btn" data-text="I was injured due to medical malpractice." data-url="/accident-help"> I was injured due to medical malpractice. </a>
+            </div>
+          </div>
+          <div class="col-md-4">
+               <div class="chat-suggest-btn">
+              <a href="#" class="suggest-btn" data-text="I was in a car accident and need legal help." data-url="/accident-help"> I was in a car accident and need legal help. </a>
+            </div>
+          </div>
+          <div class="col-md-4">
+               <div class="chat-suggest-btn">
+              <a href="#" class="suggest-btn" data-text="I was in a car accident and need legal help." data-url="/accident-help"> I was in a car accident and need legal help. </a>
+            </div>
+          </div>
+          <div class="col-md-4">
+               <div class="chat-suggest-btn">
+              <a href="#" class="suggest-btn" data-text="I was in a car accident and need legal help." data-url="/accident-help"> I was in a car accident and need legal help. </a>
+            </div>
+          </div>
+         </div>
+        
+      </div>
+    <div class="chat-search-input"> 
+      <div class="chatgpt-input-wrapper">
+        <img src="{{ get_asset_url('../../../images/robot.png') }}" alt="">
+        <textarea placeholder="Choose situation and briefly describe your case..." class="chatgpt-input"></textarea>
+        <div class="submit-btn">
+          <button type="submit"> <a href="#0"><i class="fa-solid fa-paper-plane"></i></a></button>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+
+    <div class="chat-form">
+    <div class="container">
+      <div class="chat-form-content">
+        <h2> Let’s Have a <span> Chat! </span> </h2>
+        <p><b>Important:</b> Please provide accurate details so our AI agent can contact you to prepare your case summary.</p>
+        <form>
+          <div class="row">
+            <!-- First Name -->
+            <div class="col-xl-6">
+              <div class="mb-3">
+                <label for="firstName" class="form-label">First Name</label>
+                <input type="text" class="form-control" id="firstName" placeholder="e.g. john don">
+              </div>
+            </div>
+
+            <!-- Last Name -->
+            <div class="col-xl-6">
+              <div class="mb-3">
+                <label for="lastName" class="form-label">Last Name</label>
+                <input type="text" class="form-control" id="lastName" placeholder="e.g. john don">
+              </div>
+            </div>
+          </div>
+
+          <!-- Email -->
+          <div class="col-12">
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" placeholder="e.g. example@www.com">
+            </div>
+          </div>
+
+          <!-- Submit Button -->
+          <div class="submit-btn text-center">
+              <button type="submit" class="btn btn-primary">Continue</button>
+          </div>
+          
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+
+   <div class="chat-form">
+    <div class="container">
+      <div class="chat-form-content">
+        <h2> Let’s Have a <span> Chat! </span> </h2>
+        <p><b>Note:</b>  Our AI agent cannot contact you without a valid phone number and email address.</p>
+        <form>
+          <div class="row">
+        
+
+          <!-- Phone Number -->
+          <div class="col-12">
+            <div class="mb-3">
+              <label for="phonenumber" class="form-label">Phone Number</label>
+              <input type="number" class="form-control" id="phonenumber" placeholder="000-000-000-000">
+            </div>
+          </div>
+
+
+          <div>
+            <div class="form-check checkbox-field">
+              <input class="form-check-input" type="checkbox" id="share">
+              <label class="form-check-label" for="share">
+                Share my case report with the most qualified Lawyers near me
+              </label>
+            </div>
+          </div>
+
+          <div>
+            <div class="form-check readmore">
+              <label class="form-check-label" for="share">
+                <img src="{{ get_asset_url('../../../images/circle.png') }}" alt="" class="me-2"> By submitting, you consent to receive communications from LawyersNearMe.ai, including calls and texts.<a href="#0"> Read More </a>
+              </label>
+            </div>
+          </div>
+
+          <!-- Submit Button -->
+          <div class="submit-btn text-center d-flex align-items-center justify-content-center gap-2">
+              <button type="submit" class="btn btn-primary">Go Back</button>
+              <button type="submit" class="btn btn-primary">Continue</button>
+          </div>
+          
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+
+
+   <div class="chat-form">
+    <div class="container">
+      <div class="chat-form-content">
+        <h2> Let’s Have a <span> Chat! </span> </h2>
+        <form>
+          <div class="row">
+
+          <div>
+            <div class="form-check readmore">
+              <label class="form-check-label" for="share">
+                <img src="{{ get_asset_url('../../../images/circle.png') }}" alt="" class="me-2"> <span class="text-white">  TCPA Compliance Note:</span> By selecting an option, you consent to receive communications from LawyersNearMe.AI, including via automated systems, regarding your case and related services. Message and data rates may apply. You can opt out at any time.</a>
+              </label>
+            </div>
+          </div>
+
+          <!-- Submit Button -->
+          <div class="submit-btn text-center d-flex align-items-center justify-content-center gap-2">
+              <button type="submit" class="btn btn-primary">Go Back</button>
+              <button type="submit" class="btn btn-primary">Submit information to speak with aI</button>
+          </div>
+          
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+  </div>
+
+
+
+
+
+
+
+
+  <script>
+  const input = document.querySelector('.chatgpt-input'); // Select by class
+
+  input.addEventListener('input', function () {
+    // Reset height to enable shrinking when deleting text
+    input.style.height = '50px';
+    
+    // Set new height based on scroll height
+    input.style.height = input.scrollHeight + 'px';
+  });
+
+
+    document.querySelectorAll('.suggest-btn').forEach(function(button) {
+    button.addEventListener('click', function(e) {
+      e.preventDefault(); // Prevent default action (no page reload)
+      
+      // Get the data from the clicked button
+      var text = this.getAttribute('data-text');
+      var url = this.getAttribute('data-url');
+      
+      // Populate the textarea with the selected suggestion text
+      document.querySelector('.chatgpt-input').value = text;
+      
+      // Redirect to the corresponding URL
+      window.location.href = url;
+    });
+  });
+</script>
+
+
+
+
+
+  <!-- All JS Files -->
+  {{ require_js(get_asset_url("../../../js/jquery-3.6.1.min.js")) }}
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+  {{ require_js(get_asset_url("../../../js/bootstrap.bundle.min.js")) }}
+  {{ require_js(get_asset_url("../../../js/jquery.meanmenu.min.js")) }}
+  {{ require_js(get_asset_url("../../../js/swiper-bundle.min.js")) }}
+  {{ require_js(get_asset_url("../../../js/jquery.magnific-popup.min.js")) }}
+  {{ require_js(get_asset_url("../../../js/counter.js")) }}
+  {{ require_js(get_asset_url("../../../js/progressbar.js")) }}
+
+  {# {{ require_js(get_asset_url("../../../js/sc-cursor.js")) }} #}
+  {{ require_js(get_asset_url("../../../js/main.js")) }}
+
+
+  <script></script>
+  {{ standard_footer_includes }}
+</body>
+
+</html>

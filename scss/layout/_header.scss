@@ -165,3 +165,25 @@
     }
   }
 }
+
+
+
+   .landing-header-btn a {
+      background: $primary;
+      color: $black;
+      padding: 15px 0px;
+      text-decoration: none;
+      display: block;
+      border-radius: 100px;
+      text-align: center;
+      font-weight: 500;
+      width: 235px;
+      strong {
+        color: $primary;
+        border-radius: 100px;
+        text-align: center;
+        line-height: 32px;
+        margin-right: 10px;
+        display: inline-block;
+      }
+    }
