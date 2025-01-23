@@ -21,6 +21,11 @@
   {{ require_css(get_asset_url("../../../css/magnific-popup.css")) }}
   {{ require_css(get_asset_url("../../../css/progressbar.css")) }}
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
+    <!-- Include SweetAlert2 CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+
+
+
 
   <!-- {{ require_css(get_asset_url("../../css/sc-cursor.css")) }} -->
   {{ require_css(get_asset_url("../../../scss/master.css")) }}
@@ -28,20 +33,24 @@
 </head>
 
 <body> 
-
 <div class="landing-area" style="background: url({{ get_asset_url('../../../images/chat-bg.png') }}); background-position: center; background-size: cover;">
 
 <header id="header" class="header_area others header_area2" style="background:transparent">
     <div class="container">
       <div class="row align-items-center">
-        <div class="col-lg-4 col-xl-2 col-6">
+        <div class="col-lg-4 col-xl-2 col-5">
           <div class="header-logo">
             <a href="{{ request.base_url }}/">
               <img src="{{ get_asset_url('../../../images/logo.png') }}" alt="logo" class="img-fluid">
             </a>
           </div>
         </div>
-        <div class="col-lg-4 col-xl-7 col-6">
+        <div class="col-lg-4 col-xl-3 col-5 d-block d-md-none"> 
+          <div class="mobile-phone">
+            <a href="tel:4042827202"><i class="fa-solid fa-phone"></i>Call Agent 24/7</a>
+          </div>
+        </div>
+        <div class="col-lg-4 col-xl-6 col-2">
           <div class="header-navarea d-block d-md-flex border-0">
             <div class="hamburger">
               <span></span>
@@ -51,16 +60,21 @@
             <div class="menu">
               <div class="close-btn">&times;</div>
               <ul>
-                <li><a href="{{ request.base_url }}#header" class="text-white">Home</a></li>
-                <li><a href="{{ request.base_url }}/#how-it-works">How It Works</a></li>
-                <li><a href="{{ request.base_url }}/#compliance">Compliance</a></li>
+                <li><a href="{{ request.base_url }}" class="text-white">Home</a></li>
+                <li><a href="{{ request.base_url }}/how-it-works">How It Works</a></li>
+                <li><a href="{{ request.base_url }}/#compliance">Case Summaries</a></li>
                 {# <li><a href="#0">Case Summary</a></li> #}
               </ul>
             </div>
            
           </div>
         </div>
-        <div class="col-lg-2 col-xl-3">
+        <div class="col-lg-4 col-xl-2 col-5 d-none d-md-block"> 
+          <div class="mobile-phone">
+            <a href="tel:4042827202"><i class="fa-solid fa-phone"></i>Call Agent 24/7</a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-xl-2">
              <div class="landing-header-btn d-none d-lg-block">
               <a href="{{ request.base_url }}/contact">
                 <span> <strong><img src="{{ get_asset_url('../../../images/black-message.png') }}" alt=""></strong> Firm Subscription</span>
@@ -72,7 +86,7 @@
   </header>
 
 
-  <div class="chat-hero-section" >
+  {# <div class="chat-hero-section" >
     <div class="container">
       <h2><span>AI-Powered </span> Case Summaries </h2>
       <h2>for Personal Injury Cases</h2>
@@ -251,10 +265,204 @@
 
       </div>
     </div>
+  </div> #}
+
+<!-- Step 1 -->
+<!-- Step 1 -->
+<div id="step-1">
+    <div class="chat-hero-section">
+        <div class="container">
+            <h2><span>The Fastest </span>  Way to Find a Personal Injury Lawyer Near You.</h2>
+            <p>Got Injured? Using advanced technology, we efficiently collect your case details, provide a free case summary, and connect you with the best attorneys near you.</p>
+            <div class="chat-hero-btn">
+                <a href="#" class="case-btn" type="button">Get My Free Case Summary <i class="fa-light fa-arrow-right-long"></i></a>
+            </div>
+            <div class="chat-suggest">
+
+             <div class="succes-img text-center mt-4 mb-3"> 
+                  <img src="{{ get_asset_url('../../../images/progress.svg') }}" alt="">
+                </div>
+
+                <h3>Choose Your Situation to Get Started Faster.</h3>
+
+               
+                <div class="row justify-content-center">
+                    <!-- Suggestion Buttons -->
+                    <div class="col-md-4">
+                        <div class="chat-suggest-btn">
+                            <a href="#" class="suggest-btn" data-text="I was in a car accident and need legal help.">I was in a car accident and need legal help.</a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="chat-suggest-btn">
+                            <a href="#" class="suggest-btn">I was involved in a truck accident.</a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="chat-suggest-btn">
+                            <a href="#" class="suggest-btn">I slipped and fell on someone else’s property.</a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="chat-suggest-btn">
+                            <a href="#" class="suggest-btn">I was injured due to medical malpractice.</a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="chat-suggest-btn">
+                            <a href="#" class="suggest-btn">I was hit by a vehicle while walking or biking.</a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="chat-suggest-btn">
+                            <a href="#" class="suggest-btn">A defective product caused my injury.</a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="chat-suggest-btn">
+                            <a href="#" class="suggest-btn" >I was bitten or attacked by a dog.</a>
+                        </div>
+                    </div>
+                    <!-- Add more suggestion buttons here -->
+                </div>
+            </div>
+            <!-- Chat Input -->
+            <div class="chat-search-input">
+
+                <div class="chatgpt-input-wrapper">
+                <img src="{{ get_asset_url('../../../images/robot.png') }}" alt="">
+                <textarea placeholder="Choose situation and briefly describe your case..." class="chatgpt-input d-none d-md-block" id="chatgptinput" required></textarea>
+                <textarea placeholder="Choose situation and briefly ..." class="chatgpt-input d-block d-md-none" id="chatgptinput" required></textarea>
+                <div class="submit-btn">
+                  <button type="submit" class=" submit-btn step-1-btn"> <a href="#0"><i class="fa-solid fa-paper-plane"></i></a></button>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Step 2 -->
+<div id="step-2" style="display: none;">
+    <div class="chat-form">
+        <div class="container">
+            <div class="chat-form-content">
+                <h2>Let’s Have a <span> Chat! </span></h2>
+                <p><b class="text-white">Important:</b> Please provide accurate details so our AI agent can contact you to prepare your case summary.</p>
+                <form>
+                    <div class="row">
+                        <!-- First Name -->
+                        <div class="col-xl-6">
+                            <div class="mb-3">
+                                <label for="firstName" class="form-label">First Name</label>
+                                <input type="text" class="form-control" id="firstName" placeholder="e.g. John " required>
+                            </div>
+                        </div>
+                        <!-- Last Name -->
+                        <div class="col-xl-6">
+                            <div class="mb-3">
+                                <label for="lastName" class="form-label">Last Name</label>
+                                <input type="text" class="form-control" id="lastName" placeholder="e.g. Doe" required>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Email -->
+                    <div class="col-12">
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="e.g. John@exmple.com" required>
+                        </div>
+                    </div>
+                    <!-- Submit Button -->
+                    <div class="submit-btn text-center">
+                        <button type="button" class="btn btn-primary" id="to-step-3">Continue</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Step 3 -->
+<div id="step-3" style="display: none;">
+    <div class="chat-form">
+        <div class="container">
+            <div class="chat-form-content">
+                <h2> Chat with our  <span> AI agent 24/7 </span> </h2>
+                <p><b class="text-white">Note:</b> Our AI agent cannot contact you without a valid phone number and email address.</p>
+                <form id="step-4-form">
+                 
+                    <div class="row">
+                        <!-- Phone Number -->
+                        <div class="col-12">
+                            <div class="mb-3">
+                                <label for="mobilephone" class="form-label d-block">Phone Number</label>
+                                <input type="tel" class="form-control" id="mobilephone" placeholder="000-000-000-000" required>
+                            </div>
+                        </div>
+                        <!-- Checkbox to Share Case Report -->
+                        <div>
+      
+                            <label class="form-check-label d-block text-center pt-3 pb-4" for="submit">
+                                  <img src="{{ get_asset_url('../../../images/circle.png') }}" alt="" class="me-2"> By submitting, you consent to receive communications from LawyersNearMe.ai, including calls and texts.<a href="#0"> Read More </a>
+                                </label>
+                        </div>
+                         <div class="g-recaptcha mt-3" data-sitekey="6Lc0pqoqAAAAAF551GpV2OZuJYPBMW1lvivaLHAK"></div>
+                         <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+                        <!-- Submit Button -->
+                        <div class="submit-btn text-center d-block d-lg-flex align-items-center justify-content-center gap-2">
+                          <button type="button" class="btn btn-secondery" id="go-back-1">Go Back</button>
+                          <button type="submit" class="btn btn-primary">Call Me Now</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Step 4 -->
+{# <div id="step-4" style="display: none;">
+    <div class="chat-form">
+        <div class="container">
+            <div class="chat-form-content">
+                <h2> Let’s Have a <span> Chat! </span> </h2>
+                <form id="step-4-form">
+                  <div class="g-recaptcha mt-3" data-sitekey="6Lc0pqoqAAAAAF551GpV2OZuJYPBMW1lvivaLHAK"></div>
+                  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+                    <div>
+                        <div class="form-check readmore">
+                            <label class="form-check-label" for="share">
+                                <img src="circle.png" alt="" class="me-2"> <span class="text-white">TCPA Compliance Note:</span> By selecting an option, you consent to receive communications from LawyersNearMe.AI, including via automated systems, regarding your case and related services. Message and data rates may apply. You can opt out at any time.
+                            </label>
+                        </div>
+                    </div>
+                    <!-- Submit Button -->
+                    <div class="submit-btn text-center d-block d-lg-flex align-items-center justify-content-center gap-2">
+                        <button type="button" class="btn btn-secondery" id="go-back">Go Back</button>
+                        <button type="submit" class="btn btn-primary">Submit information to speak with AI</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div> #}
+
+
+    <div class="chatgpt-footer">
+    <div class="container"> 
+      <div class="footer-menu ">
+        <ul class="d-flex align-items-center gap-2 justify-content-center justify-content-md-start">
+          <li> <a href="{{ request.base_url }}/privacy-policy"> Privacy Policy </a>
+          <li> <a href="#0"> Terms & Conditions </a>
+        </ul>
+      </div>
+    </div>
   </div>
 
-  </div>
 
+
+  </div>
 
 
 
@@ -263,6 +471,9 @@
 
 
   <script>
+
+
+
   const input = document.querySelector('.chatgpt-input'); // Select by class
 
   input.addEventListener('input', function () {
@@ -274,7 +485,7 @@
   });
 
 
-    document.querySelectorAll('.suggest-btn').forEach(function(button) {
+    {# document.querySelectorAll('.suggest-btn').forEach(function(button) {
     button.addEventListener('click', function(e) {
       e.preventDefault(); // Prevent default action (no page reload)
       
@@ -289,6 +500,13 @@
       window.location.href = url;
     });
   });
+ #}
+
+  
+
+
+
+
 </script>
 
 
@@ -296,7 +514,9 @@
 
 
   <!-- All JS Files -->
-  {{ require_js(get_asset_url("../../../js/jquery-3.6.1.min.js")) }}
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- Include SweetAlert2 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
   {{ require_js(get_asset_url("../../../js/bootstrap.bundle.min.js")) }}
   {{ require_js(get_asset_url("../../../js/jquery.meanmenu.min.js")) }}
@@ -307,6 +527,8 @@
 
   {# {{ require_js(get_asset_url("../../../js/sc-cursor.js")) }} #}
   {{ require_js(get_asset_url("../../../js/main.js")) }}
+  <!-- Toastr JS -->
+  
 
 
   <script></script>
@@ -314,3 +536,5 @@
 </body>
 
 </html>
+
+  

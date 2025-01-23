@@ -9,6 +9,295 @@
     $(this).css("height", `${this.scrollHeight}px`); // Dynamically adjust height
   });
 
+  //step Form
+
+    // const step1 = $('#step-1');
+    // const step2 = $('#step-2');
+    // const step3 = $('#step-3');
+    // const step4 = $('#step-4');
+    
+    // const toStep2 = $('#to-step-2');
+    // const toStep3 = $('#to-step-3');
+    // const toStep4 = $('#to-step-4');
+
+    // // Initially, only step-1 is visible
+    // step2.hide();
+    // step3.hide();
+    // step4.hide();
+
+    // // Show step 2
+    // toStep2.on('click', function() {
+    //     step1.hide();
+    //     step2.show();
+    // });
+
+    // // Show step 3
+    // toStep3.on('click', function() {
+    //     step2.hide();
+    //     step3.show();
+    // });
+
+    // // Show step 4
+    // toStep4.on('click', function() {
+    //     step3.hide();
+    //     step4.show();
+    // });
+
+
+    const step1 = $('#step-1');
+    const step2 = $('#step-2');
+    const step3 = $('#step-3');
+    const step4 = $('#step-4');
+
+    const toStep2 = $('#to-step-2');
+    const toStep3 = $('#to-step-3');
+    const toStep4 = $('#to-step-4');
+    const goBackBtn = $('#go-back');
+    const goBackBtn1 = $('#go-back-1');
+    
+    const suggestBtns = $('.suggest-btn'); // All suggest buttons
+    const caseBtns = $('.case-btn'); // All suggest buttons
+    const chatgptInput = $('#chatgptinput'); // The input field in step 1
+    const submitBtn = $('.step-1-btn'); // Submit button in step 1
+
+    // Initially, only step-1 is visible
+    step2.hide();
+    step3.hide();
+    step4.hide();
+
+    // Function to show error message under invalid input
+    function showErrorMessage(input, message) {
+        input.after('<div class="error-message" style="color: red; font-size: 12px; margin-top: 5px;">' + message + '</div>');
+    }
+
+    // Function to clear previous error messages
+    function clearErrorMessages() {
+        $('.error-message').remove();
+    }
+
+    // Show step 2 when moving from step 1 to step 2
+    submitBtn.on('click', function (e) {
+        e.preventDefault();
+        clearErrorMessages();
+
+        if (chatgptInput.val().trim() === '') {
+            showErrorMessage(chatgptInput, 'Please fill in the case description.');
+        } else {
+            step1.hide();
+            step2.show();
+        }
+    });
+
+    // Show step 3 when moving from step 2 to step 3
+    toStep3.on('click', function (e) {
+    e.preventDefault();
+    clearErrorMessages();
+
+    let valid = true;
+
+    // Check if all required fields are filled
+    $('#firstName, #lastName').each(function () {
+        if ($(this).val().trim() === '') {
+            showErrorMessage($(this), 'This field is required.');
+            valid = false;
+        }
+    });
+
+    // Check if email is valid
+    const emailField = $('#email');
+    const emailValue = emailField.val().trim();
+
+    if (emailValue === '') {
+        showErrorMessage(emailField, 'Email is required.');
+        valid = false;
+    } else if (!validateEmail(emailValue)) {
+        showErrorMessage(emailField, 'Please enter a valid email address.');
+        valid = false;
+    }
+
+    if (valid) {
+        step2.hide();
+        step3.show();
+    }
+});
+
+// Function to validate email format
+function validateEmail(email) {
+    const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+    return regex.test(email);
+}
+
+    // Show step 4 when moving from step 3 to step 4
+toStep4.on('click', function (e) {
+    e.preventDefault();
+    clearErrorMessages();
+
+    const phoneNumber = $('#mobilephone').val().trim();
+
+    // Regular expression to validate US phone numbers (without country code)
+    const usPhoneRegex = /^(\+1\s?)?([2-9]\d{2})(\s|-)?\d{3}(\s|-)?\d{4}$/;
+
+    if (phoneNumber === '') {
+        showErrorMessage($('#mobilephone'), 'Please provide a phone number.');
+    } else if (!usPhoneRegex.test(phoneNumber)) {
+        showErrorMessage($('#mobilephone'), 'Please provide a valid US phone number.');
+    } else {
+        step3.hide();
+        step4.show();
+    }
+});
+
+
+
+
+    // Handle "Go Back" button in step 4
+    goBackBtn1.on('click', function (e) {
+        e.preventDefault();
+        step3.hide();
+        step2.show();
+    });
+
+    goBackBtn.on('click', function (e) {
+        e.preventDefault();
+        step4.hide();
+        step3.show();
+    });
+
+    // Handle suggest button clicks
+  suggestBtns.on('click', function () {
+      // Get the value from the clicked button's data attribute (or text)
+      const suggestedValue = $(this).data('suggestion') || $(this).text();
+
+      // Set the value in the chatgptInput field
+      chatgptInput.val(suggestedValue);
+
+      // Clear previous error messages
+      clearErrorMessages();
+
+      // Automatically move to step 2
+      step1.hide();
+      step2.show();
+  });
+
+  caseBtns.on('click', function () {
+      // Get the value from the clicked button's data attribute (or text)
+      const suggestedValue = $(this).text();
+
+      // Set the value in the chatgptInput field
+      chatgptInput.val(suggestedValue);
+
+      // Clear previous error messages
+      clearErrorMessages();
+
+      // Automatically move to step 2
+      step1.hide();
+      step2.show();
+  });
+
+
+    // Handle submit of the form
+$('#step-4-form').submit(function (e) {
+    e.preventDefault(); // Prevent the default form submission behavior
+    clearErrorMessages(); // Clear previous error messages if any
+
+    // Check reCAPTCHA response
+    if (grecaptcha.getResponse() === '') {
+        alert('Please complete the reCAPTCHA verification.');
+        return; // Stop further execution if reCAPTCHA is not completed
+    }
+
+    const phoneNumber = $('#mobilephone').val().trim();
+
+    // Regular expression to validate US phone numbers (without country code)
+    const usPhoneRegex = /^(\+1\s?)?([2-9]\d{2})(\s|-)?\d{3}(\s|-)?\d{4}$/;
+
+    if (phoneNumber === '') {
+        showErrorMessage($('#mobilephone'), 'Please provide a phone number.');
+        return;
+    } else if (!usPhoneRegex.test(phoneNumber)) {
+        showErrorMessage($('#mobilephone'), 'Please provide a valid US phone number.');
+        return;
+    }
+
+
+    const mobilePhoneNumber = itiMobilePhone.getNumber(); // Full number from #mobilephone
+
+    // Validate if the phone numbers are valid
+
+
+
+    // Add overlay
+    $('body').append(`
+        <div class="submission-overlay">
+            <div class="spinner"></div>
+            <p style="margin-left:10px;color:white">Submitting your information, please wait...</p>
+        </div>
+    `);
+
+    // Style the overlay (optional, can be moved to CSS)
+    $('.submission-overlay').css({
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        width: '100%',
+        height: '100%',
+        background: 'rgba(0, 0, 0, 0.7)',
+        color: '#fff',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        zIndex: 9999,
+        textAlign: 'center'
+    });
+
+    $('.spinner').css({
+        width: '50px',
+        height: '50px',
+        border: '5px solid #fff',
+        borderTop: '5px solid #007bff',
+        borderRadius: '50%',
+        animation: 'spin 1s linear infinite'
+    });
+
+    // Gather form data
+    const formData = {
+        firstName: $('#firstName').val(),
+        lastName: $('#lastName').val(),
+        email: $('#email').val(),
+        mobilephone: mobilePhoneNumber,
+        chatgptInput: $('#chatgptinput').val(),
+    };
+
+    // Use HubSpot's form API to submit data
+    $.ajax({
+        url: 'https://forms.hubspot.com/uploads/form/v2/47511090/908b6348-26f1-4639-b270-8637fe9b7811', // Correct HubSpot form URL
+        method: 'POST',
+        data: formData,
+        success: function () {
+            // Show success message
+                // Redirect to thank-you page after the user closes the modal
+                window.location.href = '/success';
+        },
+        error: function () {
+            // Show error message
+            Swal.fire({
+                icon: 'error',
+                title: 'Error!',
+                text: 'There was an issue submitting the form. Please try again.',
+                confirmButtonText: 'Retry'
+            });
+        },
+        complete: function () {
+            // Remove overlay regardless of success or error
+            $('.submission-overlay').remove();
+        }
+    });
+});
+
+// CSS for spinner animation (add to your stylesheet)
+
+
+
 
 
 
@@ -24,18 +313,32 @@
   });
 
   // Initialize intlTelInput on the phone input
-  const input = $("#phone")[0];
-  const iti = window.intlTelInput(input, {
-    initialCountry: "us", // Default country is USA
-    onlyCountries: ["us"], // Only allow USA phone numbers
-    formatOnDisplay: true,
-    autoPlaceholder: "ON",
-    placeholderNumberType: "MOBILE",
-    separateDialCode: true,
-    utilsScript:
-      "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
-  });
+  // const input = $("#phone")[0];
+  // const iti = window.intlTelInput(input, {
+  //   initialCountry: "us", // Default country is USA
+  //   onlyCountries: ["us"], // Only allow USA phone numbers
+  //   formatOnDisplay: true,
+  //   autoPlaceholder: "ON",
+  //   placeholderNumberType: "MOBILE",
+  //   separateDialCode: true,
+  //   utilsScript:
+  //     "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+  // });
 
+
+
+  
+  const mobilePhoneInput = $("#mobilephone")[0];
+const itiMobilePhone = window.intlTelInput(mobilePhoneInput, {
+  initialCountry: "us", // Default country is USA
+  onlyCountries: ["us"], // Only allow USA phone numbers
+  formatOnDisplay: true,
+  autoPlaceholder: "ON",
+  placeholderNumberType: "MOBILE",
+  separateDialCode: true,
+  utilsScript:
+    "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+});
   // Rotating text animation
   // (function () {
   //   var words = [
@@ -147,6 +450,7 @@
       $.ajax({
         url: "https://api.hsforms.com/submissions/v3/integration/submit/47511090/1c7ae950-e4d0-45f8-96c0-21afe0c880e1",
         method: "POST",
+    
         contentType: "application/json",
         data: JSON.stringify({ fields: updatedFields }),
         success: function (response) {
@@ -223,3 +527,5 @@
 
 
 })(jQuery);
+
+

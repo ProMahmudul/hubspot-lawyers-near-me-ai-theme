@@ -34,36 +34,26 @@
     <div class="site-preloader"></div>
   </div>
 
-  <!-- Scroll to top 
-  <button id="scroll_top" class="scroll--top"><i class="fa-solid fa-arrow-up"></i></button>-->
 
-  <!-- Mobile Offcanvas 
-  <div class="offcanvas__area offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight">
-    <div class="offcanvas-header">
-      <img src="assets/imgs/logo/logo.png" alt="Logo" class="logo">
-      <button class="btn--close" data-bs-dismiss="offcanvas">
-        <i class="fa-solid fa-xmark"></i>
-      </button>
-    </div>
-    <div class="offcanvas-body offcanvas__body">
-      <div class="mobile_menu"></div>
-    </div>
-  </div>
--->
+  <div class="landing-area" style="background:#000">
 
-  <!-- Header area start -->
-  <header id="header" class="header_area" style="background: url({{ get_asset_url('../../images/hero/hero.png') }}); background-position: center; background-size: cover;">
+<header id="header" class="header_area others header_area2" style="background:transparent">
     <div class="container">
       <div class="row align-items-center">
-        <div class="col-lg-4 col-xl-5 col-6">
+        <div class="col-lg-4 col-xl-2 col-5">
           <div class="header-logo">
-            <a href="{{ request.base_url }}">
+            <a href="{{ request.base_url }}/">
               <img src="{{ get_asset_url('../../images/logo.png') }}" alt="logo" class="img-fluid">
             </a>
           </div>
         </div>
-        <div class="col-lg-8 col-xl-7 col-6">
-          <div class="header-navarea d-block d-md-flex">
+        <div class="col-lg-4 col-xl-3 col-5 d-block d-md-none"> 
+          <div class="mobile-phone">
+            <a href="tel:4042827202"><i class="fa-solid fa-phone"></i>Call Agent 24/7</a>
+          </div>
+        </div>
+        <div class="col-lg-4 col-xl-6 col-2">
+          <div class="header-navarea d-block d-md-flex border-0">
             <div class="hamburger">
               <span></span>
               <span></span>
@@ -72,51 +62,33 @@
             <div class="menu">
               <div class="close-btn">&times;</div>
               <ul>
-                <li><a href="{{ request.base_url }}/#header" class="text-white">Home</a></li>
-                <li><a href="{{ request.base_url }}/#how-it-works">How It Works</a></li>
-                <li><a href="{{ request.base_url }}/#compliance">Compliance</a></li>
+                <li><a href="https://lawyersnearme.ai/" >Home</a></li>
+                <li><a href="{{ request.base_url }}/how-it-works" class="text-white">How It Works</a></li>
+                <li><a href="{{ request.base_url }}/#compliance">Case Summaries</a></li>
                 {# <li><a href="#0">Case Summary</a></li> #}
               </ul>
             </div>
-            <div class="header-btn d-none d-lg-block">
-              <a href="{{ request.base_url }}/contact">
-                <span> <strong><img src="{{ get_asset_url('../../images/chat.png') }}" alt=""></strong> Firm Subscription</span>
-              </a>
-            </div>
+           
           </div>
         </div>
-      </div>
-      <div class="hero_area">
-        <div class="hero-content">
-          <h2>NEED A LAWYER?<br/>Your Free Case Summary, Powered by AI, In Minutes.</h2>
-          <h4>Our AI will gather your case details, call to confirm, and provide a Free Case Summary ready to share with an attorney.</h4>
+        <div class="col-lg-4 col-xl-2 col-5 d-none d-md-block"> 
+          <div class="mobile-phone">
+            <a href="tel:4042827202"><i class="fa-solid fa-phone"></i>Call Agent 24/7</a>
+          </div>
         </div>
-        <div class="hero_form">
-          <form class="form_area case_description_form d-block d-lg-flex">
-            <div class="form-field w-100">
-              <div class="input-with-icon">
-                <img src="{{ get_asset_url('../../images/hero/chatbot.png') }}" alt="icon" class="input-icon">
-                <textarea type="text" placeholder="Briefly describe your case here (e.g., car accident, slip and fall)." name="get_case_description" class="form-control" id="get_case_description"
-                  aria-describedby="get_case_description" required></textarea>
-                <div class="submit-btn">
-                  <button type="submit" class="btn btn-primary">Start My Free Case Summary</button>
-                </div>
-              </div>
+        <div class="col-lg-2 col-xl-2">
+             <div class="landing-header-btn d-none d-lg-block">
+              <a href="{{ request.base_url }}/contact">
+                <span> <strong><img src="{{ get_asset_url('../../images/black-message.png') }}" alt=""></strong> Firm Subscription</span>
+              </a>
             </div>
-          </form>
-        </div>
-
-        <div class="hero-steps">
-          <ul>
-            <li><span>📝 Step 1:</span> Answer a Quick Question.</li>
-            <li><span>📞 Step 2:</span> Get a Call from Our AI to Confirm Details.</li>
-            <li><span>📄 Step 3: </span> Receive Your Free Case Summary via Email.</li>
-          </ul>
         </div>
       </div>
     </div>
   </header>
-  <!-- Header area end -->
+
+
+  </div>
 
   <!-- Chat Modal -->
   <div class="modal fade" id="chatModal" tabindex="-1" aria-labelledby="chatModalLabel" aria-hidden="true">
@@ -256,7 +228,7 @@
       <div class="overlay" style="background: url({{ get_asset_url('../../images/work/bg.png') }}); background-position: bottom; background-size: cover; background-repeat: no-repeat;"></div>
       <div class="container">
         <div class="heading">
-          <h3 class="text-white text-center">How It Works </h3>
+          <h3 class="text-white text-center d-none">How It Works </h3>
           <p class="text-center">Here’s how our AI-powered platform helps you get legal assistance in just a few steps.
           </p>
         </div>
@@ -472,90 +444,12 @@
   </section>
   <!-- Summery End -->
 
-  <!-- Testimonail Start -->
-  <section class="footer-testimonial" style="background: url({{ get_asset_url('../../images/testimonail/bg.png') }}); background-position: center; background-size: cover;">
-    <div class="testimonail-area p-100">
-      <div class="container">
-        <div class="heading">
-          <h3 class="text-black text-center">Hear from Our Satisfied Clients </h3>
-          <p class="text-center text-black">Coming Soon</p>
-        </div>
-        <div class="row">
-          <div class="col-lg-4 col-md-6">
-            <div class="testimonal-box">
-              <div class="testimonail-header d-flex ">
-                <div class="testimonial-left d-flex">
-                  <div class="testimonial-img">
-                    <img src="{{ get_asset_url('../../images/testimonail/test1.png') }}" alt="Eric Lee">
-                  </div>
-                  <div class="testimonial-content">
-                    <h6>Eric Lee</h6>
-                    <p>CMO</p>
-                    <img src="{{ get_asset_url('../../images/testimonail/review.png') }}" alt="">
-                  </div>
-                </div>
-                <div class="testimonial-right">
-                  <img src="{{ get_asset_url('../../images/testimonail/x.png') }}" alt="">
-                </div>
-              </div>
-              <div class="testimonail-text">
-                <p>LawyersNearMe.Ai has truly made legal help as easy as chatting with a trusted friend. By simplifying the process, it frees up time for what really matters—focusing on closing this case. The fact that it uses AI to streamline everything is simply priceless.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="testimonal-box">
-              <div class="testimonail-header d-flex ">
-                <div class="testimonial-left d-flex">
-                  <div class="testimonial-img">
-                    <img src="{{ get_asset_url('../../images/testimonail/test1.png') }}" alt="Eric Lee">
-                  </div>
-                  <div class="testimonial-content">
-                    <h6>Eric Lee</h6>
-                    <p>CMO</p>
-                    <img src="{{ get_asset_url('../../images/testimonail/review.png') }}" alt="">
-                  </div>
-                </div>
-                <div class="testimonial-right">
-                  <img src="{{ get_asset_url('../../images/testimonail/x.png') }}" alt="">
-                </div>
-              </div>
-              <div class="testimonail-text">
-                <p>LawyersNearMe.Ai has truly made legal help as easy as chatting with a trusted friend. By simplifying the process, it frees up time for what really matters—focusing on closing this case. The fact that it uses AI to streamline everything is simply priceless.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="testimonal-box">
-              <div class="testimonail-header d-flex ">
-                <div class="testimonial-left d-flex">
-                  <div class="testimonial-img">
-                    <img src="{{ get_asset_url('../../images/testimonail/test1.png') }}" alt="Eric Lee">
-                  </div>
-                  <div class="testimonial-content">
-                    <h6>Eric Lee</h6>
-                    <p>CMO </p>
-                    <img src="{{ get_asset_url('../../images/testimonail/review.png') }}" alt="">
-                  </div>
-                </div>
-                <div class="testimonial-right">
-                  <img src="{{ get_asset_url('../../images/testimonail/x.png') }}" alt="">
-                </div>
-              </div>
-              <div class="testimonail-text">
-                <p>LawyersNearMe.Ai has truly made legal help as easy as chatting with a trusted friend. By simplifying the process, it frees up time for what really matters—focusing on closing this case. The fact that it uses AI to streamline everything is simply priceless.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Testimonail End -->
+
 
     <!-- Footer Start -->
     {% global_partial path="../partials/footer.html" %}
     <!-- Footer End -->
-  </section>
+  </section> 
   <!-- Footer End -->
 
 

@@ -5,15 +5,19 @@
   background-size: cover;
   padding-top: 35px;
   padding-bottom: 150px;
+
   @media #{$xs} {
     padding-bottom: 80px;
   }
+
   &.header_area2 {
     background: $gray3;
   }
-  &.others{
+
+  &.others {
     padding-bottom: 35px;
   }
+
   .header-navarea {
     justify-content: space-between;
     border: 1px solid $primary;
@@ -25,22 +29,27 @@
     @media #{$xs} {
       border: none;
     }
+
     .menu {
       ul {
         margin: 0;
         padding: 0;
         list-style: none;
         padding-left: 35px;
+
         li {
           display: inline-block;
           padding-right: 20px;
+
           &:last-child {
             padding-right: 0;
           }
+
           a {
             font-size: 18px;
             color: $dark;
             text-decoration: none;
+
             &:hover {
               color: $white;
             }
@@ -56,6 +65,7 @@
       text-decoration: none;
       display: block;
       border-radius: 100px;
+
       strong {
         background: $white;
         color: $primary;
@@ -70,9 +80,11 @@
     }
 
     .hamburger {
-      display: none; /* Hidden on desktop */
+      display: none;
+      /* Hidden on desktop */
       cursor: pointer;
       z-index: 10;
+
       span {
         display: block;
         width: 25px;
@@ -100,12 +112,15 @@
         ul {
           flex-direction: column;
           padding: 20px;
+
           li {
             padding: 13px 0;
             display: block;
+
             a {
               color: $black;
               text-align: center;
+
               &:hover {
                 // color: lighten($primary, 20%);
               }
@@ -124,16 +139,19 @@
       }
 
       .menu.active {
-        right: 0; /* Slide the menu into view */
+        right: 0;
+        /* Slide the menu into view */
       }
 
       .hamburger {
-        display: block; /* Show hamburger icon on mobile */
+        display: block;
+        /* Show hamburger icon on mobile */
         float: right;
       }
 
       .header-btn {
-        display: none; /* Hide the contact button for mobile */
+        display: none;
+        /* Hide the contact button for mobile */
       }
     }
   }
@@ -146,6 +164,7 @@
         width: auto;
         height: auto;
         background: none;
+
         ul {
           display: flex;
         }
@@ -156,11 +175,13 @@
       }
 
       .hamburger {
-        display: none; /* Hide hamburger icon on desktop */
+        display: none;
+        /* Hide hamburger icon on desktop */
       }
 
       .header-btn {
-        display: block; /* Show contact button on desktop */
+        display: block;
+        /* Show contact button on desktop */
       }
     }
   }
@@ -168,22 +189,46 @@
 
 
 
-   .landing-header-btn a {
-      background: $primary;
-      color: $black;
-      padding: 15px 0px;
-      text-decoration: none;
-      display: block;
-      border-radius: 100px;
-      text-align: center;
-      font-weight: 500;
-      width: 235px;
-      strong {
-        color: $primary;
-        border-radius: 100px;
-        text-align: center;
-        line-height: 32px;
-        margin-right: 10px;
-        display: inline-block;
-      }
+.landing-header-btn a {
+  background: $primary;
+  color: $black;
+  padding: 15px 0px;
+  text-decoration: none;
+  display: block;
+  border-radius: 100px;
+  text-align: center;
+  font-weight: 500;
+      width: 100%;
+  float: right;
+
+  strong {
+    color: $primary;
+    border-radius: 100px;
+    text-align: center;
+    line-height: 32px;
+    margin-right: 10px;
+    display: inline-block;
+  }
+}
+
+.mobile-phone {
+  a {
+    padding: 16px 25px;
+    font-size: 16px;
+    border: 1px solid #fff;
+    color: #fff;
+    border-radius: 100px;
+    float: right;
+
+    @media #{$xs} {
+      font-size: 11px;
+        padding: 10px 5px;
+    
     }
+
+    i {
+      color: $primary;
+      margin-right: 10px;
+    }
+  }
+}
